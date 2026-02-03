@@ -30,6 +30,8 @@ export default function CodePopup() {
         return "Modifié";
       case "delete":
         return "Supprimé";
+      case "move":
+        return "Déplacé";
       default:
         return "Action";
     }
@@ -43,8 +45,10 @@ export default function CodePopup() {
         return "bg-blue-500";
       case "delete":
         return "bg-red-500";
+      case "move":
+        return "bg-purple-500";
       default:
-        return "bg-gray-500";
+        return "bg-zinc-500";
     }
   };
 
@@ -54,8 +58,8 @@ export default function CodePopup() {
         return "📝";
       case "style":
         return "🎨";
-      case "section":
-        return "📦";
+      case "layout":
+        return "📐";
       case "component":
         return "🧩";
       default:
