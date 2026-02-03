@@ -1,0 +1,254 @@
+{
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-main",
+      "type": "header",
+      "width": "full",
+      "title": "NovaTech",
+      "subtitle": "",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Services", "href": "#services" },
+        { "label": "Portfolio", "href": "#portfolio" },
+        { "label": "Avis", "href": "#avis" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-main",
+      "type": "hero",
+      "width": "full",
+      "title": "Transformez vos idees en experiences digitales memorables",
+      "subtitle": "Agence web specialisee dans la creation de sites modernes, applications sur-mesure et strategies digitales qui propulsent votre business vers le succes.",
+      "buttonText": "Decouvrir nos services",
+      "buttonColor": "#6366f1",
+      "backgroundImage": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0f172a",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-1",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "features-services",
+      "type": "features",
+      "width": "full",
+      "title": "Nos expertises",
+      "features": [
+        {
+          "icon": "🎨",
+          "title": "Design UI/UX",
+          "description": "Interfaces elegantes et intuitives concues pour maximiser l'engagement et la conversion de vos utilisateurs"
+        },
+        {
+          "icon": "💻",
+          "title": "Developpement Web",
+          "description": "Sites et applications web performants avec les technologies les plus recentes (React, Next.js, Node.js)"
+        },
+        {
+          "icon": "📱",
+          "title": "Apps Mobile",
+          "description": "Applications iOS et Android natives ou cross-platform pour toucher vos clients partout"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "spacer-2",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "cta-stats",
+      "type": "cta",
+      "width": "full",
+      "title": "+150 projets realises avec succes",
+      "description": "Depuis 2018, nous accompagnons startups et grandes entreprises dans leur transformation digitale. Notre approche sur-mesure garantit des resultats mesurables.",
+      "buttonText": "Voir nos realisations",
+      "buttonColor": "#6366f1",
+      "backgroundColor": "#f8fafc",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "spacer-3",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "gallery-portfolio",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+          "alt": "Dashboard analytics"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=400&fit=crop",
+          "alt": "Application mobile"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=600&h=400&fit=crop",
+          "alt": "Design interface"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?w=600&h=400&fit=crop",
+          "alt": "Site e-commerce"
+        }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-4",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-testimonials",
+      "type": "heading",
+      "width": "full",
+      "content": "Ce que nos clients disent",
+      "level": "h2",
+      "textAlign": "center"
+    },
+    {
+      "id": "spacer-5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "testimonial-1",
+      "type": "testimonial",
+      "width": "full",
+      "quote": "NovaTech a completement revolutionne notre presence en ligne. Leur equipe a su comprendre nos besoins et livrer un site qui depasse toutes nos attentes. Le trafic a augmente de 200% en 3 mois !",
+      "author": "Marie Lefevre",
+      "role": "CEO, StartupFlow",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop",
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b",
+      "style": "card"
+    },
+    {
+      "id": "spacer-6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "testimonial-2",
+      "type": "testimonial",
+      "width": "full",
+      "quote": "Un professionnalisme rare ! L'application mobile qu'ils ont developpee pour nous est intuitive, rapide et nos utilisateurs l'adorent. Je recommande vivement.",
+      "author": "Thomas Dubois",
+      "role": "Directeur Digital, RetailPlus",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
+      "backgroundColor": "#f8fafc",
+      "textColor": "#18181b",
+      "style": "card"
+    },
+    {
+      "id": "spacer-7",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "features-process",
+      "type": "features",
+      "width": "full",
+      "title": "Notre methode de travail",
+      "features": [
+        {
+          "icon": "1️⃣",
+          "title": "Decouverte",
+          "description": "Analyse approfondie de vos besoins, objectifs et de votre marche pour definir la strategie optimale"
+        },
+        {
+          "icon": "2️⃣",
+          "title": "Conception",
+          "description": "Creation de maquettes et prototypes interactifs valides avec vous avant le developpement"
+        },
+        {
+          "icon": "3️⃣",
+          "title": "Livraison",
+          "description": "Developpement agile avec demos regulieres, tests rigoureux et mise en production securisee"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#6366f1",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-8",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "card-contact",
+      "type": "card",
+      "width": "full",
+      "title": "Pret a demarrer votre projet ?",
+      "description": "Contactez-nous pour une consultation gratuite. Nous analyserons ensemble vos besoins et vous proposerons une solution sur-mesure adaptee a votre budget.",
+      "image": "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
+      "buttonText": "Prendre rendez-vous",
+      "buttonColor": "#6366f1",
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b",
+      "rounded": "xl",
+      "shadow": "xl"
+    },
+    {
+      "id": "spacer-9",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "footer-main",
+      "type": "footer",
+      "width": "full",
+      "text": "2024 NovaTech. Tous droits reserves. | contact@novatech.fr | +33 1 23 45 67 89",
+      "showSocials": true,
+      "socials": [
+        { "icon": "twitter", "url": "#" },
+        { "icon": "linkedin", "url": "#" },
+        { "icon": "instagram", "url": "#" },
+        { "icon": "github", "url": "#" }
+      ],
+      "backgroundColor": "#0f172a",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ]
+}
