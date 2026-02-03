@@ -5,96 +5,93 @@ import {
   EditorState,
   Block,
   BlockType,
+  RowBlock,
   createBlock,
-  ContainerBlock,
+  DropPosition,
   SiteSettings,
   NavLink,
-  Section,
-  createSection,
   CodeChange,
+  DragState,
 } from "../types/builder";
 
 const defaultNavLinks: NavLink[] = [
   { id: "nav-1", label: "Accueil", href: "#" },
-  { id: "nav-2", label: "Services", href: "#services" },
+  { id: "nav-2", label: "À propos", href: "#about" },
   { id: "nav-3", label: "Contact", href: "#contact" },
 ];
 
 const defaultSettings: SiteSettings = {
-  siteName: "Mon Super Site",
+  siteName: "Mon Site",
+  siteDescription: "Créé avec le Site Builder",
   primaryColor: "#2563eb",
   backgroundColor: "#ffffff",
-  textColor: "#1e293b",
-  buttonColor: "#2563eb",
+  textColor: "#18181b",
   fontFamily: "inter",
-  spacing: "normal",
+  maxWidth: "lg",
   navLinks: defaultNavLinks,
   showNav: true,
   showFooter: true,
 };
 
+const initialDragState: DragState = {
+  isDragging: false,
+  draggedItem: null,
+  dropPosition: null,
+};
+
 const initialState: EditorState = {
-  canvas: {
-    blocks: [],
-    backgroundColor: "#ffffff",
-    maxWidth: "lg",
-  },
-  sections: [],
+  blocks: [],
   settings: defaultSettings,
   selectedBlockId: null,
-  selectedSectionId: null,
-  draggedBlockType: null,
+  dragState: initialDragState,
   previewMode: false,
   viewMode: "desktop",
-  activePanel: "blocks",
+  activePanel: "elements",
   showCodePopup: false,
   lastCodeChange: null,
   codePopupEnabled: true,
+  history: [[]],
+  historyIndex: 0,
 };
 
 interface BuilderContextType {
   state: EditorState;
-  // Canvas
-  setBackgroundColor: (color: string) => void;
-  setMaxWidth: (width: "sm" | "md" | "lg" | "full") => void;
   // Blocks
-  addBlock: (type: BlockType, parentId?: string, index?: number) => void;
+  addBlock: (type: BlockType, position?: DropPosition) => void;
+  insertBlockAt: (type: BlockType, targetId: string, position: "before" | "after" | "inside") => void;
   updateBlock: (id: string, updates: Partial<Block>) => void;
   deleteBlock: (id: string) => void;
-  moveBlock: (id: string, direction: "up" | "down") => void;
+  moveBlock: (blockId: string, targetId: string | null, position: "before" | "after" | "inside") => void;
   duplicateBlock: (id: string) => void;
-  // Sections
-  addSection: (type: Section["type"]) => void;
-  updateSection: (id: string, updates: Partial<Section>) => void;
-  deleteSection: (id: string) => void;
-  moveSection: (id: string, direction: "up" | "down") => void;
-  selectSection: (id: string | null) => void;
-  toggleSectionVisibility: (id: string) => void;
+  // Selection
+  selectBlock: (id: string | null) => void;
+  getSelectedBlock: () => Block | null;
+  // Drag
+  startDrag: (item: DragState["draggedItem"]) => void;
+  updateDropPosition: (position: DropPosition | null) => void;
+  endDrag: () => void;
   // Settings
   updateSettings: (updates: Partial<SiteSettings>) => void;
   addNavLink: () => void;
   updateNavLink: (id: string, updates: Partial<NavLink>) => void;
   deleteNavLink: (id: string) => void;
-  // Selection
-  selectBlock: (id: string | null) => void;
-  getSelectedBlock: () => Block | null;
-  getSelectedSection: () => Section | null;
-  // Drag
-  setDraggedBlockType: (type: BlockType | null) => void;
-  // Preview & View
+  // View & Preview
   togglePreview: () => void;
   setViewMode: (mode: "desktop" | "mobile") => void;
-  // Panels
-  setActivePanel: (panel: "blocks" | "sections" | "style" | "settings") => void;
+  setActivePanel: (panel: EditorState["activePanel"]) => void;
   // Code popup
   showCodeChange: (change: CodeChange) => void;
   hideCodePopup: () => void;
   toggleCodePopup: () => void;
-  // Templates
-  loadTemplate: (templateId: string) => void;
+  // History
+  undo: () => void;
+  redo: () => void;
+  canUndo: boolean;
+  canRedo: boolean;
   // Reset
   clearCanvas: () => void;
-  resetAll: () => void;
+  // Load configuration
+  loadConfiguration: (blocks: Block[], settings: SiteSettings) => void;
 }
 
 const BuilderContext = createContext<BuilderContextType | undefined>(undefined);
@@ -102,68 +99,145 @@ const BuilderContext = createContext<BuilderContextType | undefined>(undefined);
 export function BuilderProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<EditorState>(initialState);
 
-  // === CANVAS ===
-  const setBackgroundColor = useCallback((color: string) => {
-    setState((prev) => ({
-      ...prev,
-      canvas: { ...prev.canvas, backgroundColor: color },
-      settings: { ...prev.settings, backgroundColor: color },
-    }));
+  // === HISTORY ===
+  const saveToHistory = useCallback((blocks: Block[]) => {
+    setState((prev) => {
+      const newHistory = prev.history.slice(0, prev.historyIndex + 1);
+      newHistory.push(JSON.parse(JSON.stringify(blocks)));
+      // Limit history to 50 entries
+      if (newHistory.length > 50) newHistory.shift();
+      return {
+        ...prev,
+        history: newHistory,
+        historyIndex: newHistory.length - 1,
+      };
+    });
   }, []);
 
-  const setMaxWidth = useCallback((width: "sm" | "md" | "lg" | "full") => {
-    setState((prev) => ({
-      ...prev,
-      canvas: { ...prev.canvas, maxWidth: width },
-    }));
+  // === BLOCK HELPERS ===
+  const findBlockById = useCallback((blocks: Block[], id: string): Block | null => {
+    for (const block of blocks) {
+      if (block.id === id) return block;
+      if (block.type === "row") {
+        const found = findBlockById(block.children, id);
+        if (found) return found;
+      }
+    }
+    return null;
+  }, []);
+
+  const findBlockParent = useCallback((
+    blocks: Block[],
+    id: string,
+    parent: { blocks: Block[]; index: number; parentId: string | null } | null = null
+  ): { blocks: Block[]; index: number; parentId: string | null } | null => {
+    for (let i = 0; i < blocks.length; i++) {
+      const block = blocks[i];
+      if (block.id === id) {
+        return parent || { blocks, index: i, parentId: null };
+      }
+      if (block.type === "row") {
+        const result = findBlockParent(block.children, id, {
+          blocks: block.children,
+          index: -1,
+          parentId: block.id
+        });
+        if (result) {
+          if (result.index === -1) {
+            result.index = block.children.findIndex(b => b.id === id);
+          }
+          return result;
+        }
+      }
+    }
+    return null;
+  }, []);
+
+  const removeBlockFromTree = useCallback((blocks: Block[], id: string): Block[] => {
+    return blocks
+      .filter((block) => block.id !== id)
+      .map((block) => {
+        if (block.type === "row") {
+          return { ...block, children: removeBlockFromTree(block.children, id) };
+        }
+        return block;
+      });
+  }, []);
+
+  const insertBlockInTree = useCallback((
+    blocks: Block[],
+    newBlock: Block,
+    targetId: string | null,
+    position: "before" | "after" | "inside"
+  ): Block[] => {
+    // Insert at root level if no target
+    if (!targetId) {
+      return [...blocks, newBlock];
+    }
+
+    const result: Block[] = [];
+    for (const block of blocks) {
+      if (block.id === targetId) {
+        if (position === "before") {
+          result.push(newBlock, block);
+        } else if (position === "after") {
+          result.push(block, newBlock);
+        } else if (position === "inside" && block.type === "row") {
+          // When inserting inside a row, set width to auto for side-by-side layout
+          const blockForRow = { ...newBlock, width: "auto" as const };
+          result.push({ ...block, children: [...block.children, blockForRow] });
+        } else {
+          result.push(block);
+        }
+      } else if (block.type === "row") {
+        result.push({
+          ...block,
+          children: insertBlockInTree(block.children, newBlock, targetId, position),
+        });
+      } else {
+        result.push(block);
+      }
+    }
+    return result;
   }, []);
 
   // === BLOCKS ===
-  const addBlock = useCallback((type: BlockType, parentId?: string, index?: number) => {
+  const addBlock = useCallback((type: BlockType, position?: DropPosition) => {
     const newBlock = createBlock(type);
 
     setState((prev) => {
-      if (parentId) {
-        const updateChildren = (blocks: Block[]): Block[] => {
-          return blocks.map((block) => {
-            if (block.id === parentId && block.type === "container") {
-              const container = block as ContainerBlock;
-              const newChildren = [...container.children];
-              if (index !== undefined) {
-                newChildren.splice(index, 0, newBlock);
-              } else {
-                newChildren.push(newBlock);
-              }
-              return { ...container, children: newChildren };
-            }
-            if (block.type === "container") {
-              return { ...block, children: updateChildren((block as ContainerBlock).children) };
-            }
-            return block;
-          });
-        };
+      let newBlocks: Block[];
 
-        return {
-          ...prev,
-          canvas: { ...prev.canvas, blocks: updateChildren(prev.canvas.blocks) },
-          selectedBlockId: newBlock.id,
-        };
-      }
-
-      const newBlocks = [...prev.canvas.blocks];
-      if (index !== undefined) {
-        newBlocks.splice(index, 0, newBlock);
+      if (position) {
+        newBlocks = insertBlockInTree(prev.blocks, newBlock, position.targetId, position.position);
       } else {
-        newBlocks.push(newBlock);
+        newBlocks = [...prev.blocks, newBlock];
       }
 
       return {
         ...prev,
-        canvas: { ...prev.canvas, blocks: newBlocks },
+        blocks: newBlocks,
         selectedBlockId: newBlock.id,
+        dragState: initialDragState,
       };
     });
-  }, []);
+
+    // Save to history after state update
+    setTimeout(() => {
+      setState((prev) => {
+        saveToHistory(prev.blocks);
+        return prev;
+      });
+    }, 0);
+  }, [insertBlockInTree, saveToHistory]);
+
+  const insertBlockAt = useCallback((
+    type: BlockType,
+    targetId: string,
+    position: "before" | "after" | "inside"
+  ) => {
+    addBlock(type, { targetId, position });
+  }, [addBlock]);
 
   const updateBlock = useCallback((id: string, updates: Partial<Block>) => {
     setState((prev) => {
@@ -172,209 +246,170 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
           if (block.id === id) {
             return { ...block, ...updates } as Block;
           }
-          if (block.type === "container") {
-            return {
-              ...block,
-              children: updateInBlocks((block as ContainerBlock).children),
-            };
+          if (block.type === "row") {
+            return { ...block, children: updateInBlocks(block.children) };
           }
           return block;
         });
       };
 
-      // Also update in sections
-      const updateInSections = (sections: Section[]): Section[] => {
-        return sections.map((section) => ({
-          ...section,
-          blocks: updateInBlocks(section.blocks),
-        }));
-      };
-
-      return {
-        ...prev,
-        canvas: { ...prev.canvas, blocks: updateInBlocks(prev.canvas.blocks) },
-        sections: updateInSections(prev.sections),
-      };
+      const newBlocks = updateInBlocks(prev.blocks);
+      return { ...prev, blocks: newBlocks };
     });
   }, []);
 
   const deleteBlock = useCallback((id: string) => {
     setState((prev) => {
-      const removeFromBlocks = (blocks: Block[]): Block[] => {
-        return blocks
-          .filter((block) => block.id !== id)
-          .map((block) => {
-            if (block.type === "container") {
-              return {
-                ...block,
-                children: removeFromBlocks((block as ContainerBlock).children),
-              };
-            }
-            return block;
-          });
-      };
-
-      const removeFromSections = (sections: Section[]): Section[] => {
-        return sections.map((section) => ({
-          ...section,
-          blocks: removeFromBlocks(section.blocks),
-        }));
-      };
-
+      const newBlocks = removeBlockFromTree(prev.blocks, id);
+      saveToHistory(newBlocks);
       return {
         ...prev,
-        canvas: { ...prev.canvas, blocks: removeFromBlocks(prev.canvas.blocks) },
-        sections: removeFromSections(prev.sections),
+        blocks: newBlocks,
         selectedBlockId: prev.selectedBlockId === id ? null : prev.selectedBlockId,
       };
     });
-  }, []);
+  }, [removeBlockFromTree, saveToHistory]);
 
-  const moveBlock = useCallback((id: string, direction: "up" | "down") => {
+  const moveBlock = useCallback((
+    blockId: string,
+    targetId: string | null,
+    position: "before" | "after" | "inside"
+  ) => {
     setState((prev) => {
-      const moveInBlocks = (blocks: Block[]): Block[] => {
-        const index = blocks.findIndex((b) => b.id === id);
-        if (index === -1) {
-          return blocks.map((block) => {
-            if (block.type === "container") {
-              return {
-                ...block,
-                children: moveInBlocks((block as ContainerBlock).children),
-              };
-            }
-            return block;
-          });
-        }
+      // Find the block to move
+      const blockToMove = findBlockById(prev.blocks, blockId);
+      if (!blockToMove) return prev;
 
-        const newIndex = direction === "up" ? index - 1 : index + 1;
-        if (newIndex < 0 || newIndex >= blocks.length) return blocks;
+      // Can't move a row inside itself
+      if (blockId === targetId) return prev;
+      if (blockToMove.type === "row") {
+        const isDescendant = (parent: RowBlock, childId: string): boolean => {
+          for (const child of parent.children) {
+            if (child.id === childId) return true;
+            if (child.type === "row" && isDescendant(child, childId)) return true;
+          }
+          return false;
+        };
+        if (targetId && isDescendant(blockToMove, targetId)) return prev;
+      }
 
-        const newBlocks = [...blocks];
-        [newBlocks[index], newBlocks[newIndex]] = [newBlocks[newIndex], newBlocks[index]];
-        return newBlocks;
-      };
+      // Remove from current position
+      let newBlocks = removeBlockFromTree(prev.blocks, blockId);
 
-      return {
-        ...prev,
-        canvas: { ...prev.canvas, blocks: moveInBlocks(prev.canvas.blocks) },
-      };
+      // Insert at new position
+      newBlocks = insertBlockInTree(newBlocks, blockToMove, targetId, position);
+
+      saveToHistory(newBlocks);
+      return { ...prev, blocks: newBlocks, dragState: initialDragState };
     });
-  }, []);
+  }, [findBlockById, removeBlockFromTree, insertBlockInTree, saveToHistory]);
 
   const duplicateBlock = useCallback((id: string) => {
     setState((prev) => {
       const duplicateInBlocks = (blocks: Block[]): Block[] => {
         const result: Block[] = [];
         for (const block of blocks) {
-          result.push(block);
+          if (block.type === "row") {
+            result.push({ ...block, children: duplicateInBlocks(block.children) });
+          } else {
+            result.push(block);
+          }
+
           if (block.id === id) {
             const duplicate = JSON.parse(JSON.stringify(block));
             duplicate.id = `block-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+            if (duplicate.type === "row") {
+              duplicate.children = duplicate.children.map((child: Block) => ({
+                ...child,
+                id: `block-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
+              }));
+            }
             result.push(duplicate);
-          } else if (block.type === "container") {
-            const updated = {
-              ...block,
-              children: duplicateInBlocks((block as ContainerBlock).children),
-            };
-            result[result.length - 1] = updated;
           }
         }
         return result;
       };
 
-      return {
-        ...prev,
-        canvas: { ...prev.canvas, blocks: duplicateInBlocks(prev.canvas.blocks) },
-      };
+      const newBlocks = duplicateInBlocks(prev.blocks);
+      saveToHistory(newBlocks);
+      return { ...prev, blocks: newBlocks };
     });
+  }, [saveToHistory]);
+
+  // === SELECTION ===
+  const selectBlock = useCallback((id: string | null) => {
+    setState((prev) => ({ ...prev, selectedBlockId: id }));
   }, []);
 
-  // === SECTIONS ===
-  const addSection = useCallback((type: Section["type"]) => {
-    const newSection = createSection(type, state.settings);
+  const getSelectedBlock = useCallback((): Block | null => {
+    if (!state.selectedBlockId) return null;
+    return findBlockById(state.blocks, state.selectedBlockId);
+  }, [state.selectedBlockId, state.blocks, findBlockById]);
+
+  // === DRAG ===
+  const startDrag = useCallback((item: DragState["draggedItem"]) => {
     setState((prev) => ({
       ...prev,
-      sections: [...prev.sections, newSection],
-      selectedSectionId: newSection.id,
-    }));
-
-    // Show code popup for new section
-    if (state.codePopupEnabled) {
-      const codeChange: CodeChange = {
-        type: "section",
-        action: "add",
-        elementName: type,
-        code: `<Section type="${type}">\n  {/* Contenu de la section */}\n</Section>`,
-        explanation: `Une nouvelle section "${type}" a été ajoutée à votre page.`,
-      };
-      showCodeChange(codeChange);
-    }
-  }, [state.settings, state.codePopupEnabled]);
-
-  const updateSection = useCallback((id: string, updates: Partial<Section>) => {
-    setState((prev) => ({
-      ...prev,
-      sections: prev.sections.map((section) =>
-        section.id === id ? { ...section, ...updates } : section
-      ),
+      dragState: { isDragging: true, draggedItem: item, dropPosition: null },
     }));
   }, []);
 
-  const deleteSection = useCallback((id: string) => {
+  const updateDropPosition = useCallback((position: DropPosition | null) => {
     setState((prev) => ({
       ...prev,
-      sections: prev.sections.filter((section) => section.id !== id),
-      selectedSectionId: prev.selectedSectionId === id ? null : prev.selectedSectionId,
+      dragState: { ...prev.dragState, dropPosition: position },
     }));
   }, []);
 
-  const moveSection = useCallback((id: string, direction: "up" | "down") => {
+  const endDrag = useCallback(() => {
     setState((prev) => {
-      const index = prev.sections.findIndex((s) => s.id === id);
-      if (index === -1) return prev;
+      const { dragState } = prev;
 
-      const newIndex = direction === "up" ? index - 1 : index + 1;
-      if (newIndex < 0 || newIndex >= prev.sections.length) return prev;
+      // If we have a valid drop position, perform the drop
+      if (dragState.draggedItem && dragState.dropPosition) {
+        if (dragState.draggedItem.type === "new") {
+          // Adding new block
+          const newBlock = createBlock(dragState.draggedItem.blockType);
+          const newBlocks = insertBlockInTree(
+            prev.blocks,
+            newBlock,
+            dragState.dropPosition.targetId,
+            dragState.dropPosition.position
+          );
+          saveToHistory(newBlocks);
+          return {
+            ...prev,
+            blocks: newBlocks,
+            selectedBlockId: newBlock.id,
+            dragState: initialDragState,
+          };
+        } else {
+          // Moving existing block
+          const blockToMove = findBlockById(prev.blocks, dragState.draggedItem.blockId);
+          if (blockToMove) {
+            let newBlocks = removeBlockFromTree(prev.blocks, dragState.draggedItem.blockId);
+            newBlocks = insertBlockInTree(
+              newBlocks,
+              blockToMove,
+              dragState.dropPosition.targetId,
+              dragState.dropPosition.position
+            );
+            saveToHistory(newBlocks);
+            return { ...prev, blocks: newBlocks, dragState: initialDragState };
+          }
+        }
+      }
 
-      const newSections = [...prev.sections];
-      [newSections[index], newSections[newIndex]] = [newSections[newIndex], newSections[index]];
-
-      return { ...prev, sections: newSections };
+      return { ...prev, dragState: initialDragState };
     });
-  }, []);
-
-  const selectSection = useCallback((id: string | null) => {
-    setState((prev) => ({ ...prev, selectedSectionId: id, selectedBlockId: null }));
-  }, []);
-
-  const toggleSectionVisibility = useCallback((id: string) => {
-    setState((prev) => ({
-      ...prev,
-      sections: prev.sections.map((section) =>
-        section.id === id ? { ...section, visible: !section.visible } : section
-      ),
-    }));
-  }, []);
+  }, [findBlockById, insertBlockInTree, removeBlockFromTree, saveToHistory]);
 
   // === SETTINGS ===
   const updateSettings = useCallback((updates: Partial<SiteSettings>) => {
-    setState((prev) => {
-      const newSettings = { ...prev.settings, ...updates };
-
-      // Show code popup for color changes
-      if (prev.codePopupEnabled && updates.primaryColor && updates.primaryColor !== prev.settings.primaryColor) {
-        const codeChange: CodeChange = {
-          type: "style",
-          action: "update",
-          elementName: "couleur principale",
-          code: `/* Tailwind CSS */\n.bg-primary {\n  background-color: ${updates.primaryColor};\n}\n\n/* Equivalent CSS */\n:root {\n  --primary-color: ${updates.primaryColor};\n}`,
-          explanation: "La couleur principale affecte les boutons, les liens et les éléments d'accent.",
-        };
-        setTimeout(() => showCodeChange(codeChange), 0);
-      }
-
-      return { ...prev, settings: newSettings };
-    });
+    setState((prev) => ({
+      ...prev,
+      settings: { ...prev.settings, ...updates },
+    }));
   }, []);
 
   const addNavLink = useCallback(() => {
@@ -414,55 +449,12 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
     }));
   }, []);
 
-  // === SELECTION ===
-  const selectBlock = useCallback((id: string | null) => {
-    setState((prev) => ({ ...prev, selectedBlockId: id, selectedSectionId: null }));
-  }, []);
-
-  const getSelectedBlock = useCallback((): Block | null => {
-    const findBlock = (blocks: Block[], id: string): Block | null => {
-      for (const block of blocks) {
-        if (block.id === id) return block;
-        if (block.type === "container") {
-          const found = findBlock((block as ContainerBlock).children, id);
-          if (found) return found;
-        }
-      }
-      return null;
-    };
-
-    if (!state.selectedBlockId) return null;
-
-    // Search in canvas blocks
-    let found = findBlock(state.canvas.blocks, state.selectedBlockId);
-    if (found) return found;
-
-    // Search in sections
-    for (const section of state.sections) {
-      found = findBlock(section.blocks, state.selectedBlockId);
-      if (found) return found;
-    }
-
-    return null;
-  }, [state.selectedBlockId, state.canvas.blocks, state.sections]);
-
-  const getSelectedSection = useCallback((): Section | null => {
-    if (!state.selectedSectionId) return null;
-    return state.sections.find((s) => s.id === state.selectedSectionId) || null;
-  }, [state.selectedSectionId, state.sections]);
-
-  // === DRAG ===
-  const setDraggedBlockType = useCallback((type: BlockType | null) => {
-    setState((prev) => ({ ...prev, draggedBlockType: type }));
-  }, []);
-
-  // === PREVIEW & VIEW ===
+  // === VIEW & PREVIEW ===
   const togglePreview = useCallback(() => {
     setState((prev) => ({
       ...prev,
       previewMode: !prev.previewMode,
       selectedBlockId: null,
-      selectedSectionId: null,
     }));
   }, []);
 
@@ -470,8 +462,7 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
     setState((prev) => ({ ...prev, viewMode: mode }));
   }, []);
 
-  // === PANELS ===
-  const setActivePanel = useCallback((panel: "blocks" | "sections" | "style" | "settings") => {
+  const setActivePanel = useCallback((panel: EditorState["activePanel"]) => {
     setState((prev) => ({ ...prev, activePanel: panel }));
   }, []);
 
@@ -492,70 +483,90 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
     setState((prev) => ({ ...prev, codePopupEnabled: !prev.codePopupEnabled }));
   }, []);
 
-  // === TEMPLATES ===
-  const loadTemplate = useCallback((templateId: string) => {
-    const templates = getTemplates(state.settings);
-    const template = templates[templateId];
-    if (template) {
-      setState((prev) => ({
+  // === HISTORY ===
+  const undo = useCallback(() => {
+    setState((prev) => {
+      if (prev.historyIndex <= 0) return prev;
+      const newIndex = prev.historyIndex - 1;
+      return {
         ...prev,
-        sections: template.sections,
-        settings: { ...prev.settings, ...template.settings },
+        blocks: JSON.parse(JSON.stringify(prev.history[newIndex])),
+        historyIndex: newIndex,
         selectedBlockId: null,
-        selectedSectionId: null,
-      }));
-    }
-  }, [state.settings]);
+      };
+    });
+  }, []);
+
+  const redo = useCallback(() => {
+    setState((prev) => {
+      if (prev.historyIndex >= prev.history.length - 1) return prev;
+      const newIndex = prev.historyIndex + 1;
+      return {
+        ...prev,
+        blocks: JSON.parse(JSON.stringify(prev.history[newIndex])),
+        historyIndex: newIndex,
+        selectedBlockId: null,
+      };
+    });
+  }, []);
 
   // === RESET ===
   const clearCanvas = useCallback(() => {
     setState((prev) => ({
       ...prev,
-      canvas: { ...initialState.canvas },
-      sections: [],
+      blocks: [],
       selectedBlockId: null,
-      selectedSectionId: null,
+      history: [[]],
+      historyIndex: 0,
     }));
   }, []);
 
-  const resetAll = useCallback(() => {
-    setState(initialState);
-  }, []);
+  // === LOAD CONFIGURATION ===
+  const loadConfiguration = useCallback((blocks: Block[], settings: SiteSettings) => {
+    setState((prev) => {
+      const newBlocks = JSON.parse(JSON.stringify(blocks));
+      saveToHistory(newBlocks);
+      return {
+        ...prev,
+        blocks: newBlocks,
+        settings: { ...defaultSettings, ...settings },
+        selectedBlockId: null,
+        previewMode: false,
+      };
+    });
+  }, [saveToHistory]);
 
   return (
     <BuilderContext.Provider
       value={{
         state,
-        setBackgroundColor,
-        setMaxWidth,
         addBlock,
+        insertBlockAt,
         updateBlock,
         deleteBlock,
         moveBlock,
         duplicateBlock,
-        addSection,
-        updateSection,
-        deleteSection,
-        moveSection,
-        selectSection,
-        toggleSectionVisibility,
+        selectBlock,
+        getSelectedBlock,
+        startDrag,
+        updateDropPosition,
+        endDrag,
         updateSettings,
         addNavLink,
         updateNavLink,
         deleteNavLink,
-        selectBlock,
-        getSelectedBlock,
-        getSelectedSection,
-        setDraggedBlockType,
         togglePreview,
         setViewMode,
         setActivePanel,
         showCodeChange,
         hideCodePopup,
         toggleCodePopup,
-        loadTemplate,
+        undo,
+        redo,
+        canUndo: state.historyIndex > 0,
+        canRedo: state.historyIndex < state.history.length - 1,
         clearCanvas,
-        resetAll,
+        loadConfiguration,
       }}
     >
       {children}
@@ -569,48 +580,4 @@ export function useBuilder() {
     throw new Error("useBuilder must be used within a BuilderProvider");
   }
   return context;
-}
-
-// Templates helper
-function getTemplates(settings: SiteSettings): Record<string, { sections: Section[]; settings: Partial<SiteSettings> }> {
-  return {
-    blank: {
-      sections: [],
-      settings: {},
-    },
-    portfolio: {
-      sections: [
-        createSection("hero", settings),
-        createSection("features", settings),
-        createSection("cta", settings),
-      ],
-      settings: {
-        siteName: "Mon Portfolio",
-        primaryColor: "#8b5cf6",
-      },
-    },
-    business: {
-      sections: [
-        createSection("hero", settings),
-        createSection("features", settings),
-        createSection("testimonial", settings),
-        createSection("cta", settings),
-      ],
-      settings: {
-        siteName: "Mon Entreprise",
-        primaryColor: "#0ea5e9",
-      },
-    },
-    creative: {
-      sections: [
-        createSection("hero", settings),
-        createSection("gallery", settings),
-        createSection("cta", settings),
-      ],
-      settings: {
-        siteName: "Studio Créatif",
-        primaryColor: "#f43f5e",
-      },
-    },
-  };
 }
