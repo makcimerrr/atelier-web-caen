@@ -1,18 +1,19 @@
-// Types pour le Site Builder Pédagogique Avancé
+// Types pour le Site Builder WordPress-like
 
 // === BLOCS ===
-export type BlockType = "text" | "heading" | "image" | "button" | "container" | "spacer";
+export type BlockType = "text" | "heading" | "image" | "button" | "row" | "spacer" | "divider" | "header" | "footer" | "hero" | "features" | "testimonial" | "cta" | "gallery" | "card";
 
 export interface BlockBase {
   id: string;
   type: BlockType;
+  width: "auto" | "1/4" | "1/3" | "1/2" | "2/3" | "3/4" | "full";
 }
 
 export interface TextBlock extends BlockBase {
   type: "text";
   content: string;
-  fontSize: "sm" | "base" | "lg" | "xl";
-  fontWeight: "normal" | "medium" | "bold";
+  fontSize: "sm" | "base" | "lg" | "xl" | "2xl";
+  fontWeight: "normal" | "medium" | "semibold" | "bold";
   textAlign: "left" | "center" | "right";
   textColor: string;
 }
@@ -20,7 +21,7 @@ export interface TextBlock extends BlockBase {
 export interface HeadingBlock extends BlockBase {
   type: "heading";
   content: string;
-  level: "h1" | "h2" | "h3";
+  level: "h1" | "h2" | "h3" | "h4";
   textAlign: "left" | "center" | "right";
   textColor: string;
 }
@@ -29,33 +30,130 @@ export interface ImageBlock extends BlockBase {
   type: "image";
   src: string;
   alt: string;
-  rounded: "none" | "md" | "lg" | "full";
-  shadow: boolean;
+  rounded: "none" | "sm" | "md" | "lg" | "xl" | "full";
+  shadow: "none" | "sm" | "md" | "lg" | "xl";
+  aspectRatio: "auto" | "square" | "video" | "wide";
 }
 
 export interface ButtonBlock extends BlockBase {
   type: "button";
   text: string;
-  variant: "filled" | "outline";
+  variant: "filled" | "outline" | "ghost";
   size: "sm" | "md" | "lg";
   color: string;
+  fullWidth: boolean;
+  rounded: "none" | "sm" | "md" | "lg" | "full";
 }
 
-export interface ContainerBlock extends BlockBase {
-  type: "container";
+// Row = container for side-by-side elements
+export interface RowBlock extends BlockBase {
+  type: "row";
   children: Block[];
-  layout: "stack" | "row" | "grid";
-  gap: "none" | "sm" | "md" | "lg";
-  justify: "start" | "center" | "end" | "between";
+  gap: "none" | "sm" | "md" | "lg" | "xl";
   align: "start" | "center" | "end" | "stretch";
+  justify: "start" | "center" | "end" | "between" | "around";
   padding: "none" | "sm" | "md" | "lg";
   background: string;
-  rounded: "none" | "md" | "lg" | "xl";
+  rounded: "none" | "sm" | "md" | "lg" | "xl";
 }
 
 export interface SpacerBlock extends BlockBase {
   type: "spacer";
-  size: "sm" | "md" | "lg" | "xl";
+  size: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
+}
+
+export interface DividerBlock extends BlockBase {
+  type: "divider";
+  style: "solid" | "dashed" | "dotted";
+  color: string;
+  thickness: "thin" | "medium" | "thick";
+}
+
+export interface HeaderBlock extends BlockBase {
+  type: "header";
+  title: string;
+  subtitle: string;
+  showNav: boolean;
+  navLinks: { label: string; href: string }[];
+  backgroundColor: string;
+  textColor: string;
+  sticky: boolean;
+  style: "simple" | "centered" | "split";
+}
+
+export interface FooterBlock extends BlockBase {
+  type: "footer";
+  text: string;
+  showSocials: boolean;
+  socials: { icon: "facebook" | "twitter" | "instagram" | "linkedin" | "youtube"; url: string }[];
+  backgroundColor: string;
+  textColor: string;
+  style: "simple" | "centered" | "columns";
+}
+
+// === SECTIONS PRE-FAITES ===
+export interface HeroBlock extends BlockBase {
+  type: "hero";
+  title: string;
+  subtitle: string;
+  buttonText: string;
+  buttonColor: string;
+  backgroundImage: string;
+  backgroundColor: string;
+  textColor: string;
+  alignment: "left" | "center" | "right";
+  overlay: boolean;
+}
+
+export interface FeaturesBlock extends BlockBase {
+  type: "features";
+  title: string;
+  features: { icon: string; title: string; description: string }[];
+  columns: 2 | 3 | 4;
+  backgroundColor: string;
+  textColor: string;
+}
+
+export interface TestimonialBlock extends BlockBase {
+  type: "testimonial";
+  quote: string;
+  author: string;
+  role: string;
+  avatar: string;
+  backgroundColor: string;
+  textColor: string;
+  style: "simple" | "card" | "centered";
+}
+
+export interface CtaBlock extends BlockBase {
+  type: "cta";
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonColor: string;
+  backgroundColor: string;
+  textColor: string;
+}
+
+export interface GalleryBlock extends BlockBase {
+  type: "gallery";
+  images: { src: string; alt: string }[];
+  columns: 2 | 3 | 4;
+  gap: "none" | "sm" | "md" | "lg";
+  rounded: "none" | "sm" | "md" | "lg";
+}
+
+export interface CardBlock extends BlockBase {
+  type: "card";
+  image: string;
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonColor: string;
+  backgroundColor: string;
+  textColor: string;
+  rounded: "none" | "sm" | "md" | "lg" | "xl";
+  shadow: "none" | "sm" | "md" | "lg";
 }
 
 export type Block =
@@ -63,25 +161,29 @@ export type Block =
   | HeadingBlock
   | ImageBlock
   | ButtonBlock
-  | ContainerBlock
-  | SpacerBlock;
+  | RowBlock
+  | SpacerBlock
+  | DividerBlock
+  | HeaderBlock
+  | FooterBlock
+  | HeroBlock
+  | FeaturesBlock
+  | TestimonialBlock
+  | CtaBlock
+  | GalleryBlock
+  | CardBlock;
 
-// === SECTIONS ===
-export type SectionType = "hero" | "features" | "gallery" | "testimonial" | "cta" | "text" | "custom";
-
-export interface Section {
-  id: string;
-  type: SectionType;
-  title: string;
-  visible: boolean;
-  blocks: Block[];
-  settings: SectionSettings;
+// === DRAG & DROP ===
+export interface DropPosition {
+  targetId: string | null; // null = root canvas
+  position: "before" | "after" | "inside";
+  index?: number;
 }
 
-export interface SectionSettings {
-  backgroundColor: string;
-  padding: "sm" | "md" | "lg" | "xl";
-  textAlign: "left" | "center" | "right";
+export interface DragState {
+  isDragging: boolean;
+  draggedItem: { type: "new"; blockType: BlockType } | { type: "existing"; blockId: string } | null;
+  dropPosition: DropPosition | null;
 }
 
 // === NAVIGATION ===
@@ -94,28 +196,21 @@ export interface NavLink {
 // === SITE SETTINGS ===
 export interface SiteSettings {
   siteName: string;
+  siteDescription: string;
   primaryColor: string;
   backgroundColor: string;
   textColor: string;
-  buttonColor: string;
   fontFamily: "inter" | "poppins" | "space" | "mono";
-  spacing: "compact" | "normal" | "large";
+  maxWidth: "sm" | "md" | "lg" | "xl" | "full";
   navLinks: NavLink[];
   showNav: boolean;
   showFooter: boolean;
 }
 
-// === CANVAS ===
-export interface CanvasState {
-  blocks: Block[];
-  backgroundColor: string;
-  maxWidth: "sm" | "md" | "lg" | "full";
-}
-
 // === CODE CHANGE (pour popup pédagogique) ===
 export interface CodeChange {
-  type: "text" | "style" | "section" | "component";
-  action: "add" | "update" | "delete";
+  type: "text" | "style" | "layout" | "component";
+  action: "add" | "update" | "delete" | "move";
   elementName: string;
   code: string;
   explanation: string;
@@ -123,18 +218,18 @@ export interface CodeChange {
 
 // === EDITOR STATE ===
 export interface EditorState {
-  canvas: CanvasState;
-  sections: Section[];
+  blocks: Block[];
   settings: SiteSettings;
   selectedBlockId: string | null;
-  selectedSectionId: string | null;
-  draggedBlockType: BlockType | null;
+  dragState: DragState;
   previewMode: boolean;
   viewMode: "desktop" | "mobile";
-  activePanel: "blocks" | "sections" | "style" | "settings";
+  activePanel: "elements" | "layers" | "style" | "settings";
   showCodePopup: boolean;
   lastCodeChange: CodeChange | null;
   codePopupEnabled: boolean;
+  history: Block[][];
+  historyIndex: number;
 }
 
 // === COMMENTAIRES ===
@@ -148,71 +243,83 @@ export interface Comment {
 
 export type CommentTag = "web" | "design" | "code" | "decouverte";
 
-// === CONSTANTES ===
-export const COLORS = {
-  primary: "#2563eb",
-  primaryLight: "#3b82f6",
-  primaryDark: "#1d4ed8",
-  background: "#f8fafc",
-  surface: "#ffffff",
-  border: "#e2e8f0",
-  text: "#1e293b",
-  textMuted: "#64748b",
-  textLight: "#94a3b8",
-};
+// === SITES SAUVEGARDES ===
+export interface StudentInfo {
+  nom: string;
+  prenom: string;
+  email: string;
+}
 
+export interface SavedSite {
+  id: string;
+  studentInfo: StudentInfo;
+  blocks: Block[];
+  settings: SiteSettings;
+  createdAt: string;
+}
+
+export interface SavedSiteSummary {
+  id: string;
+  studentInfo: StudentInfo;
+  createdAt: string;
+}
+
+// === CONSTANTES ===
 export const PRIMARY_COLORS = [
   { name: "Bleu", value: "#2563eb" },
+  { name: "Indigo", value: "#4f46e5" },
   { name: "Violet", value: "#7c3aed" },
   { name: "Rose", value: "#ec4899" },
   { name: "Rouge", value: "#dc2626" },
   { name: "Orange", value: "#ea580c" },
   { name: "Vert", value: "#16a34a" },
   { name: "Cyan", value: "#0891b2" },
-  { name: "Gris", value: "#64748b" },
+  { name: "Gris", value: "#6b7280" },
+  { name: "Noir", value: "#18181b" },
 ];
 
 export const BACKGROUND_COLORS = [
   { name: "Blanc", value: "#ffffff" },
-  { name: "Gris très clair", value: "#f8fafc" },
-  { name: "Gris clair", value: "#f1f5f9" },
-  { name: "Crème", value: "#fef7ed" },
+  { name: "Gris très clair", value: "#fafafa" },
+  { name: "Gris clair", value: "#f4f4f5" },
+  { name: "Crème", value: "#fefce8" },
   { name: "Bleu très clair", value: "#eff6ff" },
-  { name: "Violet très clair", value: "#f5f3ff" },
+  { name: "Violet très clair", value: "#faf5ff" },
   { name: "Vert très clair", value: "#f0fdf4" },
-  { name: "Noir", value: "#0f172a" },
-];
-
-export const BLOCK_COLORS = [
-  { name: "Transparent", value: "transparent" },
-  { name: "Blanc", value: "#ffffff" },
-  { name: "Gris clair", value: "#f1f5f9" },
-  { name: "Gris", value: "#e2e8f0" },
-  { name: "Bleu clair", value: "#dbeafe" },
-  { name: "Bleu", value: "#2563eb" },
+  { name: "Gris foncé", value: "#27272a" },
 ];
 
 export const TEXT_COLORS = [
-  { name: "Noir", value: "#1e293b" },
-  { name: "Gris", value: "#64748b" },
-  { name: "Bleu", value: "#2563eb" },
+  { name: "Noir", value: "#18181b" },
+  { name: "Gris foncé", value: "#3f3f46" },
+  { name: "Gris", value: "#71717a" },
+  { name: "Gris clair", value: "#a1a1aa" },
   { name: "Blanc", value: "#ffffff" },
 ];
 
+export const DIVIDER_COLORS = [
+  { name: "Gris très clair", value: "#e4e4e7" },
+  { name: "Gris clair", value: "#d4d4d8" },
+  { name: "Gris", value: "#a1a1aa" },
+  { name: "Noir", value: "#18181b" },
+];
+
 export const FONTS = [
-  { id: "inter", name: "Inter", class: "font-sans", preview: "Aa Bb Cc" },
-  { id: "poppins", name: "Poppins", class: "font-poppins", preview: "Aa Bb Cc" },
-  { id: "space", name: "Space Grotesk", class: "font-space", preview: "Aa Bb Cc" },
-  { id: "mono", name: "Roboto Mono", class: "font-mono", preview: "Aa Bb Cc" },
+  { id: "inter", name: "Inter", class: "font-sans" },
+  { id: "poppins", name: "Poppins", class: "font-poppins" },
+  { id: "space", name: "Space Grotesk", class: "font-space" },
+  { id: "mono", name: "Roboto Mono", class: "font-mono" },
 ];
 
 export const SAMPLE_IMAGES = [
-  { name: "Paysage", url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop" },
-  { name: "Nature", url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=400&fit=crop" },
-  { name: "Ville", url: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=400&fit=crop" },
-  { name: "Tech", url: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=400&fit=crop" },
-  { name: "Bureau", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=400&fit=crop" },
-  { name: "Abstrait", url: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&h=400&fit=crop" },
+  { name: "Paysage", url: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=500&fit=crop" },
+  { name: "Nature", url: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop" },
+  { name: "Ville", url: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=500&fit=crop" },
+  { name: "Tech", url: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop" },
+  { name: "Bureau", url: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop" },
+  { name: "Abstrait", url: "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&h=500&fit=crop" },
+  { name: "Minimal", url: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=800&h=500&fit=crop" },
+  { name: "Café", url: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop" },
 ];
 
 export const COMMENT_TAGS: { value: CommentTag; label: string; icon: string; color: string }[] = [
@@ -222,350 +329,320 @@ export const COMMENT_TAGS: { value: CommentTag; label: string; icon: string; col
   { value: "decouverte", label: "Découverte", icon: "🔍", color: "#f59e0b" },
 ];
 
-export const SECTION_TYPES: { type: SectionType; name: string; icon: string; description: string }[] = [
-  { type: "hero", name: "Hero", icon: "🚀", description: "Section d'accueil avec titre et image" },
-  { type: "features", name: "Fonctionnalités", icon: "✨", description: "Liste de caractéristiques" },
-  { type: "gallery", name: "Galerie", icon: "🖼️", description: "Grille d'images" },
-  { type: "testimonial", name: "Témoignage", icon: "💬", description: "Citation ou avis client" },
-  { type: "cta", name: "Appel à l'action", icon: "📢", description: "Section avec bouton d'action" },
-  { type: "text", name: "Texte", icon: "📝", description: "Section de contenu texte" },
+export const BLOCK_TYPES: { type: BlockType; name: string; icon: string; description: string; category: "basic" | "layout" | "structure" | "sections" }[] = [
+  // Basic
+  { type: "heading", name: "Titre", icon: "H", description: "Titre de section", category: "basic" },
+  { type: "text", name: "Texte", icon: "T", description: "Paragraphe de texte", category: "basic" },
+  { type: "image", name: "Image", icon: "🖼️", description: "Image ou photo", category: "basic" },
+  { type: "button", name: "Bouton", icon: "▢", description: "Bouton d'action", category: "basic" },
+  // Layout
+  { type: "row", name: "Colonnes", icon: "⊞", description: "Conteneur côte à côte", category: "layout" },
+  { type: "spacer", name: "Espace", icon: "↕", description: "Espace vertical", category: "layout" },
+  { type: "divider", name: "Séparateur", icon: "—", description: "Ligne de séparation", category: "layout" },
+  // Structure
+  { type: "header", name: "En-tête", icon: "🏠", description: "Barre de navigation", category: "structure" },
+  { type: "footer", name: "Pied de page", icon: "📋", description: "Pied de page du site", category: "structure" },
+  // Sections prédéfinies
+  { type: "hero", name: "Hero", icon: "🚀", description: "Section d'accueil", category: "sections" },
+  { type: "features", name: "Fonctionnalités", icon: "✨", description: "Liste de caractéristiques", category: "sections" },
+  { type: "testimonial", name: "Témoignage", icon: "💬", description: "Avis client", category: "sections" },
+  { type: "cta", name: "Appel à l'action", icon: "📣", description: "Incitation à agir", category: "sections" },
+  { type: "gallery", name: "Galerie", icon: "🖼️", description: "Grille d'images", category: "sections" },
+  { type: "card", name: "Carte", icon: "🃏", description: "Carte avec image", category: "sections" },
 ];
 
-export const TEMPLATES = [
-  { id: "blank", name: "Page vide", icon: "📄", description: "Commencer de zéro" },
-  { id: "portfolio", name: "Portfolio", icon: "🎨", description: "Présentation créative" },
-  { id: "business", name: "Business", icon: "💼", description: "Site professionnel" },
-  { id: "creative", name: "Créatif", icon: "✨", description: "Design moderne" },
+export const WIDTH_OPTIONS = [
+  { value: "auto", label: "Auto" },
+  { value: "1/4", label: "25%" },
+  { value: "1/3", label: "33%" },
+  { value: "1/2", label: "50%" },
+  { value: "2/3", label: "66%" },
+  { value: "3/4", label: "75%" },
+  { value: "full", label: "100%" },
 ];
 
 // === HELPERS ===
 export function createBlock(type: BlockType): Block {
   const id = `block-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  const baseBlock = { id, width: "full" as const };
 
   switch (type) {
     case "text":
       return {
-        id,
+        ...baseBlock,
         type: "text",
-        content: "Votre texte ici. Cliquez pour modifier ce paragraphe et ajouter votre propre contenu.",
+        content: "Cliquez pour modifier ce texte. Ajoutez votre contenu ici.",
         fontSize: "base",
         fontWeight: "normal",
         textAlign: "left",
-        textColor: "#1e293b",
+        textColor: "#3f3f46",
       };
     case "heading":
       return {
-        id,
+        ...baseBlock,
         type: "heading",
         content: "Titre de section",
         level: "h2",
         textAlign: "left",
-        textColor: "#1e293b",
+        textColor: "#18181b",
       };
     case "image":
       return {
-        id,
+        ...baseBlock,
         type: "image",
         src: SAMPLE_IMAGES[0].url,
         alt: "Image",
         rounded: "md",
-        shadow: true,
+        shadow: "md",
+        aspectRatio: "auto",
       };
     case "button":
       return {
-        id,
+        ...baseBlock,
         type: "button",
         text: "Cliquez ici",
         variant: "filled",
         size: "md",
         color: "#2563eb",
+        fullWidth: false,
+        rounded: "md",
+        width: "auto",
       };
-    case "container":
+    case "row":
       return {
-        id,
-        type: "container",
+        ...baseBlock,
+        type: "row",
         children: [],
-        layout: "stack",
         gap: "md",
-        justify: "start",
         align: "stretch",
-        padding: "md",
+        justify: "start",
+        padding: "none",
         background: "transparent",
         rounded: "none",
       };
     case "spacer":
       return {
-        id,
+        ...baseBlock,
         type: "spacer",
         size: "md",
+      };
+    case "divider":
+      return {
+        ...baseBlock,
+        type: "divider",
+        style: "solid",
+        color: "#e4e4e7",
+        thickness: "thin",
+      };
+    case "header":
+      return {
+        ...baseBlock,
+        type: "header",
+        title: "Mon Site",
+        subtitle: "",
+        showNav: true,
+        navLinks: [
+          { label: "Accueil", href: "#" },
+          { label: "À propos", href: "#about" },
+          { label: "Contact", href: "#contact" },
+        ],
+        backgroundColor: "#ffffff",
+        textColor: "#18181b",
+        sticky: false,
+        style: "simple",
+      };
+    case "footer":
+      return {
+        ...baseBlock,
+        type: "footer",
+        text: "© 2024 Mon Site. Tous droits réservés.",
+        showSocials: false,
+        socials: [],
+        backgroundColor: "#18181b",
+        textColor: "#ffffff",
+        style: "simple",
+      };
+    case "hero":
+      return {
+        ...baseBlock,
+        type: "hero",
+        title: "Bienvenue sur mon site",
+        subtitle: "Découvrez nos services et laissez-nous vous accompagner dans vos projets.",
+        buttonText: "En savoir plus",
+        buttonColor: "#2563eb",
+        backgroundImage: SAMPLE_IMAGES[0].url,
+        backgroundColor: "#1e293b",
+        textColor: "#ffffff",
+        alignment: "center",
+        overlay: true,
+      };
+    case "features":
+      return {
+        ...baseBlock,
+        type: "features",
+        title: "Nos avantages",
+        features: [
+          { icon: "⚡", title: "Rapide", description: "Performance optimisée pour une expérience fluide" },
+          { icon: "🛡️", title: "Sécurisé", description: "Vos données sont protégées en permanence" },
+          { icon: "🎨", title: "Design", description: "Interface moderne et intuitive" },
+        ],
+        columns: 3,
+        backgroundColor: "#ffffff",
+        textColor: "#18181b",
+      };
+    case "testimonial":
+      return {
+        ...baseBlock,
+        type: "testimonial",
+        quote: "Ce service a transformé notre façon de travailler. Je le recommande vivement !",
+        author: "Marie Dupont",
+        role: "Directrice Marketing",
+        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+        backgroundColor: "#f4f4f5",
+        textColor: "#18181b",
+        style: "card",
+      };
+    case "cta":
+      return {
+        ...baseBlock,
+        type: "cta",
+        title: "Prêt à commencer ?",
+        description: "Rejoignez des milliers d'utilisateurs satisfaits dès aujourd'hui.",
+        buttonText: "Commencer maintenant",
+        buttonColor: "#2563eb",
+        backgroundColor: "#2563eb",
+        textColor: "#ffffff",
+      };
+    case "gallery":
+      return {
+        ...baseBlock,
+        type: "gallery",
+        images: [
+          { src: SAMPLE_IMAGES[0].url, alt: "Image 1" },
+          { src: SAMPLE_IMAGES[1].url, alt: "Image 2" },
+          { src: SAMPLE_IMAGES[2].url, alt: "Image 3" },
+          { src: SAMPLE_IMAGES[3].url, alt: "Image 4" },
+        ],
+        columns: 2,
+        gap: "md",
+        rounded: "md",
+      };
+    case "card":
+      return {
+        ...baseBlock,
+        type: "card",
+        image: SAMPLE_IMAGES[4].url,
+        title: "Titre de la carte",
+        description: "Une description courte et attrayante pour cette carte.",
+        buttonText: "Voir plus",
+        buttonColor: "#2563eb",
+        backgroundColor: "#ffffff",
+        textColor: "#18181b",
+        rounded: "lg",
+        shadow: "md",
+        width: "auto",
       };
   }
 }
 
-export function createSection(type: SectionType, siteSettings: SiteSettings): Section {
-  const id = `section-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
-
-  const defaultSettings: SectionSettings = {
-    backgroundColor: "#ffffff",
-    padding: "lg",
-    textAlign: "center",
-  };
-
-  const sectionInfo = SECTION_TYPES.find((s) => s.type === type);
-  const title = sectionInfo?.name || "Section";
-
-  // Create default blocks based on section type
-  const blocks: Block[] = [];
-
-  switch (type) {
-    case "hero":
-      blocks.push(
-        {
-          id: `block-${Date.now()}-h1`,
-          type: "heading",
-          content: "Bienvenue sur mon site",
-          level: "h1",
-          textAlign: "center",
-          textColor: "#1e293b",
-        },
-        {
-          id: `block-${Date.now()}-p`,
-          type: "text",
-          content: "Créez votre présence en ligne en quelques clics. Personnalisez chaque élément selon vos envies.",
-          fontSize: "lg",
-          fontWeight: "normal",
-          textAlign: "center",
-          textColor: "#64748b",
-        },
-        {
-          id: `block-${Date.now()}-btn`,
-          type: "button",
-          text: "Découvrir",
-          variant: "filled",
-          size: "lg",
-          color: siteSettings.primaryColor,
-        }
-      );
-      break;
-
-    case "features":
-      blocks.push(
-        {
-          id: `block-${Date.now()}-h2`,
-          type: "heading",
-          content: "Nos fonctionnalités",
-          level: "h2",
-          textAlign: "center",
-          textColor: "#1e293b",
-        },
-        {
-          id: `block-${Date.now()}-container`,
-          type: "container",
-          children: [
-            {
-              id: `block-${Date.now()}-f1`,
-              type: "text",
-              content: "🚀 Rapide et intuitif",
-              fontSize: "lg",
-              fontWeight: "medium",
-              textAlign: "center",
-              textColor: "#1e293b",
-            },
-            {
-              id: `block-${Date.now()}-f2`,
-              type: "text",
-              content: "🎨 Design moderne",
-              fontSize: "lg",
-              fontWeight: "medium",
-              textAlign: "center",
-              textColor: "#1e293b",
-            },
-            {
-              id: `block-${Date.now()}-f3`,
-              type: "text",
-              content: "📱 100% responsive",
-              fontSize: "lg",
-              fontWeight: "medium",
-              textAlign: "center",
-              textColor: "#1e293b",
-            },
-          ],
-          layout: "row",
-          gap: "lg",
-          justify: "center",
-          align: "stretch",
-          padding: "md",
-          background: "transparent",
-          rounded: "none",
-        }
-      );
-      break;
-
-    case "gallery":
-      blocks.push(
-        {
-          id: `block-${Date.now()}-h2`,
-          type: "heading",
-          content: "Galerie",
-          level: "h2",
-          textAlign: "center",
-          textColor: "#1e293b",
-        },
-        {
-          id: `block-${Date.now()}-container`,
-          type: "container",
-          children: [
-            {
-              id: `block-${Date.now()}-img1`,
-              type: "image",
-              src: SAMPLE_IMAGES[0].url,
-              alt: "Image 1",
-              rounded: "lg",
-              shadow: true,
-            },
-            {
-              id: `block-${Date.now()}-img2`,
-              type: "image",
-              src: SAMPLE_IMAGES[1].url,
-              alt: "Image 2",
-              rounded: "lg",
-              shadow: true,
-            },
-            {
-              id: `block-${Date.now()}-img3`,
-              type: "image",
-              src: SAMPLE_IMAGES[2].url,
-              alt: "Image 3",
-              rounded: "lg",
-              shadow: true,
-            },
-          ],
-          layout: "grid",
-          gap: "md",
-          justify: "center",
-          align: "stretch",
-          padding: "none",
-          background: "transparent",
-          rounded: "none",
-        }
-      );
-      break;
-
-    case "testimonial":
-      blocks.push(
-        {
-          id: `block-${Date.now()}-quote`,
-          type: "text",
-          content: '"Ce site builder est incroyable ! J\'ai pu créer mon site en quelques minutes seulement."',
-          fontSize: "xl",
-          fontWeight: "medium",
-          textAlign: "center",
-          textColor: "#1e293b",
-        },
-        {
-          id: `block-${Date.now()}-author`,
-          type: "text",
-          content: "— Marie D., Designer",
-          fontSize: "base",
-          fontWeight: "normal",
-          textAlign: "center",
-          textColor: "#64748b",
-        }
-      );
-      defaultSettings.backgroundColor = "#f8fafc";
-      break;
-
-    case "cta":
-      blocks.push(
-        {
-          id: `block-${Date.now()}-h2`,
-          type: "heading",
-          content: "Prêt à commencer ?",
-          level: "h2",
-          textAlign: "center",
-          textColor: "#ffffff",
-        },
-        {
-          id: `block-${Date.now()}-p`,
-          type: "text",
-          content: "Rejoignez des milliers d'utilisateurs satisfaits.",
-          fontSize: "lg",
-          fontWeight: "normal",
-          textAlign: "center",
-          textColor: "#e2e8f0",
-        },
-        {
-          id: `block-${Date.now()}-btn`,
-          type: "button",
-          text: "Commencer maintenant",
-          variant: "filled",
-          size: "lg",
-          color: "#ffffff",
-        }
-      );
-      defaultSettings.backgroundColor = siteSettings.primaryColor;
-      break;
-
-    case "text":
-      blocks.push(
-        {
-          id: `block-${Date.now()}-h2`,
-          type: "heading",
-          content: "À propos",
-          level: "h2",
-          textAlign: "left",
-          textColor: "#1e293b",
-        },
-        {
-          id: `block-${Date.now()}-p`,
-          type: "text",
-          content: "Ajoutez votre contenu ici. Parlez de votre projet, de votre histoire, de ce qui vous rend unique. N'hésitez pas à personnaliser ce texte pour qu'il reflète votre personnalité.",
-          fontSize: "base",
-          fontWeight: "normal",
-          textAlign: "left",
-          textColor: "#64748b",
-        }
-      );
-      defaultSettings.textAlign = "left";
-      break;
-  }
-
-  return {
-    id,
-    type,
-    title,
-    visible: true,
-    blocks,
-    settings: defaultSettings,
-  };
-}
-
-// Helper pour générer le code d'un bloc
+// Generate code representation of a block
 export function generateBlockCode(block: Block): string {
   switch (block.type) {
     case "heading":
-      return `<${block.level} className="text-${block.level === 'h1' ? '4xl' : block.level === 'h2' ? '3xl' : '2xl'} font-bold">
+      return `<${block.level} className="text-${
+        block.level === "h1" ? "4xl" : block.level === "h2" ? "3xl" : block.level === "h3" ? "2xl" : "xl"
+      } font-bold text-${block.textAlign}">
   ${block.content}
 </${block.level}>`;
 
     case "text":
-      return `<p className="text-${block.fontSize}">
+      return `<p className="text-${block.fontSize} font-${block.fontWeight} text-${block.textAlign}">
   ${block.content}
 </p>`;
 
     case "button":
-      return `<button className="px-6 py-3 bg-[${block.color}] text-white rounded-lg">
+      return `<button className="px-${block.size === "sm" ? 4 : block.size === "md" ? 6 : 8} py-${
+        block.size === "sm" ? 2 : block.size === "md" ? 3 : 4
+      } bg-[${block.color}] text-white rounded-${block.rounded}${block.fullWidth ? " w-full" : ""}">
   ${block.text}
 </button>`;
 
     case "image":
       return `<img
-  src="${block.src}"
+  src="${block.src.substring(0, 50)}..."
   alt="${block.alt}"
-  className="rounded-${block.rounded} ${block.shadow ? 'shadow-lg' : ''}"
+  className="rounded-${block.rounded} shadow-${block.shadow}"
 />`;
 
-    default:
-      return `<${block.type}>...</${block.type}>`;
+    case "row":
+      return `<div className="flex gap-${block.gap} items-${block.align}">
+  {/* ${block.children.length} éléments */}
+</div>`;
+
+    case "spacer":
+      return `<div className="h-${
+        block.size === "xs" ? 2 : block.size === "sm" ? 4 : block.size === "md" ? 8 : block.size === "lg" ? 12 : block.size === "xl" ? 16 : 24
+      }" />`;
+
+    case "divider":
+      return `<hr className="border-${block.style} border-[${block.color}]" />`;
+
+    case "header":
+      return `<header className="py-4 px-6 ${block.sticky ? "sticky top-0" : ""}">
+  <nav className="flex items-center justify-between">
+    <span className="font-bold">${block.title}</span>
+    <div className="flex gap-4">
+      {/* ${block.navLinks.length} liens */}
+    </div>
+  </nav>
+</header>`;
+
+    case "footer":
+      return `<footer className="py-8 px-6 text-center">
+  <p>${block.text}</p>
+</footer>`;
+
+    case "hero":
+      return `<section className="py-20 text-center bg-gradient-to-r from-blue-500 to-purple-600">
+  <h1 className="text-5xl font-bold text-white mb-4">${block.title}</h1>
+  <p className="text-xl text-white/90 mb-8">${block.subtitle}</p>
+  <button className="px-8 py-3 bg-white text-blue-600 rounded-full">${block.buttonText}</button>
+</section>`;
+
+    case "features":
+      return `<section className="py-16 px-6">
+  <h2 className="text-3xl font-bold text-center mb-12">${block.title}</h2>
+  <div className="grid grid-cols-3 gap-8">
+    {/* ${block.features.length} fonctionnalités */}
+  </div>
+</section>`;
+
+    case "testimonial":
+      return `<blockquote className="max-w-2xl mx-auto p-8 text-center">
+  <p className="text-xl italic mb-6">"${block.quote}"</p>
+  <cite className="font-semibold">${block.author}</cite>
+  <p className="text-sm text-gray-500">${block.role}</p>
+</blockquote>`;
+
+    case "cta":
+      return `<section className="py-16 px-6 text-center bg-[${block.backgroundColor}]">
+  <h2 className="text-3xl font-bold mb-4">${block.title}</h2>
+  <p className="text-lg mb-8">${block.description}</p>
+  <button className="px-8 py-3 bg-[${block.buttonColor}] text-white rounded-lg">${block.buttonText}</button>
+</section>`;
+
+    case "gallery":
+      return `<div className="grid grid-cols-${block.columns} gap-${block.gap}">
+  {/* ${block.images.length} images */}
+</div>`;
+
+    case "card":
+      return `<div className="rounded-${block.rounded} shadow-${block.shadow} overflow-hidden">
+  <img src="${block.image}" alt="${block.title}" />
+  <div className="p-6">
+    <h3 className="text-xl font-bold mb-2">${block.title}</h3>
+    <p className="text-gray-600">${block.description}</p>
+  </div>
+</div>`;
   }
 }
