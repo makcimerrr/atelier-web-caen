@@ -1,7 +1,8 @@
 "use client";
 
 import { useBuilder } from "../../context/BuilderContext";
-import { Block, RowBlock, HeaderBlock, FooterBlock, HeroBlock, FeaturesBlock, TestimonialBlock, CtaBlock, GalleryBlock, CardBlock } from "../../types/builder";
+import { useState } from "react";
+import { Block, RowBlock, HeaderBlock, FooterBlock, HeroBlock, FeaturesBlock, TestimonialBlock, CtaBlock, GalleryBlock, CardBlock, VideoBlock, ListBlock, QuoteBlock, SocialsBlock, StatsBlock, AccordionBlock, PricingBlock } from "../../types/builder";
 import DropIndicator from "../builder/DropIndicator";
 
 interface BlockWrapperProps {
@@ -16,6 +17,11 @@ export default function BlockWrapper({ block, isInRow = false }: BlockWrapperPro
   const isDragging = state.dragState.isDragging &&
     state.dragState.draggedItem?.type === "existing" &&
     state.dragState.draggedItem.blockId === block.id;
+
+  // Don't render hidden blocks in preview mode
+  if (isPreview && block.visible === false) {
+    return null;
+  }
 
   const handleClick = (e: React.MouseEvent) => {
     if (isPreview) return;
@@ -38,13 +44,13 @@ export default function BlockWrapper({ block, isInRow = false }: BlockWrapperPro
 
   // Width classes for blocks inside rows
   const widthClasses: Record<Block["width"], string> = {
-    "auto": "",
-    "1/4": "w-1/4",
-    "1/3": "w-1/3",
-    "1/2": "w-1/2",
-    "2/3": "w-2/3",
-    "3/4": "w-3/4",
-    "full": "w-full",
+    "auto": "flex-1 min-w-0",
+    "1/4": "w-1/4 flex-shrink-0",
+    "1/3": "w-1/3 flex-shrink-0",
+    "1/2": "w-1/2 flex-shrink-0",
+    "2/3": "w-2/3 flex-shrink-0",
+    "3/4": "w-3/4 flex-shrink-0",
+    "full": "w-full flex-shrink-0",
   };
 
   const wrapperClass = isPreview
@@ -73,6 +79,13 @@ export default function BlockWrapper({ block, isInRow = false }: BlockWrapperPro
     cta: "Appel à l'action",
     gallery: "Galerie",
     card: "Carte",
+    video: "Vidéo",
+    list: "Liste",
+    quote: "Citation",
+    socials: "Réseaux",
+    stats: "Stats",
+    accordion: "FAQ",
+    pricing: "Tarif",
   };
 
   return (
@@ -175,6 +188,20 @@ function BlockContent({ block }: { block: Block }) {
       return <GalleryBlockComponent block={block} />;
     case "card":
       return <CardBlockComponent block={block} />;
+    case "video":
+      return <VideoBlockComponent block={block as VideoBlock} />;
+    case "list":
+      return <ListBlockComponent block={block as ListBlock} />;
+    case "quote":
+      return <QuoteBlockComponent block={block as QuoteBlock} />;
+    case "socials":
+      return <SocialsBlockComponent block={block as SocialsBlock} />;
+    case "stats":
+      return <StatsBlockComponent block={block as StatsBlock} />;
+    case "accordion":
+      return <AccordionBlockComponent block={block as AccordionBlock} />;
+    case "pricing":
+      return <PricingBlockComponent block={block as PricingBlock} />;
     default:
       return null;
   }
@@ -392,9 +419,12 @@ function RowBlockComponent({ block }: { block: RowBlock }) {
     dragState.draggedItem?.type === "existing" &&
     dragState.draggedItem.blockId === block.id;
 
+  // Wrap mode classes
+  const wrapClasses = block.wrap ? "flex-wrap" : "flex-nowrap";
+
   return (
     <div
-      className={`flex flex-wrap ${gapClasses[block.gap]} ${alignClasses[block.align]} ${justifyClasses[block.justify]} ${paddingClasses[block.padding]} ${roundedClasses[block.rounded]} min-h-[80px] transition-all ${
+      className={`flex ${wrapClasses} ${gapClasses[block.gap]} ${alignClasses[block.align]} ${justifyClasses[block.justify]} ${paddingClasses[block.padding]} ${roundedClasses[block.rounded]} min-h-[80px] transition-all ${
         isDropTarget && !isDraggingThis ? "ring-2 ring-blue-400 ring-dashed bg-blue-50/50" : ""
       }`}
       style={{
@@ -428,7 +458,7 @@ function RowBlockComponent({ block }: { block: RowBlock }) {
           )}
 
           {block.children.map((child, index) => (
-            <div key={child.id} className="flex items-stretch">
+            <div key={child.id} className={`flex items-stretch ${child.width === "auto" ? "flex-1 min-w-0" : ""}`}>
               <BlockWrapper block={child} isInRow={true} />
               {!state.previewMode && (
                 <DropIndicator
@@ -815,6 +845,281 @@ function CardBlockComponent({ block }: { block: CardBlock }) {
           {block.buttonText}
         </button>
       </div>
+    </div>
+  );
+}
+
+// === VIDEO ===
+function VideoBlockComponent({ block }: { block: VideoBlock }) {
+  const roundedClasses = {
+    none: "rounded-none",
+    sm: "rounded",
+    md: "rounded-lg",
+    lg: "rounded-xl",
+    xl: "rounded-2xl",
+  };
+
+  // Convert YouTube URL to embed URL
+  const getEmbedUrl = (url: string) => {
+    const youtubeMatch = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&]+)/);
+    if (youtubeMatch) {
+      return `https://www.youtube.com/embed/${youtubeMatch[1]}${block.autoplay ? "?autoplay=1" : ""}`;
+    }
+    const vimeoMatch = url.match(/vimeo\.com\/(\d+)/);
+    if (vimeoMatch) {
+      return `https://player.vimeo.com/video/${vimeoMatch[1]}${block.autoplay ? "?autoplay=1" : ""}`;
+    }
+    return url;
+  };
+
+  const aspectClasses = {
+    "16/9": "aspect-video",
+    "4/3": "aspect-[4/3]",
+    "1/1": "aspect-square",
+  };
+
+  return (
+    <div className={`w-full ${aspectClasses[block.aspectRatio]} ${roundedClasses[block.rounded]} overflow-hidden bg-zinc-900`}>
+      <iframe
+        src={getEmbedUrl(block.url)}
+        className="w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+  );
+}
+
+// === LIST ===
+function ListBlockComponent({ block }: { block: ListBlock }) {
+  const icons = {
+    bullet: "•",
+    number: null,
+    check: "✓",
+    arrow: "→",
+  };
+
+  return (
+    <ul className="space-y-2">
+      {block.items.map((item, index) => (
+        <li key={index} className="flex items-start gap-3">
+          <span
+            className="flex-shrink-0 font-bold"
+            style={{ color: block.iconColor }}
+          >
+            {block.style === "number" ? `${index + 1}.` : icons[block.style]}
+          </span>
+          <span style={{ color: block.textColor }}>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+// === QUOTE ===
+function QuoteBlockComponent({ block }: { block: QuoteBlock }) {
+  const styleClasses = {
+    simple: "pl-4",
+    bordered: "border-l-4 pl-6 py-2",
+    filled: "p-6 rounded-xl",
+  };
+
+  return (
+    <blockquote
+      className={`${styleClasses[block.style]}`}
+      style={{
+        borderColor: block.style === "bordered" ? block.accentColor : undefined,
+        backgroundColor: block.style === "filled" ? block.backgroundColor : undefined,
+      }}
+    >
+      <p
+        className="text-xl italic mb-3 leading-relaxed"
+        style={{ color: block.textColor }}
+      >
+        "{block.content}"
+      </p>
+      {block.author && (
+        <cite
+          className="text-sm font-medium not-italic block"
+          style={{ color: block.accentColor }}
+        >
+          — {block.author}
+        </cite>
+      )}
+    </blockquote>
+  );
+}
+
+// === SOCIALS ===
+function SocialsBlockComponent({ block }: { block: SocialsBlock }) {
+  const sizeClasses = {
+    sm: "w-8 h-8 text-sm",
+    md: "w-10 h-10 text-base",
+    lg: "w-12 h-12 text-lg",
+  };
+
+  const platformIcons: Record<string, string> = {
+    facebook: "f",
+    twitter: "𝕏",
+    instagram: "📷",
+    linkedin: "in",
+    youtube: "▶",
+    tiktok: "♪",
+    github: "⌘",
+  };
+
+  return (
+    <div className="flex gap-3 flex-wrap">
+      {block.links.map((link, index) => (
+        <a
+          key={index}
+          href={link.url}
+          className={`${sizeClasses[block.size]} flex items-center justify-center rounded-full font-bold transition-opacity hover:opacity-80`}
+          style={{
+            backgroundColor: block.style === "filled" ? block.color : "transparent",
+            color: block.style === "filled" ? "#fff" : block.color,
+            border: block.style === "outline" ? `2px solid ${block.color}` : undefined,
+          }}
+        >
+          {platformIcons[link.platform]}
+        </a>
+      ))}
+    </div>
+  );
+}
+
+// === STATS ===
+function StatsBlockComponent({ block }: { block: StatsBlock }) {
+  const colClasses = {
+    2: "grid-cols-2",
+    3: "grid-cols-3",
+    4: "grid-cols-4",
+  };
+
+  return (
+    <div
+      className={`grid ${colClasses[block.columns]} gap-8 p-8 rounded-xl`}
+      style={{ backgroundColor: block.backgroundColor }}
+    >
+      {block.stats.map((stat, index) => (
+        <div key={index} className="text-center">
+          {stat.icon && <span className="text-3xl mb-2 block">{stat.icon}</span>}
+          <div
+            className="text-4xl font-bold mb-1"
+            style={{ color: block.accentColor }}
+          >
+            {stat.value}
+          </div>
+          <div className="text-sm opacity-70" style={{ color: block.textColor }}>
+            {stat.label}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// === ACCORDION ===
+function AccordionBlockComponent({ block }: { block: AccordionBlock }) {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const styleClasses = {
+    simple: "",
+    bordered: "border rounded-lg divide-y",
+    filled: "rounded-lg overflow-hidden",
+  };
+
+  return (
+    <div
+      className={styleClasses[block.style]}
+      style={{
+        borderColor: block.style === "bordered" ? block.accentColor + "30" : undefined,
+        backgroundColor: block.style === "filled" ? block.backgroundColor : undefined,
+      }}
+    >
+      {block.items.map((item, index) => (
+        <div key={index} className={block.style === "filled" && index > 0 ? "border-t" : ""}>
+          <button
+            onClick={() => setOpenIndex(openIndex === index ? null : index)}
+            className={`w-full flex items-center justify-between p-4 text-left font-medium transition-colors hover:bg-black/5 ${
+              block.style === "simple" ? "border-b" : ""
+            }`}
+            style={{
+              color: block.textColor,
+              borderColor: block.accentColor + "20",
+            }}
+          >
+            <span>{item.question}</span>
+            <span
+              className={`transform transition-transform ${openIndex === index ? "rotate-180" : ""}`}
+              style={{ color: block.accentColor }}
+            >
+              ▼
+            </span>
+          </button>
+          {openIndex === index && (
+            <div
+              className="p-4 text-sm leading-relaxed"
+              style={{ color: block.textColor, opacity: 0.8 }}
+            >
+              {item.answer}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// === PRICING ===
+function PricingBlockComponent({ block }: { block: PricingBlock }) {
+  return (
+    <div
+      className={`rounded-2xl p-8 text-center transition-all ${
+        block.highlighted ? "scale-105 shadow-xl" : "shadow-lg"
+      }`}
+      style={{
+        backgroundColor: block.backgroundColor,
+        boxShadow: block.highlighted ? `0 0 0 2px ${block.buttonColor}` : undefined,
+      }}
+    >
+      <h3
+        className="text-xl font-bold mb-4"
+        style={{ color: block.textColor }}
+      >
+        {block.title}
+      </h3>
+      <div className="mb-6">
+        <span
+          className="text-5xl font-bold"
+          style={{ color: block.buttonColor }}
+        >
+          {block.price}
+        </span>
+        <span className="text-sm opacity-60" style={{ color: block.textColor }}>
+          {block.period}
+        </span>
+      </div>
+      <ul className="space-y-3 mb-8">
+        {block.features.map((feature, index) => (
+          <li
+            key={index}
+            className="flex items-center justify-center gap-2 text-sm"
+            style={{ color: block.textColor }}
+          >
+            <span style={{ color: block.buttonColor }}>✓</span>
+            {feature}
+          </li>
+        ))}
+      </ul>
+      <button
+        className={`w-full py-3 rounded-xl font-bold text-white transition-opacity hover:opacity-90 ${
+          block.highlighted ? "" : "opacity-90"
+        }`}
+        style={{ backgroundColor: block.buttonColor }}
+      >
+        {block.buttonText}
+      </button>
     </div>
   );
 }
