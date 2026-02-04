@@ -28,6 +28,7 @@ export default function ElementsPanel() {
   const layoutElements = BLOCK_TYPES.filter(b => b.category === "layout");
   const structureElements = BLOCK_TYPES.filter(b => b.category === "structure");
   const sectionElements = BLOCK_TYPES.filter(b => b.category === "sections");
+  const interactiveElements = BLOCK_TYPES.filter(b => b.category === "interactive");
 
   return (
     <div className="p-4 space-y-6">
@@ -131,6 +132,30 @@ export default function ElementsPanel() {
               <span className="text-xs bg-amber-200 text-amber-700 px-2 py-0.5 rounded-full font-medium">
                 Auto
               </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Interactive Elements */}
+      <div>
+        <h3 className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mb-3">
+          Éléments interactifs
+        </h3>
+        <div className="grid grid-cols-2 gap-2">
+          {interactiveElements.map(({ type, icon, name, description }) => (
+            <div
+              key={type}
+              draggable
+              onDragStart={(e) => handleDragStart(e, type)}
+              onDragEnd={handleDragEnd}
+              onClick={() => handleClick(type)}
+              className="flex flex-col items-center justify-center p-3 bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-200 rounded-xl cursor-grab hover:border-emerald-400 hover:from-emerald-100 hover:to-teal-100 active:cursor-grabbing transition-all select-none group"
+            >
+              <span className="text-xl mb-1 group-hover:scale-110 transition-transform">
+                {icon}
+              </span>
+              <span className="text-xs font-medium text-emerald-700">{name}</span>
             </div>
           ))}
         </div>
