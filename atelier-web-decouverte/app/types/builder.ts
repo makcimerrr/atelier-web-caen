@@ -1,12 +1,16 @@
 // Types pour le Site Builder WordPress-like
 
 // === BLOCS ===
-export type BlockType = "text" | "heading" | "image" | "button" | "row" | "spacer" | "divider" | "header" | "footer" | "hero" | "features" | "testimonial" | "cta" | "gallery" | "card";
+export type BlockType =
+  | "text" | "heading" | "image" | "button" | "row" | "spacer" | "divider"
+  | "header" | "footer" | "hero" | "features" | "testimonial" | "cta" | "gallery" | "card"
+  | "video" | "list" | "quote" | "socials" | "stats" | "accordion" | "pricing";
 
 export interface BlockBase {
   id: string;
   type: BlockType;
   width: "auto" | "1/4" | "1/3" | "1/2" | "2/3" | "3/4" | "full";
+  visible?: boolean;
 }
 
 export interface TextBlock extends BlockBase {
@@ -55,6 +59,7 @@ export interface RowBlock extends BlockBase {
   padding: "none" | "sm" | "md" | "lg";
   background: string;
   rounded: "none" | "sm" | "md" | "lg" | "xl";
+  wrap: boolean;
 }
 
 export interface SpacerBlock extends BlockBase {
@@ -156,6 +161,72 @@ export interface CardBlock extends BlockBase {
   shadow: "none" | "sm" | "md" | "lg";
 }
 
+// === NEW BLOCK TYPES ===
+export interface VideoBlock extends BlockBase {
+  type: "video";
+  url: string;
+  aspectRatio: "16/9" | "4/3" | "1/1";
+  autoplay: boolean;
+  rounded: "none" | "sm" | "md" | "lg" | "xl";
+}
+
+export interface ListBlock extends BlockBase {
+  type: "list";
+  items: string[];
+  style: "bullet" | "number" | "check" | "arrow";
+  textColor: string;
+  iconColor: string;
+}
+
+export interface QuoteBlock extends BlockBase {
+  type: "quote";
+  content: string;
+  author: string;
+  style: "simple" | "bordered" | "filled";
+  backgroundColor: string;
+  textColor: string;
+  accentColor: string;
+}
+
+export interface SocialsBlock extends BlockBase {
+  type: "socials";
+  links: { platform: "facebook" | "twitter" | "instagram" | "linkedin" | "youtube" | "tiktok" | "github"; url: string }[];
+  style: "filled" | "outline" | "minimal";
+  size: "sm" | "md" | "lg";
+  color: string;
+}
+
+export interface StatsBlock extends BlockBase {
+  type: "stats";
+  stats: { value: string; label: string; icon?: string }[];
+  columns: 2 | 3 | 4;
+  backgroundColor: string;
+  textColor: string;
+  accentColor: string;
+}
+
+export interface AccordionBlock extends BlockBase {
+  type: "accordion";
+  items: { question: string; answer: string }[];
+  style: "simple" | "bordered" | "filled";
+  backgroundColor: string;
+  textColor: string;
+  accentColor: string;
+}
+
+export interface PricingBlock extends BlockBase {
+  type: "pricing";
+  title: string;
+  price: string;
+  period: string;
+  features: string[];
+  buttonText: string;
+  buttonColor: string;
+  backgroundColor: string;
+  textColor: string;
+  highlighted: boolean;
+}
+
 export type Block =
   | TextBlock
   | HeadingBlock
@@ -171,7 +242,14 @@ export type Block =
   | TestimonialBlock
   | CtaBlock
   | GalleryBlock
-  | CardBlock;
+  | CardBlock
+  | VideoBlock
+  | ListBlock
+  | QuoteBlock
+  | SocialsBlock
+  | StatsBlock
+  | AccordionBlock
+  | PricingBlock;
 
 // === DRAG & DROP ===
 export interface DropPosition {
@@ -329,12 +407,15 @@ export const COMMENT_TAGS: { value: CommentTag; label: string; icon: string; col
   { value: "decouverte", label: "Découverte", icon: "🔍", color: "#f59e0b" },
 ];
 
-export const BLOCK_TYPES: { type: BlockType; name: string; icon: string; description: string; category: "basic" | "layout" | "structure" | "sections" }[] = [
+export const BLOCK_TYPES: { type: BlockType; name: string; icon: string; description: string; category: "basic" | "layout" | "structure" | "sections" | "interactive" }[] = [
   // Basic
   { type: "heading", name: "Titre", icon: "H", description: "Titre de section", category: "basic" },
   { type: "text", name: "Texte", icon: "T", description: "Paragraphe de texte", category: "basic" },
   { type: "image", name: "Image", icon: "🖼️", description: "Image ou photo", category: "basic" },
   { type: "button", name: "Bouton", icon: "▢", description: "Bouton d'action", category: "basic" },
+  { type: "video", name: "Vidéo", icon: "▶️", description: "Vidéo YouTube/Vimeo", category: "basic" },
+  { type: "list", name: "Liste", icon: "📝", description: "Liste à puces", category: "basic" },
+  { type: "quote", name: "Citation", icon: "❝", description: "Citation stylée", category: "basic" },
   // Layout
   { type: "row", name: "Colonnes", icon: "⊞", description: "Conteneur côte à côte", category: "layout" },
   { type: "spacer", name: "Espace", icon: "↕", description: "Espace vertical", category: "layout" },
@@ -349,6 +430,11 @@ export const BLOCK_TYPES: { type: BlockType; name: string; icon: string; descrip
   { type: "cta", name: "Appel à l'action", icon: "📣", description: "Incitation à agir", category: "sections" },
   { type: "gallery", name: "Galerie", icon: "🖼️", description: "Grille d'images", category: "sections" },
   { type: "card", name: "Carte", icon: "🃏", description: "Carte avec image", category: "sections" },
+  // Interactive
+  { type: "socials", name: "Réseaux sociaux", icon: "🔗", description: "Liens sociaux", category: "interactive" },
+  { type: "stats", name: "Statistiques", icon: "📊", description: "Chiffres clés", category: "interactive" },
+  { type: "accordion", name: "Accordéon", icon: "📂", description: "FAQ dépliable", category: "interactive" },
+  { type: "pricing", name: "Tarif", icon: "💰", description: "Carte de prix", category: "interactive" },
 ];
 
 export const WIDTH_OPTIONS = [
@@ -419,6 +505,7 @@ export function createBlock(type: BlockType): Block {
         padding: "none",
         background: "transparent",
         rounded: "none",
+        wrap: false,
       };
     case "spacer":
       return {
@@ -542,6 +629,93 @@ export function createBlock(type: BlockType): Block {
         shadow: "md",
         width: "auto",
       };
+    case "video":
+      return {
+        ...baseBlock,
+        type: "video",
+        url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+        aspectRatio: "16/9",
+        autoplay: false,
+        rounded: "lg",
+      };
+    case "list":
+      return {
+        ...baseBlock,
+        type: "list",
+        items: ["Premier élément de la liste", "Deuxième élément", "Troisième élément"],
+        style: "bullet",
+        textColor: "#18181b",
+        iconColor: "#2563eb",
+      };
+    case "quote":
+      return {
+        ...baseBlock,
+        type: "quote",
+        content: "La créativité, c'est l'intelligence qui s'amuse.",
+        author: "Albert Einstein",
+        style: "bordered",
+        backgroundColor: "#f8fafc",
+        textColor: "#18181b",
+        accentColor: "#2563eb",
+      };
+    case "socials":
+      return {
+        ...baseBlock,
+        type: "socials",
+        links: [
+          { platform: "facebook", url: "#" },
+          { platform: "twitter", url: "#" },
+          { platform: "instagram", url: "#" },
+          { platform: "linkedin", url: "#" },
+        ],
+        style: "filled",
+        size: "md",
+        color: "#2563eb",
+        width: "auto",
+      };
+    case "stats":
+      return {
+        ...baseBlock,
+        type: "stats",
+        stats: [
+          { value: "100+", label: "Clients satisfaits", icon: "😊" },
+          { value: "50+", label: "Projets réalisés", icon: "🚀" },
+          { value: "5 ans", label: "D'expérience", icon: "⭐" },
+        ],
+        columns: 3,
+        backgroundColor: "#ffffff",
+        textColor: "#18181b",
+        accentColor: "#2563eb",
+      };
+    case "accordion":
+      return {
+        ...baseBlock,
+        type: "accordion",
+        items: [
+          { question: "Comment ça fonctionne ?", answer: "C'est très simple ! Il suffit de glisser-déposer les éléments." },
+          { question: "Est-ce gratuit ?", answer: "Oui, l'outil est entièrement gratuit pour l'atelier." },
+          { question: "Puis-je exporter mon site ?", answer: "Votre site sera sauvegardé et vous recevrez le résultat par email." },
+        ],
+        style: "bordered",
+        backgroundColor: "#ffffff",
+        textColor: "#18181b",
+        accentColor: "#2563eb",
+      };
+    case "pricing":
+      return {
+        ...baseBlock,
+        type: "pricing",
+        title: "Formule Pro",
+        price: "29€",
+        period: "/mois",
+        features: ["Fonctionnalité 1", "Fonctionnalité 2", "Fonctionnalité 3", "Support prioritaire"],
+        buttonText: "Choisir",
+        buttonColor: "#2563eb",
+        backgroundColor: "#ffffff",
+        textColor: "#18181b",
+        highlighted: false,
+        width: "auto",
+      };
   }
 }
 
@@ -643,6 +817,45 @@ export function generateBlockCode(block: Block): string {
     <h3 className="text-xl font-bold mb-2">${block.title}</h3>
     <p className="text-gray-600">${block.description}</p>
   </div>
+</div>`;
+
+    case "video":
+      return `<div className="aspect-[${block.aspectRatio}] rounded-${block.rounded} overflow-hidden">
+  <iframe src="${block.url}" className="w-full h-full" allowFullScreen />
+</div>`;
+
+    case "list":
+      return `<ul className="list-${block.style === "bullet" ? "disc" : block.style === "number" ? "decimal" : "none"} pl-5 space-y-2">
+  {/* ${block.items.length} éléments */}
+</ul>`;
+
+    case "quote":
+      return `<blockquote className="border-l-4 border-[${block.accentColor}] pl-6 py-4 italic">
+  <p className="text-lg">${block.content}</p>
+  <cite className="text-sm mt-2 block">— ${block.author}</cite>
+</blockquote>`;
+
+    case "socials":
+      return `<div className="flex gap-4">
+  {/* ${block.links.length} réseaux sociaux */}
+</div>`;
+
+    case "stats":
+      return `<div className="grid grid-cols-${block.columns} gap-8 text-center">
+  {/* ${block.stats.length} statistiques */}
+</div>`;
+
+    case "accordion":
+      return `<div className="space-y-2">
+  {/* ${block.items.length} questions */}
+</div>`;
+
+    case "pricing":
+      return `<div className="rounded-xl shadow-lg p-8 text-center${block.highlighted ? " ring-2 ring-[" + block.buttonColor + "]" : ""}">
+  <h3 className="text-xl font-bold">${block.title}</h3>
+  <div className="text-4xl font-bold my-4">${block.price}<span className="text-lg">${block.period}</span></div>
+  <ul className="space-y-2 my-6">{/* ${block.features.length} features */}</ul>
+  <button className="w-full py-3 bg-[${block.buttonColor}] text-white rounded-lg">${block.buttonText}</button>
 </div>`;
   }
 }
