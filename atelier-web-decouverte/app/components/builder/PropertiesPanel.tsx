@@ -18,6 +18,13 @@ import {
   CtaBlock,
   GalleryBlock,
   CardBlock,
+  VideoBlock,
+  ListBlock,
+  QuoteBlock,
+  SocialsBlock,
+  StatsBlock,
+  AccordionBlock,
+  PricingBlock,
   TEXT_COLORS,
   PRIMARY_COLORS,
   BACKGROUND_COLORS,
@@ -84,6 +91,13 @@ export default function PropertiesPanel() {
         {selectedBlock.type === "cta" && <CtaProperties block={selectedBlock} />}
         {selectedBlock.type === "gallery" && <GalleryProperties block={selectedBlock} />}
         {selectedBlock.type === "card" && <CardProperties block={selectedBlock} />}
+        {selectedBlock.type === "video" && <VideoProperties block={selectedBlock} />}
+        {selectedBlock.type === "list" && <ListProperties block={selectedBlock} />}
+        {selectedBlock.type === "quote" && <QuoteProperties block={selectedBlock} />}
+        {selectedBlock.type === "socials" && <SocialsProperties block={selectedBlock} />}
+        {selectedBlock.type === "stats" && <StatsProperties block={selectedBlock} />}
+        {selectedBlock.type === "accordion" && <AccordionProperties block={selectedBlock} />}
+        {selectedBlock.type === "pricing" && <PricingProperties block={selectedBlock} />}
       </div>
     </div>
   );
@@ -106,6 +120,13 @@ function BlockIcon({ type }: { type: Block["type"] }) {
     cta: "📣",
     gallery: "🖼️",
     card: "🃏",
+    video: "▶️",
+    list: "📝",
+    quote: "❝",
+    socials: "🔗",
+    stats: "📊",
+    accordion: "📂",
+    pricing: "💰",
   };
   return <span className="text-lg">{icons[type]}</span>;
 }
@@ -127,6 +148,13 @@ function getBlockName(type: Block["type"]): string {
     cta: "Appel à l'action",
     gallery: "Galerie",
     card: "Carte",
+    video: "Vidéo",
+    list: "Liste",
+    quote: "Citation",
+    socials: "Réseaux sociaux",
+    stats: "Statistiques",
+    accordion: "Accordéon",
+    pricing: "Tarif",
   };
   return names[type];
 }
@@ -498,6 +526,12 @@ function RowProperties({ block }: { block: RowBlock }) {
           onChange={(value) => updateBlock(block.id, { rounded: value as RowBlock["rounded"] })}
         />
       </div>
+
+      <Toggle
+        label="Retour à la ligne automatique"
+        checked={block.wrap}
+        onChange={(checked) => updateBlock(block.id, { wrap: checked })}
+      />
 
       <ColorPicker
         label="Couleur de fond"
@@ -1188,6 +1222,610 @@ function CardProperties({ block }: { block: CardBlock }) {
           onChange={(value) => updateBlock(block.id, { shadow: value as CardBlock["shadow"] })}
         />
       </div>
+    </>
+  );
+}
+
+// === VIDEO PROPERTIES ===
+function VideoProperties({ block }: { block: VideoBlock }) {
+  const { updateBlock } = useBuilder();
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">URL de la vidéo</label>
+        <input
+          type="text"
+          value={block.url}
+          onChange={(e) => updateBlock(block.id, { url: e.target.value })}
+          className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg focus:ring-2 focus:ring-blue-500"
+          placeholder="https://youtube.com/watch?v=..."
+        />
+        <p className="text-xs text-zinc-400 mt-1">YouTube, Vimeo, ou URL directe</p>
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Format</label>
+        <ButtonGroup
+          options={[
+            { value: "16/9", label: "16:9" },
+            { value: "4/3", label: "4:3" },
+            { value: "1/1", label: "1:1" },
+          ]}
+          value={block.aspectRatio}
+          onChange={(value) => updateBlock(block.id, { aspectRatio: value as VideoBlock["aspectRatio"] })}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Arrondi</label>
+        <ButtonGroup
+          options={[
+            { value: "none", label: "0" },
+            { value: "sm", label: "S" },
+            { value: "md", label: "M" },
+            { value: "lg", label: "L" },
+            { value: "xl", label: "XL" },
+          ]}
+          value={block.rounded}
+          onChange={(value) => updateBlock(block.id, { rounded: value as VideoBlock["rounded"] })}
+        />
+      </div>
+      <Toggle
+        label="Lecture automatique"
+        checked={block.autoplay}
+        onChange={(checked) => updateBlock(block.id, { autoplay: checked })}
+      />
+    </>
+  );
+}
+
+// === LIST PROPERTIES ===
+function ListProperties({ block }: { block: ListBlock }) {
+  const { updateBlock } = useBuilder();
+
+  const updateItem = (index: number, value: string) => {
+    const newItems = [...block.items];
+    newItems[index] = value;
+    updateBlock(block.id, { items: newItems });
+  };
+
+  const addItem = () => {
+    updateBlock(block.id, { items: [...block.items, "Nouvel élément"] });
+  };
+
+  const removeItem = (index: number) => {
+    updateBlock(block.id, { items: block.items.filter((_, i) => i !== index) });
+  };
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Style</label>
+        <ButtonGroup
+          options={[
+            { value: "bullet", label: "•" },
+            { value: "number", label: "1." },
+            { value: "check", label: "✓" },
+            { value: "arrow", label: "→" },
+          ]}
+          value={block.style}
+          onChange={(value) => updateBlock(block.id, { style: value as ListBlock["style"] })}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Éléments</label>
+        <div className="space-y-2">
+          {block.items.map((item, index) => (
+            <div key={index} className="flex gap-1.5 items-center">
+              <input
+                type="text"
+                value={item}
+                onChange={(e) => updateItem(index, e.target.value)}
+                className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-zinc-200 rounded focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                onClick={() => removeItem(index)}
+                className="p-1 text-zinc-400 hover:text-red-500 rounded"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          ))}
+          <button
+            onClick={addItem}
+            className="w-full py-1.5 text-sm text-blue-500 hover:bg-blue-50 border border-dashed border-blue-200 rounded-lg"
+          >
+            + Ajouter un élément
+          </button>
+        </div>
+      </div>
+      <ColorPicker
+        label="Couleur du texte"
+        colors={TEXT_COLORS}
+        value={block.textColor}
+        onChange={(color) => updateBlock(block.id, { textColor: color })}
+      />
+      <ColorPicker
+        label="Couleur des icônes"
+        colors={PRIMARY_COLORS}
+        value={block.iconColor}
+        onChange={(color) => updateBlock(block.id, { iconColor: color })}
+      />
+    </>
+  );
+}
+
+// === QUOTE PROPERTIES ===
+function QuoteProperties({ block }: { block: QuoteBlock }) {
+  const { updateBlock } = useBuilder();
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Citation</label>
+        <textarea
+          value={block.content}
+          onChange={(e) => updateBlock(block.id, { content: e.target.value })}
+          rows={3}
+          className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg focus:ring-2 focus:ring-blue-500 resize-none"
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Auteur</label>
+        <input
+          type="text"
+          value={block.author}
+          onChange={(e) => updateBlock(block.id, { author: e.target.value })}
+          className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Style</label>
+        <ButtonGroup
+          options={[
+            { value: "simple", label: "Simple" },
+            { value: "bordered", label: "Bordure" },
+            { value: "filled", label: "Rempli" },
+          ]}
+          value={block.style}
+          onChange={(value) => updateBlock(block.id, { style: value as QuoteBlock["style"] })}
+        />
+      </div>
+      <ColorPicker
+        label="Couleur d'accent"
+        colors={PRIMARY_COLORS}
+        value={block.accentColor}
+        onChange={(color) => updateBlock(block.id, { accentColor: color })}
+      />
+      <ColorPicker
+        label="Couleur de fond"
+        colors={BACKGROUND_COLORS}
+        value={block.backgroundColor}
+        onChange={(color) => updateBlock(block.id, { backgroundColor: color })}
+      />
+      <ColorPicker
+        label="Couleur du texte"
+        colors={TEXT_COLORS}
+        value={block.textColor}
+        onChange={(color) => updateBlock(block.id, { textColor: color })}
+      />
+    </>
+  );
+}
+
+// === SOCIALS PROPERTIES ===
+function SocialsProperties({ block }: { block: SocialsBlock }) {
+  const { updateBlock } = useBuilder();
+
+  const platforms = ["facebook", "twitter", "instagram", "linkedin", "youtube", "tiktok", "github"] as const;
+  const platformIcons: Record<typeof platforms[number], string> = {
+    facebook: "📘",
+    twitter: "🐦",
+    instagram: "📷",
+    linkedin: "💼",
+    youtube: "▶️",
+    tiktok: "🎵",
+    github: "💻",
+  };
+
+  const updateLink = (index: number, updates: Partial<{ platform: typeof platforms[number]; url: string }>) => {
+    const newLinks = [...block.links];
+    newLinks[index] = { ...newLinks[index], ...updates };
+    updateBlock(block.id, { links: newLinks });
+  };
+
+  const addLink = () => {
+    updateBlock(block.id, { links: [...block.links, { platform: "facebook", url: "#" }] });
+  };
+
+  const removeLink = (index: number) => {
+    updateBlock(block.id, { links: block.links.filter((_, i) => i !== index) });
+  };
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Style</label>
+        <ButtonGroup
+          options={[
+            { value: "filled", label: "Plein" },
+            { value: "outline", label: "Contour" },
+            { value: "minimal", label: "Minimal" },
+          ]}
+          value={block.style}
+          onChange={(value) => updateBlock(block.id, { style: value as SocialsBlock["style"] })}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Taille</label>
+        <ButtonGroup
+          options={[
+            { value: "sm", label: "S" },
+            { value: "md", label: "M" },
+            { value: "lg", label: "L" },
+          ]}
+          value={block.size}
+          onChange={(value) => updateBlock(block.id, { size: value as SocialsBlock["size"] })}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Réseaux</label>
+        <div className="space-y-2">
+          {block.links.map((link, index) => (
+            <div key={index} className="flex gap-1.5 items-center">
+              <select
+                value={link.platform}
+                onChange={(e) => updateLink(index, { platform: e.target.value as typeof platforms[number] })}
+                className="w-20 px-2 py-1.5 text-sm border border-zinc-200 rounded"
+              >
+                {platforms.map((p) => (
+                  <option key={p} value={p}>{platformIcons[p]}</option>
+                ))}
+              </select>
+              <input
+                type="text"
+                value={link.url}
+                onChange={(e) => updateLink(index, { url: e.target.value })}
+                className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-zinc-200 rounded focus:ring-2 focus:ring-blue-500"
+                placeholder="URL"
+              />
+              <button
+                onClick={() => removeLink(index)}
+                className="p-1 text-zinc-400 hover:text-red-500 rounded"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          ))}
+          <button
+            onClick={addLink}
+            className="w-full py-1.5 text-sm text-blue-500 hover:bg-blue-50 border border-dashed border-blue-200 rounded-lg"
+          >
+            + Ajouter un réseau
+          </button>
+        </div>
+      </div>
+      <ColorPicker
+        label="Couleur"
+        colors={PRIMARY_COLORS}
+        value={block.color}
+        onChange={(color) => updateBlock(block.id, { color })}
+      />
+    </>
+  );
+}
+
+// === STATS PROPERTIES ===
+function StatsProperties({ block }: { block: StatsBlock }) {
+  const { updateBlock } = useBuilder();
+
+  const updateStat = (index: number, updates: Partial<{ value: string; label: string; icon?: string }>) => {
+    const newStats = [...block.stats];
+    newStats[index] = { ...newStats[index], ...updates };
+    updateBlock(block.id, { stats: newStats });
+  };
+
+  const addStat = () => {
+    updateBlock(block.id, { stats: [...block.stats, { value: "0", label: "Nouveau", icon: "📊" }] });
+  };
+
+  const removeStat = (index: number) => {
+    updateBlock(block.id, { stats: block.stats.filter((_, i) => i !== index) });
+  };
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Colonnes</label>
+        <ButtonGroup
+          options={[
+            { value: "2", label: "2" },
+            { value: "3", label: "3" },
+            { value: "4", label: "4" },
+          ]}
+          value={String(block.columns)}
+          onChange={(value) => updateBlock(block.id, { columns: Number(value) as 2 | 3 | 4 })}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Statistiques</label>
+        <div className="space-y-3">
+          {block.stats.map((stat, index) => (
+            <div key={index} className="p-3 bg-zinc-50 rounded-lg space-y-2">
+              <div className="flex gap-2">
+                <input
+                  type="text"
+                  value={stat.icon || ""}
+                  onChange={(e) => updateStat(index, { icon: e.target.value })}
+                  className="w-12 px-2 py-1 text-center text-sm border border-zinc-200 rounded"
+                  placeholder="🔥"
+                />
+                <input
+                  type="text"
+                  value={stat.value}
+                  onChange={(e) => updateStat(index, { value: e.target.value })}
+                  className="flex-1 px-2 py-1 text-sm border border-zinc-200 rounded font-bold"
+                  placeholder="100+"
+                />
+                <button
+                  onClick={() => removeStat(index)}
+                  className="p-1 text-zinc-400 hover:text-red-500 rounded"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <input
+                type="text"
+                value={stat.label}
+                onChange={(e) => updateStat(index, { label: e.target.value })}
+                className="w-full px-2 py-1 text-sm border border-zinc-200 rounded"
+                placeholder="Label"
+              />
+            </div>
+          ))}
+          <button
+            onClick={addStat}
+            className="w-full py-1.5 text-sm text-blue-500 hover:bg-blue-50 border border-dashed border-blue-200 rounded-lg"
+          >
+            + Ajouter une stat
+          </button>
+        </div>
+      </div>
+      <ColorPicker
+        label="Couleur d'accent"
+        colors={PRIMARY_COLORS}
+        value={block.accentColor}
+        onChange={(color) => updateBlock(block.id, { accentColor: color })}
+      />
+      <ColorPicker
+        label="Couleur de fond"
+        colors={BACKGROUND_COLORS}
+        value={block.backgroundColor}
+        onChange={(color) => updateBlock(block.id, { backgroundColor: color })}
+      />
+      <ColorPicker
+        label="Couleur du texte"
+        colors={TEXT_COLORS}
+        value={block.textColor}
+        onChange={(color) => updateBlock(block.id, { textColor: color })}
+      />
+    </>
+  );
+}
+
+// === ACCORDION PROPERTIES ===
+function AccordionProperties({ block }: { block: AccordionBlock }) {
+  const { updateBlock } = useBuilder();
+
+  const updateItem = (index: number, updates: Partial<{ question: string; answer: string }>) => {
+    const newItems = [...block.items];
+    newItems[index] = { ...newItems[index], ...updates };
+    updateBlock(block.id, { items: newItems });
+  };
+
+  const addItem = () => {
+    updateBlock(block.id, { items: [...block.items, { question: "Nouvelle question ?", answer: "Réponse..." }] });
+  };
+
+  const removeItem = (index: number) => {
+    updateBlock(block.id, { items: block.items.filter((_, i) => i !== index) });
+  };
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Style</label>
+        <ButtonGroup
+          options={[
+            { value: "simple", label: "Simple" },
+            { value: "bordered", label: "Bordure" },
+            { value: "filled", label: "Rempli" },
+          ]}
+          value={block.style}
+          onChange={(value) => updateBlock(block.id, { style: value as AccordionBlock["style"] })}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Questions / Réponses</label>
+        <div className="space-y-3">
+          {block.items.map((item, index) => (
+            <div key={index} className="p-3 bg-zinc-50 rounded-lg space-y-2">
+              <div className="flex gap-2 items-start">
+                <div className="flex-1 space-y-2">
+                  <input
+                    type="text"
+                    value={item.question}
+                    onChange={(e) => updateItem(index, { question: e.target.value })}
+                    className="w-full px-2 py-1 text-sm border border-zinc-200 rounded font-medium"
+                    placeholder="Question ?"
+                  />
+                  <textarea
+                    value={item.answer}
+                    onChange={(e) => updateItem(index, { answer: e.target.value })}
+                    rows={2}
+                    className="w-full px-2 py-1 text-sm border border-zinc-200 rounded resize-none"
+                    placeholder="Réponse..."
+                  />
+                </div>
+                <button
+                  onClick={() => removeItem(index)}
+                  className="p-1 text-zinc-400 hover:text-red-500 rounded flex-shrink-0"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          ))}
+          <button
+            onClick={addItem}
+            className="w-full py-1.5 text-sm text-blue-500 hover:bg-blue-50 border border-dashed border-blue-200 rounded-lg"
+          >
+            + Ajouter une question
+          </button>
+        </div>
+      </div>
+      <ColorPicker
+        label="Couleur d'accent"
+        colors={PRIMARY_COLORS}
+        value={block.accentColor}
+        onChange={(color) => updateBlock(block.id, { accentColor: color })}
+      />
+      <ColorPicker
+        label="Couleur de fond"
+        colors={BACKGROUND_COLORS}
+        value={block.backgroundColor}
+        onChange={(color) => updateBlock(block.id, { backgroundColor: color })}
+      />
+      <ColorPicker
+        label="Couleur du texte"
+        colors={TEXT_COLORS}
+        value={block.textColor}
+        onChange={(color) => updateBlock(block.id, { textColor: color })}
+      />
+    </>
+  );
+}
+
+// === PRICING PROPERTIES ===
+function PricingProperties({ block }: { block: PricingBlock }) {
+  const { updateBlock } = useBuilder();
+
+  const updateFeature = (index: number, value: string) => {
+    const newFeatures = [...block.features];
+    newFeatures[index] = value;
+    updateBlock(block.id, { features: newFeatures });
+  };
+
+  const addFeature = () => {
+    updateBlock(block.id, { features: [...block.features, "Nouvelle fonctionnalité"] });
+  };
+
+  const removeFeature = (index: number) => {
+    updateBlock(block.id, { features: block.features.filter((_, i) => i !== index) });
+  };
+
+  return (
+    <>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Titre du plan</label>
+        <input
+          type="text"
+          value={block.title}
+          onChange={(e) => updateBlock(block.id, { title: e.target.value })}
+          className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <div className="grid grid-cols-2 gap-2">
+        <div>
+          <label className="block text-xs font-medium text-zinc-500 mb-1.5">Prix</label>
+          <input
+            type="text"
+            value={block.price}
+            onChange={(e) => updateBlock(block.id, { price: e.target.value })}
+            className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg"
+            placeholder="29€"
+          />
+        </div>
+        <div>
+          <label className="block text-xs font-medium text-zinc-500 mb-1.5">Période</label>
+          <input
+            type="text"
+            value={block.period}
+            onChange={(e) => updateBlock(block.id, { period: e.target.value })}
+            className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg"
+            placeholder="/mois"
+          />
+        </div>
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Fonctionnalités</label>
+        <div className="space-y-2">
+          {block.features.map((feature, index) => (
+            <div key={index} className="flex gap-1.5 items-center">
+              <span className="text-green-500">✓</span>
+              <input
+                type="text"
+                value={feature}
+                onChange={(e) => updateFeature(index, e.target.value)}
+                className="flex-1 min-w-0 px-2 py-1.5 text-sm border border-zinc-200 rounded focus:ring-2 focus:ring-blue-500"
+              />
+              <button
+                onClick={() => removeFeature(index)}
+                className="p-1 text-zinc-400 hover:text-red-500 rounded"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          ))}
+          <button
+            onClick={addFeature}
+            className="w-full py-1.5 text-sm text-blue-500 hover:bg-blue-50 border border-dashed border-blue-200 rounded-lg"
+          >
+            + Ajouter une fonctionnalité
+          </button>
+        </div>
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-zinc-500 mb-1.5">Texte du bouton</label>
+        <input
+          type="text"
+          value={block.buttonText}
+          onChange={(e) => updateBlock(block.id, { buttonText: e.target.value })}
+          className="w-full px-3 py-2 text-sm border border-zinc-200 rounded-lg"
+        />
+      </div>
+      <Toggle
+        label="Mise en avant"
+        checked={block.highlighted}
+        onChange={(checked) => updateBlock(block.id, { highlighted: checked })}
+      />
+      <ColorPicker
+        label="Couleur du bouton"
+        colors={PRIMARY_COLORS}
+        value={block.buttonColor}
+        onChange={(color) => updateBlock(block.id, { buttonColor: color })}
+      />
+      <ColorPicker
+        label="Couleur de fond"
+        colors={BACKGROUND_COLORS}
+        value={block.backgroundColor}
+        onChange={(color) => updateBlock(block.id, { backgroundColor: color })}
+      />
+      <ColorPicker
+        label="Couleur du texte"
+        colors={TEXT_COLORS}
+        value={block.textColor}
+        onChange={(color) => updateBlock(block.id, { textColor: color })}
+      />
     </>
   );
 }
