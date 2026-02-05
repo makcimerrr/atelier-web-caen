@@ -1,0 +1,86 @@
+{
+  "id": "site-1770285044167-z9hlnodhq",
+  "studentInfo": {
+    "nom": "Dubois",
+    "prenom": "Maxime",
+    "email": "maxim3pro@proton.me"
+  },
+  "blocks": [
+    {
+      "id": "block-1770284615458-5ueezu5c2",
+      "width": "full",
+      "type": "heading",
+      "content": "Phoque",
+      "level": "h2",
+      "textAlign": "left",
+      "textColor": "#18181b",
+      "visible": true
+    },
+    {
+      "id": "block-1770284612524-mlj7szy46",
+      "width": "full",
+      "type": "video",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "lg"
+    },
+    {
+      "id": "block-1770284606342-pdb6vac89",
+      "width": "full",
+      "type": "quote",
+      "content": "La créativité, c'est l'intelligence qui s'amuse.",
+      "author": "Albert Einstein",
+      "style": "bordered",
+      "backgroundColor": "#f8fafc",
+      "textColor": "#18181b",
+      "accentColor": "#2563eb"
+    },
+    {
+      "id": "block-1770284608108-iehed2dv7",
+      "width": "full",
+      "type": "list",
+      "items": [
+        "Premier élément de la liste",
+        "Deuxième élément",
+        "Troisième élément"
+      ],
+      "style": "bullet",
+      "textColor": "#18181b",
+      "iconColor": "#2563eb"
+    },
+    {
+      "id": "block-1770284585642-1edf0vkdd",
+      "width": "full",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
+      "alt": "Tech",
+      "rounded": "md",
+      "shadow": "md",
+      "aspectRatio": "auto"
+    },
+    {
+      "id": "block-1770284599325-7trvi6f8n",
+      "width": "full",
+      "type": "text",
+      "content": "image au pif\n",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "left",
+      "textColor": "#3f3f46"
+    }
+  ],
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T09:50:44.167Z"
+}

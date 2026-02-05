@@ -1,0 +1,92 @@
+{
+  "id": "site-1770284250719-tti0ubeih",
+  "studentInfo": {
+    "nom": "Dubois",
+    "prenom": "Maxime",
+    "email": "maxim3pro@proton.me"
+  },
+  "blocks": [
+    {
+      "id": "block-1770283747968-bcw6zd4ci",
+      "width": "full",
+      "type": "heading",
+      "content": "clash royal",
+      "level": "h2",
+      "textAlign": "left",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "block-1770283786539-1fdp6u2f0",
+      "width": "full",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=500&fit=crop",
+      "alt": "Ville",
+      "rounded": "md",
+      "shadow": "md",
+      "aspectRatio": "auto"
+    },
+    {
+      "id": "block-1770283831238-wvh075k2m",
+      "width": "full",
+      "type": "text",
+      "content": "Voici les différents personnage :",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "left",
+      "textColor": "#3f3f46"
+    },
+    {
+      "id": "block-1770283823635-3hnvrkthu",
+      "width": "full",
+      "type": "list",
+      "items": [
+        "Méga chevalier",
+        "electro sorcier",
+        "Boule de feu",
+        "Prince"
+      ],
+      "style": "bullet",
+      "textColor": "#18181b",
+      "iconColor": "#2563eb"
+    },
+    {
+      "id": "block-1770283932737-igr3bupk4",
+      "width": "full",
+      "type": "stats",
+      "stats": [
+        {
+          "value": "110+",
+          "label": "Personnnages",
+          "icon": "😊"
+        },
+        {
+          "value": "5M+",
+          "label": "de joueurs",
+          "icon": "🚀"
+        },
+        {
+          "value": "8 ans",
+          "label": "D'existence",
+          "icon": "⭐"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b",
+      "accentColor": "#2563eb"
+    }
+  ],
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T09:37:30.719Z"
+}

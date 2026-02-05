@@ -1,0 +1,85 @@
+{
+  "id": "site-1770283431204-snig20pdt",
+  "studentInfo": {
+    "nom": "Dubois",
+    "prenom": "Maxime",
+    "email": "test@test.com"
+  },
+  "blocks": [
+    {
+      "id": "block-1770282407287-p8gq7euad",
+      "width": "full",
+      "type": "heading",
+      "content": "Minecraft new generation",
+      "level": "h1",
+      "textAlign": "center",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "block-1770282520802-02ztqruqb",
+      "width": "full",
+      "type": "text",
+      "content": "",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "left",
+      "textColor": "#3f3f46"
+    },
+    {
+      "id": "block-1770282620767-tb9sn7drt",
+      "width": "full",
+      "type": "spacer",
+      "size": "md"
+    },
+    {
+      "id": "block-1770282625368-3x3qu2tn2",
+      "width": "full",
+      "type": "row",
+      "children": [
+        {
+          "id": "block-1770282632404-t5z88y967",
+          "width": "auto",
+          "type": "text",
+          "content": "Rejoignez notre serveur et amusez vous bien !",
+          "fontSize": "lg",
+          "fontWeight": "normal",
+          "textAlign": "left",
+          "textColor": "#3f3f46"
+        }
+      ],
+      "gap": "md",
+      "align": "stretch",
+      "justify": "start",
+      "padding": "none",
+      "background": "transparent",
+      "rounded": "none",
+      "wrap": false
+    },
+    {
+      "id": "block-1770282625767-zeg06igf1",
+      "width": "full",
+      "type": "row",
+      "children": [],
+      "gap": "md",
+      "align": "stretch",
+      "justify": "start",
+      "padding": "none",
+      "background": "transparent",
+      "rounded": "none",
+      "wrap": false
+    }
+  ],
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T09:23:51.204Z"
+}

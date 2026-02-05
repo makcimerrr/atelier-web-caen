@@ -1,0 +1,53 @@
+{
+  "id": "site-1770281105829-noahqsdoa",
+  "studentInfo": {
+    "nom": "Dubois",
+    "prenom": "Maxime",
+    "email": "test@test.com"
+  },
+  "blocks": [
+    {
+      "id": "block-1770280757823-q4ntb4ptf",
+      "width": "full",
+      "type": "heading",
+      "content": "Bienvenue sur mon site !!!!!!!!",
+      "level": "h2",
+      "textAlign": "left",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "block-1770280772071-e3c3g1hk4",
+      "width": "full",
+      "type": "image",
+      "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
+      "alt": "Tech",
+      "rounded": "md",
+      "shadow": "md",
+      "aspectRatio": "auto"
+    },
+    {
+      "id": "block-1770280833222-k7fuv85s0",
+      "width": "full",
+      "type": "quote",
+      "content": "Rien ne se perd rien ne se créé tout se transforme !!!!!!!!",
+      "author": "Arthur Rimbault",
+      "style": "bordered",
+      "backgroundColor": "#f8fafc",
+      "textColor": "#18181b",
+      "accentColor": "#2563eb"
+    }
+  ],
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T08:45:05.829Z"
+}
