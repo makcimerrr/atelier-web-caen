@@ -1,5 +1,19 @@
 [
   {
+    "id": "comment-1770289050951",
+    "pseudo": "simon",
+    "message": "très apprend le métier web designer et les subtilités de se métier",
+    "tag": "design",
+    "createdAt": "2026-02-05T10:57:30.951Z"
+  },
+  {
+    "id": "comment-1770287312667",
+    "pseudo": "Mehdi",
+    "message": "Plateforme intuitive et simple d'utilisation je recommande vivement !",
+    "tag": "web",
+    "createdAt": "2026-02-05T10:28:32.667Z"
+  },
+  {
     "id": "comment-1770285008681",
     "pseudo": "Antonio",
     "message": "j'ai appris plus q'en une 1 heure de techno.",
