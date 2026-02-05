@@ -1,5 +1,33 @@
 [
   {
+    "id": "comment-1770285008681",
+    "pseudo": "Antonio",
+    "message": "j'ai appris plus q'en une 1 heure de techno.",
+    "tag": "web",
+    "createdAt": "2026-02-05T09:50:08.681Z"
+  },
+  {
+    "id": "comment-1770284229218",
+    "pseudo": "Albert,Philéas",
+    "message": "Merci pour cet super atelier",
+    "tag": "web",
+    "createdAt": "2026-02-05T09:37:09.218Z"
+  },
+  {
+    "id": "comment-1770283250194",
+    "pseudo": "Ethan  et Mattew",
+    "message": "Cet atelier, je l'ai trouvé bien je me voit bien continuer plus tard. / Ethan\ncela et tres bien je pense continuer plus tar dans ce projet / Mattew",
+    "tag": "code",
+    "createdAt": "2026-02-05T09:20:50.194Z"
+  },
+  {
+    "id": "comment-1770282115181",
+    "pseudo": "léo/allan",
+    "message": "l'atelier est très intéressant montrant correctement les basses du code est de la programmation",
+    "tag": "code",
+    "createdAt": "2026-02-05T09:01:55.181Z"
+  },
+  {
     "id": "comment-1770281029525",
     "pseudo": "charly lenaic et leonard",
     "message": "super intéressant et amusant et stylé !!!!!!!",
