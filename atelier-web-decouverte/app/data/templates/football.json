@@ -1,0 +1,267 @@
+{
+  "id": "football",
+  "name": "Football",
+  "description": "Site pour les fans de foot - Ton club, tes stats, tes joueurs preferes !",
+  "emoji": "⚽",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton nom et ton poste de predilection",
+    "Indique ton club prefere et pourquoi",
+    "Partage tes stats si tu joues (buts, passes...)",
+    "Liste tes joueurs preferes de tous les temps",
+    "Raconte ton meilleur souvenir foot"
+  ],
+  "settings": {
+    "siteName": "Football Fan",
+    "siteDescription": "Ma passion pour le foot",
+    "primaryColor": "#1e3a5f",
+    "backgroundColor": "#f0f9f0",
+    "textColor": "#1a1a1a",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-foot",
+      "type": "header",
+      "width": "full",
+      "title": "⚽ [TON PSEUDO]",
+      "subtitle": "Football Fan",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Mon Club", "href": "#club" },
+        { "label": "Mes Stats", "href": "#stats" },
+        { "label": "Legends", "href": "#legends" }
+      ],
+      "backgroundColor": "#1e3a5f",
+      "textColor": "#ffffff",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-foot",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON NOM/PSEUDO]",
+      "subtitle": "[DECRIS-TOI - Ex: Fan du [Club] depuis 2015, je joue au poste de milieu offensif dans mon club amateur et je vis pour le foot !]",
+      "buttonText": "Mes stats",
+      "buttonColor": "#4ade80",
+      "backgroundImage": "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1e3a5f",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-foot1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-club",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=800&h=400&fit=crop",
+      "title": "Mon Club de Coeur : [NOM DU CLUB]",
+      "description": "[POURQUOI CE CLUB - Ex: Je supporte le PSG depuis que j'ai 8 ans. Mon pere m'a emmene au Parc pour la premiere fois et j'ai eu des frissons. Depuis, je ne rate aucun match !]",
+      "buttonText": "Allez [Club]!",
+      "buttonColor": "#1e3a5f",
+      "backgroundColor": "#ffffff",
+      "textColor": "#1a1a1a",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-foot2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-stats",
+      "type": "heading",
+      "width": "full",
+      "content": "📊 Mes Stats (si tu joues)",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1e3a5f"
+    },
+    {
+      "id": "spacer-foot3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "stats-foot",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Matchs joues", "icon": "⚽" },
+        { "value": "[???]", "label": "Buts marques", "icon": "🥅" },
+        { "value": "[???]", "label": "Passes decisives", "icon": "🎯" },
+        { "value": "[???]", "label": "Trophees", "icon": "🏆" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1e3a5f",
+      "textColor": "#ffffff",
+      "accentColor": "#4ade80"
+    },
+    {
+      "id": "text-stats",
+      "type": "text",
+      "width": "full",
+      "content": "[SI TU NE JOUES PAS, REMPLACE PAR : Je ne joue pas en club mais je tape le ballon avec les potes tous les weekends !]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-foot4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-legends",
+      "type": "heading",
+      "width": "full",
+      "content": "🌟 Mes Joueurs Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1e3a5f"
+    },
+    {
+      "id": "spacer-foot5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-legends",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🥇",
+          "title": "[JOUEUR 1]",
+          "description": "[Ex: Zidane - Le plus grand joueur francais, sa volée en finale 2002 c'est l'art]"
+        },
+        {
+          "icon": "🥈",
+          "title": "[JOUEUR 2]",
+          "description": "[Ex: Messi - Le GOAT, 8 Ballons d'Or, c'est irréel]"
+        },
+        {
+          "icon": "🥉",
+          "title": "[JOUEUR 3]",
+          "description": "[Ex: Mbappe - La fierte francaise, futur meilleur du monde]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#ffffff",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-foot6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-foot",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=600&h=400&fit=crop", "alt": "Stade" },
+        { "src": "https://images.unsplash.com/photo-1522778119026-d647f0596c20?w=600&h=400&fit=crop", "alt": "Supporters" },
+        { "src": "https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=600&h=400&fit=crop", "alt": "But" },
+        { "src": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&h=400&fit=crop", "alt": "Match" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-foot7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-foot",
+      "type": "quote",
+      "width": "full",
+      "content": "[TON MEILLEUR SOUVENIR FOOT - Ex: La finale de la Coupe du Monde 2018, j'etais chez mes grands-parents, on a tous pleure de joie quand Lloris a souleve le trophee. Moment magique !]",
+      "author": "[Ton prenom]",
+      "style": "filled",
+      "backgroundColor": "#1e3a5f",
+      "textColor": "#ffffff",
+      "accentColor": "#4ade80"
+    },
+    {
+      "id": "spacer-foot8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-foot",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Ton poste prefere ?", "answer": "[REPONDS - Ex: Milieu offensif, j'adore creer des occasions et marquer !]" },
+        { "question": "Ta competition preferee ?", "answer": "[REPONDS - Ex: La Ligue des Champions, l'hymne me donne des frissons a chaque fois]" },
+        { "question": "Le match de tes reves ?", "answer": "[REPONDS - Ex: Une finale de Coupe du Monde France vs Bresil !]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#f0f9f0",
+      "textColor": "#1a1a1a",
+      "accentColor": "#1e3a5f"
+    },
+    {
+      "id": "spacer-foot9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-foot",
+      "type": "cta",
+      "width": "full",
+      "title": "On parle foot ? ⚽",
+      "description": "[TES CONTACTS - Ex: Retrouve-moi sur Twitter @tonpseudo pour parler foot, debattre des transferts et vivre les matchs ensemble !]",
+      "buttonText": "Me suivre",
+      "buttonColor": "#1e3a5f",
+      "backgroundColor": "#4ade80",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-foot10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-foot",
+      "type": "footer",
+      "width": "full",
+      "text": "⚽ Site cree par [TON PRENOM] | Fan de foot depuis [ANNEE] | Allez les Bleus! 🇫🇷",
+      "showSocials": true,
+      "socials": [
+        { "icon": "twitter", "url": "#" },
+        { "icon": "instagram", "url": "#" }
+      ],
+      "backgroundColor": "#1e3a5f",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ]
+}

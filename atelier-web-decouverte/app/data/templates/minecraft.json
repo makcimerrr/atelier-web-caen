@@ -1,0 +1,243 @@
+{
+  "id": "minecraft",
+  "name": "Minecraft",
+  "description": "Site pour les fans de Minecraft - Partage tes builds et aventures !",
+  "emoji": "⛏️",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton pseudo Minecraft dans le hero",
+    "Decris 3 de tes meilleures constructions",
+    "Ajoute tes stats (heures, diamonds, builds)",
+    "Reponds aux questions de la FAQ avec tes infos",
+    "Si tu as un serveur, ajoute l'IP dans le CTA"
+  ],
+  "settings": {
+    "siteName": "Minecraft World",
+    "siteDescription": "Mon univers Minecraft",
+    "primaryColor": "#50C878",
+    "backgroundColor": "#2d2d2d",
+    "textColor": "#ffffff",
+    "fontFamily": "mono",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-mc",
+      "type": "header",
+      "width": "full",
+      "title": "⛏️ MINECRAFT",
+      "subtitle": "Mon Monde",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Builds", "href": "#builds" },
+        { "label": "Aventures", "href": "#aventures" },
+        { "label": "Serveur", "href": "#serveur" }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#50C878",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-mc",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO MINECRAFT]",
+      "subtitle": "[DECRIS-TOI - Ex: Builder creatif depuis 2015, specialise dans les chateaux medievaux et la redstone !]",
+      "buttonText": "Voir mes builds",
+      "buttonColor": "#50C878",
+      "backgroundImage": "https://images.unsplash.com/photo-1563207153-f403bf289096?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-mc1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-mc",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]h", "label": "Heures de jeu", "icon": "⏰" },
+        { "value": "[???]", "label": "Builds termines", "icon": "🏗️" },
+        { "value": "[???]", "label": "Diamonds trouves", "icon": "💎" },
+        { "value": "[???]", "label": "Mondes crees", "icon": "🌍" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#3d3d3d",
+      "textColor": "#ffffff",
+      "accentColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-builds",
+      "type": "heading",
+      "width": "full",
+      "content": "🏰 Mes Constructions",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "card-build1",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=400&fit=crop",
+      "title": "[NOM DU BUILD 1 - Ex: Chateau Medieval]",
+      "description": "[DECRIS TA CONSTRUCTION - Materiaux utilises, temps passe, nombre de blocs, inspiration...]",
+      "buttonText": "Voir en detail",
+      "buttonColor": "#50C878",
+      "backgroundColor": "#3d3d3d",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-mc4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-builds",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🏠",
+          "title": "[BUILD 2]",
+          "description": "[Description courte - type, taille, particularite]"
+        },
+        {
+          "icon": "⚙️",
+          "title": "[BUILD REDSTONE]",
+          "description": "[Si tu fais de la redstone - ferme auto, porte secrete, etc.]"
+        },
+        {
+          "icon": "🌳",
+          "title": "[BUILD 3]",
+          "description": "[Autre construction - village, ferme, monument...]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#4a4a4a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-mc5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-mc",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1563207153-f403bf289096?w=600&h=400&fit=crop", "alt": "Build 1" },
+        { "src": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&h=400&fit=crop", "alt": "Build 2" },
+        { "src": "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=600&h=400&fit=crop", "alt": "Build 3" },
+        { "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop", "alt": "Landscape" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-mc6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-faq",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Quel est ton mode de jeu prefere ?", "answer": "[REPONDS - Ex: Survie Hardcore, j'adore le challenge de ne pas mourir !]" },
+        { "question": "Java ou Bedrock ?", "answer": "[REPONDS - Ex: Java Edition pour les mods et les shaders]" },
+        { "question": "Tes mods/shaders preferes ?", "answer": "[REPONDS - Ex: OptiFine + BSL Shaders pour les graphismes, et Create pour la redstone avancee]" },
+        { "question": "Un conseil pour les debutants ?", "answer": "[REPONDS - Ex: Ne jamais creuser sous ses pieds, et toujours avoir un seau d'eau sur soi !]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff",
+      "accentColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-mc",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA CITATION OU MOMENT MEMORABLE - Ex: Le jour ou j'ai trouve ma premiere netherite apres 3h de recherche, c'etait magique !]",
+      "author": "[Ton pseudo]",
+      "style": "bordered",
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff",
+      "accentColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-mc",
+      "type": "cta",
+      "width": "full",
+      "title": "Rejoins mon serveur ! 🎮",
+      "description": "[SI TU AS UN SERVEUR : IP: play.tonserveur.fr - Sinon ecris : Pas de serveur pour le moment, mais ajoute-moi sur Discord : TonPseudo#1234]",
+      "buttonText": "Se connecter",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#50C878",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-mc9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-mc",
+      "type": "footer",
+      "width": "full",
+      "text": "⛏️ Craft with love by [TON PRENOM] | Mineur depuis [ANNEE] | \"Never dig straight down!\"",
+      "showSocials": true,
+      "socials": [
+        { "icon": "youtube", "url": "#" },
+        { "icon": "twitter", "url": "#" }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#50C878",
+      "style": "centered"
+    }
+  ]
+}

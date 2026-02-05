@@ -1,0 +1,296 @@
+{
+  "id": "site-1770294014169-ni3cjbwb6",
+  "studentInfo": {
+    "nom": "lepareur",
+    "prenom": "lola",
+    "email": "lolalepareur199@gmail.com"
+  },
+  "blocks": [
+    {
+      "id": "header-mc",
+      "type": "header",
+      "width": "full",
+      "title": "⛏️ MINECRAFT",
+      "subtitle": "la ville du futur",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Accueil",
+          "href": "#"
+        },
+        {
+          "label": "Builds",
+          "href": "#builds"
+        },
+        {
+          "label": "Aventures",
+          "href": "#aventures"
+        },
+        {
+          "label": "Serveur",
+          "href": "#serveur"
+        }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#50C878",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-mc",
+      "type": "hero",
+      "width": "full",
+      "title": "lola",
+      "subtitle": "Vous trouverez sur ce serveur de LOLA, ma. maison, des machines à farm, des magasins, un hotel avec piscine, un parc, une bibliothèque et pleins de choses à venir ...\n\nPas de méchanceté, que du fun et de la bienveillance ",
+      "buttonText": "",
+      "buttonColor": "#dc2626",
+      "backgroundImage": "https://images.unsplash.com/photo-1563207153-f403bf289096?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#7c3aed",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-mc1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-mc",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "7h",
+          "label": "Heures de jeu",
+          "icon": "⏰"
+        },
+        {
+          "value": "20",
+          "label": "Builds termines",
+          "icon": "🏗️"
+        },
+        {
+          "value": "1",
+          "label": "Diamonds trouves",
+          "icon": "💎"
+        },
+        {
+          "value": "1",
+          "label": "Mondes crees",
+          "icon": "🌍"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#3d3d3d",
+      "textColor": "#ffffff",
+      "accentColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-builds",
+      "type": "heading",
+      "width": "full",
+      "content": "🏰 Mes Constructions",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "card-build1",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&h=400&fit=crop",
+      "title": "Maison et farm",
+      "description": "J'ai créé la maison en pierre, dedans il y des chambres, une salle d'enchantement, avec une cuisine, un salon et des salles de bains",
+      "buttonText": "J'ai aussi créé une ferme qui me permet de créer de la nourriture à l'infini, ceux sont des poulets précuits",
+      "buttonColor": "#ec4899",
+      "backgroundColor": "#3d3d3d",
+      "textColor": "#ffffff",
+      "rounded": "lg",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-mc4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-builds",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🏠",
+          "title": "MA VILLE",
+          "description": "Piscine en construction, à terme le parc et la bibliothèque pour Soizic "
+        },
+        {
+          "icon": "⚙️",
+          "title": "[BUILD REDSTONE]",
+          "description": "A voir plus tard"
+        },
+        {
+          "icon": "🌳",
+          "title": "[BUILD 3]",
+          "description": "A venir"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#27272a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-mc5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-mc",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop",
+          "alt": "Build 1"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
+          "alt": "Build 2"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop",
+          "alt": "Build 3"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=500&fit=crop",
+          "alt": "Landscape"
+        }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-mc6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-faq",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        {
+          "question": "Quel est ton mode de jeu prefere ?",
+          "answer": "[REPONDS - Ex: Survie Hardcore, j'adore le challenge de ne pas mourir !]"
+        },
+        {
+          "question": "Java ou Bedrock ?",
+          "answer": "[REPONDS - Ex: Java Edition pour les mods et les shaders]"
+        },
+        {
+          "question": "Tes mods/shaders preferes ?",
+          "answer": "[REPONDS - Ex: OptiFine + BSL Shaders pour les graphismes, et Create pour la redstone avancee]"
+        },
+        {
+          "question": "Un conseil pour les debutants ?",
+          "answer": "[REPONDS - Ex: Ne jamais creuser sous ses pieds, et toujours avoir un seau d'eau sur soi !]"
+        }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff",
+      "accentColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-mc",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA CITATION OU MOMENT MEMORABLE - Ex: Le jour ou j'ai trouve ma premiere netherite apres 3h de recherche, c'etait magique !]",
+      "author": "[Ton pseudo]",
+      "style": "bordered",
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff",
+      "accentColor": "#50C878"
+    },
+    {
+      "id": "spacer-mc8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-mc",
+      "type": "cta",
+      "width": "full",
+      "title": "Rejoins mon serveur ! 🎮",
+      "description": "[SI TU AS UN SERVEUR : IP: play.tonserveur.fr - Sinon ecris : Pas de serveur pour le moment, mais ajoute-moi sur Discord : TonPseudo#1234]",
+      "buttonText": "Se connecter",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#50C878",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-mc9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-mc",
+      "type": "footer",
+      "width": "full",
+      "text": "⛏️ Craft with love by [TON PRENOM] | Mineur depuis [ANNEE] | \"Never dig straight down!\"",
+      "showSocials": true,
+      "socials": [
+        {
+          "icon": "youtube",
+          "url": "#"
+        },
+        {
+          "icon": "twitter",
+          "url": "#"
+        }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#50C878",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "Minecraft World",
+    "siteDescription": "Mon univers Minecraft",
+    "primaryColor": "#50C878",
+    "backgroundColor": "#2d2d2d",
+    "textColor": "#ffffff",
+    "fontFamily": "mono",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T12:20:14.169Z"
+}

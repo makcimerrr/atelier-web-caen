@@ -1,0 +1,253 @@
+{
+  "id": "clash-royale",
+  "name": "Clash Royale",
+  "description": "Fan site du jeu Clash Royale - Complete les textes et personnalise les couleurs !",
+  "emoji": "👑",
+  "difficulty": "facile",
+  "tasks": [
+    "Change le titre du hero par ton pseudo de joueur",
+    "Modifie la description avec ton deck prefere",
+    "Remplace [????] par tes vrais stats (trophees, victoires...)",
+    "Personnalise les 4 cartes de ton deck favori",
+    "Ajoute le nom de ton clan dans le CTA"
+  ],
+  "settings": {
+    "siteName": "Clash Royale Fan",
+    "siteDescription": "Mon site de fan Clash Royale",
+    "primaryColor": "#FFD700",
+    "backgroundColor": "#1a1a2e",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-cr",
+      "type": "header",
+      "width": "full",
+      "title": "👑 Clash Royale",
+      "subtitle": "Fan Site",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Mon Deck", "href": "#deck" },
+        { "label": "Stats", "href": "#stats" },
+        { "label": "Clan", "href": "#clan" }
+      ],
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#FFD700",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-cr",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO ICI]",
+      "subtitle": "[DECRIS TON STYLE DE JEU - Ex: Main Hog Rider 2.6, joueur agressif depuis 2016, Champion League chaque saison !]",
+      "buttonText": "Voir mon deck",
+      "buttonColor": "#FFD700",
+      "backgroundImage": "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-cr1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-cr",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[????]", "label": "Trophees", "icon": "🏆" },
+        { "value": "[????]", "label": "Victoires", "icon": "⚔️" },
+        { "value": "[????]", "label": "Cartes Max", "icon": "🃏" },
+        { "value": "[????]", "label": "Record", "icon": "📈" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#16213e",
+      "textColor": "#ffffff",
+      "accentColor": "#FFD700"
+    },
+    {
+      "id": "spacer-cr2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-deck",
+      "type": "heading",
+      "width": "full",
+      "content": "🃏 Mon Deck Favori",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FFD700"
+    },
+    {
+      "id": "text-deck-intro",
+      "type": "text",
+      "width": "full",
+      "content": "[DECRIS TON DECK - Ex: Deck Hog 2.6 cycle rapide, parfait pour les contre-attaques et la defense !]",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#a1a1aa"
+    },
+    {
+      "id": "spacer-cr3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-deck",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "👑",
+          "title": "[CARTE WIN CON]",
+          "description": "[Ta carte principale pour gagner - Hog, Giant, Golem...]"
+        },
+        {
+          "icon": "⚡",
+          "title": "[CARTE SPELL]",
+          "description": "[Ton sort prefere - Fireball, Log, Zap...]"
+        },
+        {
+          "icon": "🛡️",
+          "title": "[CARTE DEFENSE]",
+          "description": "[Ta meilleure defense - Tesla, Cannon, Mini Pekka...]"
+        },
+        {
+          "icon": "💀",
+          "title": "[CARTE SUPPORT]",
+          "description": "[Carte de support - Musketeer, Ice Spirit...]"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#0f3460",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-cr4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-cr",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&h=400&fit=crop", "alt": "Gaming setup" },
+        { "src": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop", "alt": "Esport" },
+        { "src": "https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=600&h=400&fit=crop", "alt": "Mobile gaming" },
+        { "src": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&h=400&fit=crop", "alt": "Victory" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-cr5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-cr",
+      "type": "quote",
+      "width": "full",
+      "content": "[ECRIS TA PHRASE DE VICTOIRE OU TON CONSEIL - Ex: Un bon joueur ne rage quit jamais, il analyse ses erreurs !]",
+      "author": "[Ton pseudo]",
+      "style": "bordered",
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#ffffff",
+      "accentColor": "#FFD700"
+    },
+    {
+      "id": "spacer-cr6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-clan",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1542751110-97427bbecf20?w=800&h=400&fit=crop",
+      "title": "Mon Clan : [NOM DU CLAN]",
+      "description": "[DECRIS TON CLAN - Nombre de membres, trophees requis, ambiance, guerres de clan...]",
+      "buttonText": "Nous rejoindre",
+      "buttonColor": "#FFD700",
+      "backgroundColor": "#16213e",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-cr7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-cr",
+      "type": "cta",
+      "width": "full",
+      "title": "Rejoins mon clan !",
+      "description": "[TAG DU CLAN : #XXXXXX] - On cherche des joueurs actifs pour les guerres de clan ! Minimum [????] trophees.",
+      "buttonText": "Copier le tag",
+      "buttonColor": "#FFD700",
+      "backgroundColor": "#e94560",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-cr8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-cr",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "youtube", "url": "#" },
+        { "platform": "twitter", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#FFD700"
+    },
+    {
+      "id": "spacer-cr9",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-cr",
+      "type": "footer",
+      "width": "full",
+      "text": "Site cree par [TON PRENOM] | Fan de Clash Royale depuis [ANNEE] | GG WP!",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#FFD700",
+      "style": "centered"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "id": "dessin-art",
+  "name": "Dessin & Art",
+  "description": "Portfolio artistique - Presente tes creations et ton univers !",
+  "emoji": "🎨",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton nom d'artiste",
+    "Decris ton style artistique",
+    "Ajoute tes meilleures oeuvres",
+    "Liste tes outils et techniques",
+    "Partage tes commissions ou contact"
+  ],
+  "settings": {
+    "siteName": "Artist Portfolio",
+    "siteDescription": "Mon univers artistique",
+    "primaryColor": "#8B5CF6",
+    "backgroundColor": "#faf5ff",
+    "textColor": "#1e1b4b",
+    "fontFamily": "inter",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-art",
+      "type": "header",
+      "width": "full",
+      "title": "🎨 [TON NOM D'ARTISTE]",
+      "subtitle": "Digital Artist",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Portfolio", "href": "#" },
+        { "label": "A propos", "href": "#about" },
+        { "label": "Commissions", "href": "#commissions" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "backgroundColor": "#ffffff",
+      "textColor": "#8B5CF6",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-art",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON NOM D'ARTISTE]",
+      "subtitle": "[DECRIS TON ART - Ex: Illustratrice digitale specialisee dans le character design et le fanart. J'aime creer des personnages colores et expressifs !]",
+      "buttonText": "Voir mon portfolio",
+      "buttonColor": "#8B5CF6",
+      "backgroundImage": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#faf5ff",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-art1",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-portfolio",
+      "type": "heading",
+      "width": "full",
+      "content": "Portfolio",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1e1b4b"
+    },
+    {
+      "id": "spacer-art2",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "gallery-portfolio",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=600&fit=crop", "alt": "Artwork 1" },
+        { "src": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=600&fit=crop", "alt": "Artwork 2" },
+        { "src": "https://images.unsplash.com/photo-1547891654-e66ed7ebb968?w=600&h=600&fit=crop", "alt": "Artwork 3" },
+        { "src": "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&h=600&fit=crop", "alt": "Artwork 4" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-art3",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "gallery-portfolio2",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1561214115-f2f134cc4912?w=600&h=600&fit=crop", "alt": "Artwork 5" },
+        { "src": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&h=600&fit=crop", "alt": "Artwork 6" },
+        { "src": "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&h=600&fit=crop", "alt": "Artwork 7" },
+        { "src": "https://images.unsplash.com/photo-1482160549825-59d1b23cb208?w=600&h=600&fit=crop", "alt": "Artwork 8" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "text-portfolio",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR TES PROPRES CREATIONS]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#a1a1aa"
+    },
+    {
+      "id": "spacer-art4",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-about",
+      "type": "heading",
+      "width": "full",
+      "content": "A propos",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1e1b4b"
+    },
+    {
+      "id": "spacer-art5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-about",
+      "type": "text",
+      "width": "full",
+      "content": "[PRESENTE-TOI - Ex: Je suis [Ton Prenom], artiste autodidacte de [age] ans. Je dessine depuis que je suis tout petit et j'ai commence le digital art en 2020. Mon style est influence par le manga et l'animation japonaise. J'adore creer des personnages originaux et des fanarts de mes series preferees. Mon reve ? Travailler dans l'animation ou le jeu video !]",
+      "fontSize": "lg",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#52525b"
+    },
+    {
+      "id": "spacer-art6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "features-style",
+      "type": "features",
+      "width": "full",
+      "title": "Ce que je fais",
+      "features": [
+        {
+          "icon": "👤",
+          "title": "Character Design",
+          "description": "[Ex: Creation de personnages originaux, design detaille]"
+        },
+        {
+          "icon": "🎭",
+          "title": "Fanart",
+          "description": "[Ex: Illustrations de personnages de manga, anime, jeux video]"
+        },
+        {
+          "icon": "🖼️",
+          "title": "Illustrations",
+          "description": "[Ex: Scenes, decors, illustrations completes]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#f5f3ff",
+      "textColor": "#1e1b4b"
+    },
+    {
+      "id": "spacer-art7",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-tools",
+      "type": "heading",
+      "width": "full",
+      "content": "Mes Outils",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1e1b4b"
+    },
+    {
+      "id": "spacer-art8",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-tools",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[TABLETTE] - Ex: Wacom Intuos Pro Medium",
+        "[LOGICIEL PRINCIPAL] - Ex: Clip Studio Paint Pro",
+        "[AUTRES LOGICIELS] - Ex: Photoshop pour les retouches",
+        "[TRADITIONNEL] - Ex: Copic markers, aquarelle",
+        "[INSPIRATION] - Ex: Pinterest, ArtStation, Instagram"
+      ],
+      "style": "check",
+      "textColor": "#1e1b4b",
+      "iconColor": "#8B5CF6"
+    },
+    {
+      "id": "spacer-art9",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "quote-art",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA PHILOSOPHIE ARTISTIQUE - Ex: L'art c'est exprimer ce qu'on ne peut pas dire avec des mots. Chaque dessin est un morceau de mon ame.]",
+      "author": "[Ton nom d'artiste]",
+      "style": "filled",
+      "backgroundColor": "#8B5CF6",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-art10",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-commissions",
+      "type": "heading",
+      "width": "full",
+      "content": "Commissions",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1e1b4b"
+    },
+    {
+      "id": "spacer-art11",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "pricing-art",
+      "type": "pricing",
+      "width": "auto",
+      "title": "[TYPE DE COMMISSION]",
+      "price": "[PRIX]€",
+      "period": "",
+      "features": [
+        "[INCLUS 1 - Ex: Personnage complet]",
+        "[INCLUS 2 - Ex: Fond simple/complexe]",
+        "[INCLUS 3 - Ex: 2 revisions incluses]",
+        "[INCLUS 4 - Ex: Fichier HD + web]"
+      ],
+      "buttonText": "Commander",
+      "buttonColor": "#8B5CF6",
+      "backgroundColor": "#ffffff",
+      "textColor": "#1e1b4b",
+      "highlighted": true
+    },
+    {
+      "id": "text-commissions",
+      "type": "text",
+      "width": "full",
+      "content": "[STATUT - Ex: ✅ Commissions OUVERTES | ❌ Commissions FERMEES - Attente: 2 semaines]",
+      "fontSize": "base",
+      "fontWeight": "bold",
+      "textAlign": "center",
+      "textColor": "#8B5CF6"
+    },
+    {
+      "id": "spacer-art12",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "cta-art",
+      "type": "cta",
+      "width": "full",
+      "title": "Suis mon travail ! 🎨",
+      "description": "[TES CONTACTS - Ex: Instagram @tonpseudo pour mes WIP et mes nouvelles creations | Commissions: ton@email.com]",
+      "buttonText": "Me contacter",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#8B5CF6",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-art13",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-art",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "twitter", "url": "#" },
+        { "platform": "youtube", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#8B5CF6"
+    },
+    {
+      "id": "spacer-art14",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-art",
+      "type": "footer",
+      "width": "full",
+      "text": "🎨 [TON NOM D'ARTISTE] | Artist since [ANNEE] | \"Every artist was first an amateur\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1e1b4b",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ]
+}

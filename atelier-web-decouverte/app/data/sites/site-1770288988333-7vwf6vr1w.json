@@ -1,0 +1,165 @@
+{
+  "id": "site-1770288988333-7vwf6vr1w",
+  "studentInfo": {
+    "nom": "barbier",
+    "prenom": "Simon",
+    "email": "simonbarbier730@gmail.com"
+  },
+  "blocks": [
+    {
+      "id": "block-1770288065553-4lclkmlhl",
+      "width": "full",
+      "type": "text",
+      "content": "Delidrone",
+      "fontSize": "2xl",
+      "fontWeight": "bold",
+      "textAlign": "center",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "block-1770288334934-cxn19tda0",
+      "width": "full",
+      "type": "hero",
+      "title": "Bienvenue sur mon site",
+      "subtitle": "Découvrez nos services et laissez-nous vous accompagner dans vos projets.",
+      "buttonText": "décrouvrez-nous ",
+      "buttonColor": "#2563eb",
+      "backgroundImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
+      "backgroundColor": "#1e293b",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "block-1770288800376-q6eajxmxm",
+      "width": "full",
+      "type": "cta",
+      "title": "prêt à construire, programmer, piloter",
+      "description": "Rejoignez des millions d'utilisateurs satisfaits dès aujourd'hui.",
+      "buttonText": "Commencer maintenant",
+      "buttonColor": "#dc2626",
+      "backgroundColor": "#ea580c",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "block-1770288422648-9uxezxhdm",
+      "width": "full",
+      "type": "stats",
+      "stats": [
+        {
+          "value": "100+",
+          "label": "marques différente",
+          "icon": "😊"
+        },
+        {
+          "value": "2M",
+          "label": "drones achetés à l'année",
+          "icon": "🚀"
+        },
+        {
+          "value": "5ans",
+          "label": "durée de vie d'un drone",
+          "icon": "⭐"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#fefce8",
+      "textColor": "#ea580c",
+      "accentColor": "#dc2626"
+    },
+    {
+      "id": "block-1770288589312-6hyfn4erv",
+      "width": "full",
+      "type": "gallery",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop",
+          "alt": "Image 1"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=500&fit=crop",
+          "alt": "Image 2"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=500&fit=crop",
+          "alt": "Image 3"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=500&fit=crop",
+          "alt": "Image 4"
+        }
+      ],
+      "columns": 2,
+      "gap": "md",
+      "rounded": "md"
+    },
+    {
+      "id": "block-1770288602545-edbo9k2qu",
+      "width": "auto",
+      "type": "pricing",
+      "title": "Formule Pro",
+      "price": "120€",
+      "period": "/mois",
+      "features": [
+        "mesure météo pour le drone",
+        "stabilité correctement à 5O km de vent",
+        "vision à 360° avec casque VR"
+      ],
+      "buttonText": "Choisir",
+      "buttonColor": "#dc2626",
+      "backgroundColor": "#fefce8",
+      "textColor": "#ea580c",
+      "highlighted": false
+    },
+    {
+      "id": "block-1770288302628-1t62wldwe",
+      "width": "auto",
+      "type": "button",
+      "text": "Cliquez ici",
+      "variant": "filled",
+      "size": "md",
+      "color": "#2563eb",
+      "fullWidth": false,
+      "rounded": "md"
+    },
+    {
+      "id": "block-1770288760060-cw5vys30q",
+      "width": "auto",
+      "type": "socials",
+      "links": [
+        {
+          "platform": "facebook",
+          "url": "#"
+        },
+        {
+          "platform": "twitter",
+          "url": "#"
+        },
+        {
+          "platform": "instagram",
+          "url": "#"
+        },
+        {
+          "platform": "linkedin",
+          "url": "#"
+        }
+      ],
+      "style": "filled",
+      "size": "md",
+      "color": "#ea580c"
+    }
+  ],
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T10:56:28.333Z"
+}

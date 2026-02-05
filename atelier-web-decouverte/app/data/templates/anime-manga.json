@@ -1,0 +1,310 @@
+{
+  "id": "anime-manga",
+  "name": "Anime & Manga",
+  "description": "Site pour les fans d'anime et manga - Partage ta passion otaku !",
+  "emoji": "🎌",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton pseudo otaku",
+    "Liste tes animes et mangas preferes",
+    "Presente ton Top 3 personnages",
+    "Partage ta collection (figurines, mangas...)",
+    "Ajoute tes sites et chaines favorites"
+  ],
+  "settings": {
+    "siteName": "Otaku Zone",
+    "siteDescription": "Ma passion anime & manga",
+    "primaryColor": "#FF1493",
+    "backgroundColor": "#1a1625",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-anime",
+      "type": "header",
+      "width": "full",
+      "title": "🎌 [TON PSEUDO OTAKU]",
+      "subtitle": "Anime & Manga Fan",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Mes Animes", "href": "#animes" },
+        { "label": "Top Persos", "href": "#persos" },
+        { "label": "Collection", "href": "#collection" }
+      ],
+      "backgroundColor": "#1a1625",
+      "textColor": "#FF1493",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-anime",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS-TOI - Ex: Fan d'anime depuis mes 10 ans, j'ai commence avec Dragon Ball et maintenant je devore 5 animes par saison ! Mes genres preferes : Shonen et Isekai]",
+      "buttonText": "Voir mes recommandations",
+      "buttonColor": "#FF1493",
+      "backgroundImage": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1625",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-anime1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-anime",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Animes vus", "icon": "📺" },
+        { "value": "[???]", "label": "Mangas lus", "icon": "📖" },
+        { "value": "[???]", "label": "Figurines", "icon": "🎎" },
+        { "value": "[???]", "label": "Cosplays", "icon": "🎭" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff",
+      "accentColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-topanime",
+      "type": "heading",
+      "width": "full",
+      "content": "🏆 Mon Top Animes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-topanime",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🥇",
+          "title": "[ANIME 1]",
+          "description": "[Ex: Attack on Titan - Chef d'oeuvre absolu, le plot twist de la saison 4 m'a detruit]"
+        },
+        {
+          "icon": "🥈",
+          "title": "[ANIME 2]",
+          "description": "[Ex: Demon Slayer - L'animation est juste INCROYABLE, Ufotable sont des genies]"
+        },
+        {
+          "icon": "🥉",
+          "title": "[ANIME 3]",
+          "description": "[Ex: One Piece - 1000+ episodes et toujours aussi hype !]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-manga",
+      "type": "heading",
+      "width": "full",
+      "content": "📚 Mes Mangas Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-manga",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[MANGA 1] - Ex: Jujutsu Kaisen - Le nouveau roi du shonen",
+        "[MANGA 2] - Ex: Chainsaw Man - Tatsuki Fujimoto est un genie fou",
+        "[MANGA 3] - Ex: Spy x Family - Trop mignon et drole",
+        "[MANGA 4] - Ex: My Hero Academia - Le parfait manga de super-heros",
+        "[MANGA 5] - Ex: Tokyo Revengers - Les retournements sont ouf"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-anime",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=400&fit=crop", "alt": "Anime art" },
+        { "src": "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=600&h=400&fit=crop", "alt": "Manga collection" },
+        { "src": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=600&h=400&fit=crop", "alt": "Figurines" },
+        { "src": "https://images.unsplash.com/photo-1560393464-5c69a73c5770?w=600&h=400&fit=crop", "alt": "Japan" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-anime7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-persos",
+      "type": "heading",
+      "width": "full",
+      "content": "⭐ Mes Personnages Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime8",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "card-perso1",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=400&fit=crop",
+      "title": "Mon personnage prefere : [NOM]",
+      "description": "[EXPLIQUE POURQUOI - Ex: Levi Ackerman de SNK - Le soldat le plus fort de l'humanite, trop badass et son histoire est tragique. Ses scenes de combat sont legendaires !]",
+      "buttonText": "GOAT",
+      "buttonColor": "#FF1493",
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-anime9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-anime",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA REPLIQUE D'ANIME PREFEREE - Ex: 'Plus Ultra!' - All Might | 'Believe it!' - Naruto | 'I'll take a potato chip... and eat it!' - Light Yagami]",
+      "author": "[Nom du personnage]",
+      "style": "filled",
+      "backgroundColor": "#FF1493",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-anime",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Ton premier anime ?", "answer": "[REPONDS - Ex: Dragon Ball Z quand j'avais 8 ans, sur TF1 le matin avant l'ecole !]" },
+        { "question": "Anime actuel que tu suis ?", "answer": "[REPONDS - Ex: Jujutsu Kaisen saison 2 - L'arc Shibuya est INSANE]" },
+        { "question": "Tu preferes : Sub ou Dub ?", "answer": "[REPONDS - Ex: VOSTFR toujours ! Les voix japonaises sont irreplacables]" },
+        { "question": "Tu as ete a Japan Expo ?", "answer": "[REPONDS - Ex: Oui 3 fois ! J'ai meme fait du cosplay en Tanjiro]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#1a1625",
+      "textColor": "#ffffff",
+      "accentColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-anime",
+      "type": "cta",
+      "width": "full",
+      "title": "Parlons anime ! 🎌",
+      "description": "[TES CONTACTS - Ex: Retrouve-moi sur MyAnimeList: myanimelist.net/profile/tonpseudo ou Discord pour discuter theories !]",
+      "buttonText": "MyAnimeList",
+      "buttonColor": "#1a1625",
+      "backgroundColor": "#FF1493",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-anime",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "twitter", "url": "#" },
+        { "platform": "instagram", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#FF1493"
+    },
+    {
+      "id": "spacer-anime13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-anime",
+      "type": "footer",
+      "width": "full",
+      "text": "🎌 [TON PSEUDO] | Otaku depuis [ANNEE] | \"Anime wa jinsei da!\" (L'anime c'est la vie!)",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1a1625",
+      "textColor": "#FF1493",
+      "style": "centered"
+    }
+  ]
+}

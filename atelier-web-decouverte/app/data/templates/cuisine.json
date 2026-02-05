@@ -1,0 +1,299 @@
+{
+  "id": "cuisine",
+  "name": "Cuisine & Food",
+  "description": "Site pour passionnes de cuisine - Partage tes recettes et creations !",
+  "emoji": "🍳",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton nom de chef ou pseudo foodie",
+    "Decris ta specialite culinaire",
+    "Partage 3-4 de tes recettes preferees",
+    "Liste ton materiel de cuisine",
+    "Ajoute de belles photos de tes plats"
+  ],
+  "settings": {
+    "siteName": "Food Creator",
+    "siteDescription": "Mes recettes et creations",
+    "primaryColor": "#FF6B35",
+    "backgroundColor": "#faf7f5",
+    "textColor": "#2d2d2d",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-food",
+      "type": "header",
+      "width": "full",
+      "title": "🍳 [TON PSEUDO]",
+      "subtitle": "Food Creator",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Recettes", "href": "#recettes" },
+        { "label": "A propos", "href": "#about" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "backgroundColor": "#ffffff",
+      "textColor": "#FF6B35",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-food",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO FOODIE]",
+      "subtitle": "[DECRIS-TOI - Ex: Passionné de cuisine depuis toujours, je partage mes recettes faciles et gourmandes ! Specialite : patisserie francaise et cuisine asiatique fusion]",
+      "buttonText": "Voir mes recettes",
+      "buttonColor": "#FF6B35",
+      "backgroundImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#faf7f5",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-food1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-food",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Recettes", "icon": "📝" },
+        { "value": "[???]", "label": "Followers", "icon": "👥" },
+        { "value": "[???]h", "label": "En cuisine", "icon": "⏰" },
+        { "value": "[???]", "label": "Plats goutes", "icon": "🍽️" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#ffffff",
+      "textColor": "#2d2d2d",
+      "accentColor": "#FF6B35"
+    },
+    {
+      "id": "spacer-food2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-recettes",
+      "type": "heading",
+      "width": "full",
+      "content": "🥘 Mes Recettes Stars",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#2d2d2d"
+    },
+    {
+      "id": "spacer-food3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "card-recette1",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&h=400&fit=crop",
+      "title": "[RECETTE 1 - Ex: Pizza Maison]",
+      "description": "[DESCRIPTION - Ex: Ma recette de pizza napolitaine avec pate 72h de fermentation, sauce tomate San Marzano et mozzarella di bufala. Temps: 30min + repos]",
+      "buttonText": "Voir la recette",
+      "buttonColor": "#FF6B35",
+      "backgroundColor": "#ffffff",
+      "textColor": "#2d2d2d",
+      "rounded": "xl",
+      "shadow": "md"
+    },
+    {
+      "id": "spacer-food4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-recettes",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🍰",
+          "title": "[RECETTE 2]",
+          "description": "[Ex: Tiramisu classique - Recette italienne authentique]"
+        },
+        {
+          "icon": "🍜",
+          "title": "[RECETTE 3]",
+          "description": "[Ex: Ramen maison - Bouillon 12h, chashu fondant]"
+        },
+        {
+          "icon": "🥐",
+          "title": "[RECETTE 4]",
+          "description": "[Ex: Croissants - La recette de ma grand-mere]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#fff8f5",
+      "textColor": "#2d2d2d"
+    },
+    {
+      "id": "spacer-food5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-food",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&h=400&fit=crop", "alt": "Pizza" },
+        { "src": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop", "alt": "Pancakes" },
+        { "src": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&h=400&fit=crop", "alt": "Salade" },
+        { "src": "https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&h=400&fit=crop", "alt": "Dessert" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-food6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-food",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA PHILOSOPHIE CULINAIRE - Ex: La cuisine c'est de l'amour en portion individuelle. Je cuisine avec le coeur et ca se goute !]",
+      "author": "[Ton pseudo]",
+      "style": "bordered",
+      "backgroundColor": "#faf7f5",
+      "textColor": "#2d2d2d",
+      "accentColor": "#FF6B35"
+    },
+    {
+      "id": "spacer-food7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-matos",
+      "type": "heading",
+      "width": "full",
+      "content": "🔪 Mon Materiel",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#2d2d2d"
+    },
+    {
+      "id": "spacer-food8",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-matos",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[COUTEAU] - Ex: Couteau japonais Santoku - Mon indispensable",
+        "[CASSEROLE] - Ex: Set de casseroles en inox - Qualite pro",
+        "[ROBOT] - Ex: KitchenAid Artisan - Pour la patisserie",
+        "[AUTRE] - Ex: Pierre a pizza, mandoline, thermometre de cuisson...",
+        "[BONUS] - Ex: Mon telephone pour les photos Instagram !"
+      ],
+      "style": "check",
+      "textColor": "#2d2d2d",
+      "iconColor": "#FF6B35"
+    },
+    {
+      "id": "spacer-food9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-food",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video-food",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR UNE VIDEO DE RECETTE OU UN DE TES REELS]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-food10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-food",
+      "type": "cta",
+      "width": "full",
+      "title": "Retrouve-moi sur Instagram ! 📸",
+      "description": "[TON INSTAGRAM - Ex: @tonpseudo_food - Je poste mes recettes en stories et mes plats du jour !]",
+      "buttonText": "Me suivre",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#FF6B35",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-food11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-food",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "youtube", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#FF6B35"
+    },
+    {
+      "id": "spacer-food12",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-food",
+      "type": "footer",
+      "width": "full",
+      "text": "🍳 Made with love by [TON PRENOM] | Foodie depuis toujours | \"Life is too short for bad food!\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ]
+}

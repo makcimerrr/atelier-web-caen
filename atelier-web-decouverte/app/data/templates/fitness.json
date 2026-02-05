@@ -1,0 +1,325 @@
+{
+  "id": "fitness",
+  "name": "Fitness & Musculation",
+  "description": "Site pour les sportifs - Partage ton parcours fitness et tes resultats !",
+  "emoji": "💪",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton pseudo fitness",
+    "Decris ton parcours et tes objectifs",
+    "Partage tes stats (poids, records)",
+    "Liste ton programme d'entrainement",
+    "Ajoute des photos de ta transformation"
+  ],
+  "settings": {
+    "siteName": "Fitness Journey",
+    "siteDescription": "Mon parcours fitness",
+    "primaryColor": "#10B981",
+    "backgroundColor": "#111827",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-fitness",
+      "type": "header",
+      "width": "full",
+      "title": "💪 [TON PSEUDO]",
+      "subtitle": "Fitness Addict",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Stats", "href": "#stats" },
+        { "label": "Programme", "href": "#programme" },
+        { "label": "Nutrition", "href": "#nutrition" }
+      ],
+      "backgroundColor": "#111827",
+      "textColor": "#10B981",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-fitness",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS TON PARCOURS - Ex: En transformation depuis 2 ans, j'ai perdu 25kg et gagne en muscle. Le sport a change ma vie et je partage mon parcours pour motiver les autres !]",
+      "buttonText": "Ma transformation",
+      "buttonColor": "#10B981",
+      "backgroundImage": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#111827",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-fitness1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-fitness",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]kg", "label": "Poids actuel", "icon": "⚖️" },
+        { "value": "[???]kg", "label": "Squat PR", "icon": "🦵" },
+        { "value": "[???]kg", "label": "Bench PR", "icon": "💪" },
+        { "value": "[???]", "label": "Seances/semaine", "icon": "📅" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1f2937",
+      "textColor": "#ffffff",
+      "accentColor": "#10B981"
+    },
+    {
+      "id": "spacer-fitness2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-journey",
+      "type": "heading",
+      "width": "full",
+      "content": "📈 Mon Parcours",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#10B981"
+    },
+    {
+      "id": "spacer-fitness3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-journey",
+      "type": "text",
+      "width": "full",
+      "content": "[RACONTE TON HISTOIRE - Ex: J'ai commence la muscu en septembre 2022, je pesais 95kg pour 1m75. Aujourd'hui je suis a 75kg sec avec plus de force qu'avant. Le secret ? La regularite, la patience et une bonne alimentation. Chaque jour je progresse un peu plus !]",
+      "fontSize": "lg",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#9ca3af"
+    },
+    {
+      "id": "spacer-fitness4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-fitness",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop", "alt": "Gym" },
+        { "src": "https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=600&h=400&fit=crop", "alt": "Training" },
+        { "src": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop", "alt": "Weights" },
+        { "src": "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&h=400&fit=crop", "alt": "Progress" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-fitness5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-programme",
+      "type": "heading",
+      "width": "full",
+      "content": "🏋️ Mon Programme",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#10B981"
+    },
+    {
+      "id": "spacer-fitness6",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-programme",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "📅",
+          "title": "Lundi - Push",
+          "description": "[Ex: Pecs, epaules, triceps - Bench, OHP, dips]"
+        },
+        {
+          "icon": "📅",
+          "title": "Mercredi - Pull",
+          "description": "[Ex: Dos, biceps - Rowing, tractions, curls]"
+        },
+        {
+          "icon": "📅",
+          "title": "Vendredi - Legs",
+          "description": "[Ex: Quadris, ischios, mollets - Squat, leg press]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1f2937",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fitness7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-records",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=400&fit=crop",
+      "title": "🏆 Mes Records Personnels",
+      "description": "[TES PR - Ex: Squat: 140kg | Bench: 100kg | Deadlift: 180kg | OHP: 60kg | Total: 420kg - Objectif 500kg club !]",
+      "buttonText": "Let's go!",
+      "buttonColor": "#10B981",
+      "backgroundColor": "#1f2937",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-fitness8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-fitness",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA MOTIVATION - Ex: La douleur que tu ressens aujourd'hui sera la force que tu sentiras demain. No pain, no gain !]",
+      "author": "[Ton pseudo]",
+      "style": "filled",
+      "backgroundColor": "#10B981",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fitness9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-nutrition",
+      "type": "heading",
+      "width": "full",
+      "content": "🥗 Ma Nutrition",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#10B981"
+    },
+    {
+      "id": "spacer-fitness10",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-nutrition",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[CALORIES] - Ex: ~2500 kcal/jour en maintenance",
+        "[PROTEINES] - Ex: 160g de proteines minimum",
+        "[SUPPLEMENTS] - Ex: Whey, creatine, omega 3",
+        "[REPAS] - Ex: 4 repas par jour + collations",
+        "[HYDRATATION] - Ex: 3L d'eau minimum"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#10B981"
+    },
+    {
+      "id": "spacer-fitness11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-fitness",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Comment tu as commence ?", "answer": "[REPONDS - Ex: J'etais complexe par mon poids, un jour j'ai decide que ca suffisait et je me suis inscrit a la salle]" },
+        { "question": "Ton conseil pour debuter ?", "answer": "[REPONDS - Ex: Commencer doucement, bien apprendre les mouvements et etre regulier, c'est ca le secret]" },
+        { "question": "Ta plus grande fierte ?", "answer": "[REPONDS - Ex: Mon premier squat a 100kg, j'ai pleure de joie !]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#111827",
+      "textColor": "#ffffff",
+      "accentColor": "#10B981"
+    },
+    {
+      "id": "spacer-fitness12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-fitness",
+      "type": "cta",
+      "width": "full",
+      "title": "On s'entraine ensemble ? 💪",
+      "description": "[TES CONTACTS - Ex: Retrouve-moi sur Instagram @tonpseudo pour mes workouts et ma progression !]",
+      "buttonText": "Follow",
+      "buttonColor": "#111827",
+      "backgroundColor": "#10B981",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fitness13",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-fitness",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "youtube", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#10B981"
+    },
+    {
+      "id": "spacer-fitness14",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-fitness",
+      "type": "footer",
+      "width": "full",
+      "text": "💪 [TON PSEUDO] | Fitness depuis [ANNEE] | \"Discipline > Motivation\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#111827",
+      "textColor": "#10B981",
+      "style": "centered"
+    }
+  ]
+}

@@ -1,0 +1,339 @@
+{
+  "id": "voyage",
+  "name": "Voyage & Aventure",
+  "description": "Blog de voyage - Partage tes aventures et destinations !",
+  "emoji": "✈️",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton pseudo de voyageur",
+    "Liste les pays que tu as visites",
+    "Partage tes destinations preferees",
+    "Ajoute des photos de tes voyages",
+    "Donne tes conseils aux futurs voyageurs"
+  ],
+  "settings": {
+    "siteName": "Travel Blog",
+    "siteDescription": "Mes aventures autour du monde",
+    "primaryColor": "#0EA5E9",
+    "backgroundColor": "#f0f9ff",
+    "textColor": "#0c4a6e",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-travel",
+      "type": "header",
+      "width": "full",
+      "title": "✈️ [TON PSEUDO]",
+      "subtitle": "Travel Addict",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Destinations", "href": "#destinations" },
+        { "label": "Photos", "href": "#photos" },
+        { "label": "Conseils", "href": "#conseils" }
+      ],
+      "backgroundColor": "#ffffff",
+      "textColor": "#0EA5E9",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-travel",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS TON STYLE DE VOYAGE - Ex: Backpacker de 22 ans, j'explore le monde avec mon sac a dos et mon appareil photo. Fan de randonnees, de rencontres locales et de street food !]",
+      "buttonText": "Mes aventures",
+      "buttonColor": "#0EA5E9",
+      "backgroundImage": "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#f0f9ff",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-travel1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-travel",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Pays visites", "icon": "🌍" },
+        { "value": "[???]", "label": "Villes explorees", "icon": "🏙️" },
+        { "value": "[???]km", "label": "Parcourus", "icon": "✈️" },
+        { "value": "[???]", "label": "Photos prises", "icon": "📸" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#0EA5E9",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-travel2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-destinations",
+      "type": "heading",
+      "width": "full",
+      "content": "🗺️ Mes Destinations Preferees",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#0c4a6e"
+    },
+    {
+      "id": "spacer-travel3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-destinations",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🗼",
+          "title": "[DESTINATION 1]",
+          "description": "[Ex: Japon - Tokyo, Kyoto, Osaka... Culture incroyable, nourriture divine, gens adorables]"
+        },
+        {
+          "icon": "🏝️",
+          "title": "[DESTINATION 2]",
+          "description": "[Ex: Thailande - Plages paradisiaques, temples somptueux, pad thai a 2€]"
+        },
+        {
+          "icon": "🏔️",
+          "title": "[DESTINATION 3]",
+          "description": "[Ex: Islande - Paysages de fou, aurores boreales, road trip epique]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#e0f2fe",
+      "textColor": "#0c4a6e"
+    },
+    {
+      "id": "spacer-travel4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-travel",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&h=400&fit=crop", "alt": "Japan" },
+        { "src": "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&h=400&fit=crop", "alt": "Thailand" },
+        { "src": "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&h=400&fit=crop", "alt": "Iceland" },
+        { "src": "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=600&h=400&fit=crop", "alt": "Travel" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-travel5",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "gallery-travel2",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=600&h=400&fit=crop", "alt": "Lake" },
+        { "src": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop", "alt": "Beach" },
+        { "src": "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=600&h=400&fit=crop", "alt": "Mountain" },
+        { "src": "https://images.unsplash.com/photo-1530789253388-582c481c54b0?w=600&h=400&fit=crop", "alt": "Adventure" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "text-gallery",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR TES PROPRES PHOTOS DE VOYAGE]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-travel6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-besttrip",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&h=400&fit=crop",
+      "title": "⭐ Mon Plus Beau Voyage : [DESTINATION]",
+      "description": "[RACONTE - Ex: 3 semaines au Japon en solo, mon reve depuis toujours. J'ai traverse le pays du nord au sud, de Tokyo a Hiroshima. Les temples de Kyoto au lever du soleil, les ramen a Osaka, la gentillesse des Japonais... Chaque jour etait une aventure incroyable !]",
+      "buttonText": "Inoubliable",
+      "buttonColor": "#0EA5E9",
+      "backgroundColor": "#ffffff",
+      "textColor": "#0c4a6e",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-travel7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-travel",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA PHILOSOPHIE DE VOYAGE - Ex: Le monde est un livre et ceux qui ne voyagent pas n'en lisent qu'une page. Chaque voyage me transforme un peu plus.]",
+      "author": "[Ton pseudo]",
+      "style": "filled",
+      "backgroundColor": "#0EA5E9",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-travel8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-conseils",
+      "type": "heading",
+      "width": "full",
+      "content": "💡 Mes Conseils Voyage",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#0c4a6e"
+    },
+    {
+      "id": "spacer-travel9",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-conseils",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[CONSEIL 1] - Ex: Voyage leger - Un sac a dos de 40L suffit pour plusieurs semaines",
+        "[CONSEIL 2] - Ex: Apprends quelques mots de la langue locale - Ca fait toujours plaisir",
+        "[CONSEIL 3] - Ex: Sors des sentiers battus - Les meilleurs moments sont souvent imprevus",
+        "[CONSEIL 4] - Ex: Goute tout - La street food c'est la vraie cuisine du pays",
+        "[CONSEIL 5] - Ex: Prends ton temps - Voyager c'est pas une course"
+      ],
+      "style": "check",
+      "textColor": "#0c4a6e",
+      "iconColor": "#0EA5E9"
+    },
+    {
+      "id": "spacer-travel10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-bucketlist",
+      "type": "heading",
+      "width": "full",
+      "content": "🎯 Ma Bucket List",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#0c4a6e"
+    },
+    {
+      "id": "spacer-travel11",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "accordion-bucketlist",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Prochaine destination ?", "answer": "[REPONDS - Ex: La Nouvelle-Zelande ! Road trip epique prevu pour 2025]" },
+        { "question": "Destination reve ?", "answer": "[REPONDS - Ex: La Patagonie - Les glaciers, les montagnes, le bout du monde]" },
+        { "question": "Un pays a recommander ?", "answer": "[REPONDS - Ex: Le Portugal - Proche, pas cher, incroyable pour un premier voyage solo]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#f0f9ff",
+      "textColor": "#0c4a6e",
+      "accentColor": "#0EA5E9"
+    },
+    {
+      "id": "spacer-travel12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-travel",
+      "type": "cta",
+      "width": "full",
+      "title": "Suis mes aventures ! ✈️",
+      "description": "[TES CONTACTS - Ex: Instagram @tonpseudo pour mes photos de voyage et mes stories live depuis le bout du monde !]",
+      "buttonText": "Follow",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#0EA5E9",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-travel13",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-travel",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "youtube", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#0EA5E9"
+    },
+    {
+      "id": "spacer-travel14",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-travel",
+      "type": "footer",
+      "width": "full",
+      "text": "✈️ [TON PSEUDO] | Explorer depuis [ANNEE] | \"Not all who wander are lost\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#0c4a6e",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ]
+}

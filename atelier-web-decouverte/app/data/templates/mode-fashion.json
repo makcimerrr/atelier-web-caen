@@ -1,0 +1,341 @@
+{
+  "id": "mode-fashion",
+  "name": "Mode & Fashion",
+  "description": "Site pour les passionnes de mode - Partage ton style et tes inspirations !",
+  "emoji": "👗",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton pseudo mode/influenceur",
+    "Decris ton style vestimentaire",
+    "Partage tes marques et pieces preferees",
+    "Ajoute des photos de tes outfits",
+    "Liste tes inspirations et icones mode"
+  ],
+  "settings": {
+    "siteName": "Fashion Style",
+    "siteDescription": "Mon univers mode",
+    "primaryColor": "#000000",
+    "backgroundColor": "#fafafa",
+    "textColor": "#1a1a1a",
+    "fontFamily": "inter",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-fashion",
+      "type": "header",
+      "width": "full",
+      "title": "👗 [TON PSEUDO]",
+      "subtitle": "Fashion & Style",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Mon Style", "href": "#style" },
+        { "label": "Outfits", "href": "#outfits" },
+        { "label": "Inspo", "href": "#inspo" }
+      ],
+      "backgroundColor": "#ffffff",
+      "textColor": "#1a1a1a",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-fashion",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS TON STYLE - Ex: Style streetwear chic, j'aime melanger les pieces vintage avec des basiques modernes. Ma devise : moins c'est plus, mais avec du caractere !]",
+      "buttonText": "Voir mes looks",
+      "buttonColor": "#1a1a1a",
+      "backgroundImage": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#fafafa",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-fashion1",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-style",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Style",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion2",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-style",
+      "type": "text",
+      "width": "full",
+      "content": "[DECRIS TON UNIVERS MODE - Ex: J'ai toujours ete attire par la mode depuis le college. Mon style a beaucoup evolue : d'abord tres streetwear, puis j'ai decouvert le minimalisme scandinave et maintenant je melange les deux. J'adore les pieces oversize, les tons neutres et les accessoires statement. Pour moi, la mode c'est une forme d'expression, chaque outfit raconte une histoire !]",
+      "fontSize": "lg",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#52525b"
+    },
+    {
+      "id": "spacer-fashion3",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "features-style",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "👕",
+          "title": "Streetwear",
+          "description": "[Ex: Hoodies oversize, sneakers limitees, graphic tees]"
+        },
+        {
+          "icon": "🧥",
+          "title": "Minimaliste",
+          "description": "[Ex: Coupes epurees, couleurs neutres, qualite over quantite]"
+        },
+        {
+          "icon": "✨",
+          "title": "Statement pieces",
+          "description": "[Ex: Accessoires bold, une piece forte par outfit]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#f5f5f5",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion4",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-outfits",
+      "type": "heading",
+      "width": "full",
+      "content": "Mes Outfits",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "gallery-outfits",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400&h=600&fit=crop", "alt": "Outfit 1" },
+        { "src": "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=400&h=600&fit=crop", "alt": "Outfit 2" },
+        { "src": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=400&h=600&fit=crop", "alt": "Outfit 3" },
+        { "src": "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=400&h=600&fit=crop", "alt": "Outfit 4" }
+      ],
+      "columns": 4,
+      "gap": "sm",
+      "rounded": "none"
+    },
+    {
+      "id": "text-outfits",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR TES PROPRES PHOTOS D'OUTFITS]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#a1a1aa"
+    },
+    {
+      "id": "spacer-fashion6",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-brands",
+      "type": "heading",
+      "width": "full",
+      "content": "Mes Marques Preferees",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion7",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-brands",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[MARQUE 1] - Ex: Acne Studios - Le minimalisme scandinave parfait",
+        "[MARQUE 2] - Ex: Nike - Pour les sneakers, incontournable",
+        "[MARQUE 3] - Ex: Carhartt WIP - Le workwear stylise",
+        "[MARQUE 4] - Ex: COS - Basiques de qualite abordables",
+        "[MARQUE 5] - Ex: Vintage/Fripe - Les pieces uniques introuvables"
+      ],
+      "style": "check",
+      "textColor": "#1a1a1a",
+      "iconColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion8",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "quote-fashion",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA PHILOSOPHIE MODE - Ex: La mode n'est pas superficielle, c'est une facon de montrer au monde qui tu es sans avoir a parler.]",
+      "author": "[Ton pseudo]",
+      "style": "minimal",
+      "backgroundColor": "#fafafa",
+      "textColor": "#1a1a1a",
+      "accentColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion9",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-inspo",
+      "type": "heading",
+      "width": "full",
+      "content": "Mes Inspirations",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion10",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-inspo",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "⭐",
+          "title": "[ICONE 1]",
+          "description": "[Ex: A$AP Rocky - Le roi du mix streetwear/high fashion]"
+        },
+        {
+          "icon": "⭐",
+          "title": "[ICONE 2]",
+          "description": "[Ex: Zendaya - Toujours parfaite sur le red carpet]"
+        },
+        {
+          "icon": "⭐",
+          "title": "[ICONE 3]",
+          "description": "[Ex: Kanye West/Ye - Visionnaire mode controversé]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#ffffff",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion11",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "accordion-fashion",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Ton essentiel mode ?", "answer": "[REPONDS - Ex: Un bon jean brut bien coupe, ca va avec absolument tout]" },
+        { "question": "Ta meilleure trouvaille ?", "answer": "[REPONDS - Ex: Une veste Helmut Lang vintage a 30€ en fripe !]" },
+        { "question": "Un conseil mode ?", "answer": "[REPONDS - Ex: Investis dans des basiques de qualite, ca change tout]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#fafafa",
+      "textColor": "#1a1a1a",
+      "accentColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion12",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "cta-fashion",
+      "type": "cta",
+      "width": "full",
+      "title": "Suis mon style !",
+      "description": "[TES CONTACTS - Ex: Instagram @tonpseudo pour mes outfits quotidiens et mes inspirations mode]",
+      "buttonText": "Follow",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fashion13",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-fashion",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "pinterest", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "minimal",
+      "size": "lg",
+      "color": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fashion14",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-fashion",
+      "type": "footer",
+      "width": "full",
+      "text": "👗 [TON PSEUDO] | Fashion enthusiast | \"Style is a way to say who you are without having to speak\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ]
+}

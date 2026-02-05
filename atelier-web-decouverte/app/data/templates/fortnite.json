@@ -1,0 +1,280 @@
+{
+  "id": "fortnite",
+  "name": "Fortnite",
+  "description": "Site de joueur Fortnite - Montre tes stats, skins et clips !",
+  "emoji": "🎯",
+  "difficulty": "facile",
+  "tasks": [
+    "Remplace [TON PSEUDO] par ton vrai pseudo Epic Games",
+    "Ajoute tes vraies statistiques (wins, kills, top 10)",
+    "Liste tes 5 skins preferes avec une description",
+    "Decris ton meilleur moment de game",
+    "Ajoute ton pseudo Epic dans le CTA pour jouer ensemble"
+  ],
+  "settings": {
+    "siteName": "Fortnite Player",
+    "siteDescription": "Mon profil Fortnite",
+    "primaryColor": "#9D4EDD",
+    "backgroundColor": "#0d1b2a",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-fn",
+      "type": "header",
+      "width": "full",
+      "title": "🎯 FORTNITE",
+      "subtitle": "Battle Royale",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Profil", "href": "#" },
+        { "label": "Stats", "href": "#stats" },
+        { "label": "Locker", "href": "#locker" },
+        { "label": "Clips", "href": "#clips" }
+      ],
+      "backgroundColor": "#0d1b2a",
+      "textColor": "#00f5d4",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-fn",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO EPIC GAMES]",
+      "subtitle": "[DECRIS-TOI - Ex: Builder pro depuis le Chapter 1, 500+ wins, je joue en solo et en squad avec mes potes !]",
+      "buttonText": "Mes stats",
+      "buttonColor": "#9D4EDD",
+      "backgroundImage": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0d1b2a",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-fn1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-fn",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Victory Royales", "icon": "🏆" },
+        { "value": "[???]", "label": "Total Kills", "icon": "💀" },
+        { "value": "[???]%", "label": "Win Rate", "icon": "📊" },
+        { "value": "[???]", "label": "Heures jouees", "icon": "⏰" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1b263b",
+      "textColor": "#ffffff",
+      "accentColor": "#00f5d4"
+    },
+    {
+      "id": "spacer-fn2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-loadout",
+      "type": "heading",
+      "width": "full",
+      "content": "🎒 Mon Loadout Ideal",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#00f5d4"
+    },
+    {
+      "id": "spacer-fn3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-loadout",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[SLOT 1] - Ex: AR Legendary - Mon arme principale pour le mid-range",
+        "[SLOT 2] - Ex: Shotgun Epic - Indispensable pour les box fights",
+        "[SLOT 3] - Ex: SMG - Pour finir les kills rapidement",
+        "[SLOT 4] - Ex: Medkits / Shields - Toujours avoir de quoi heal",
+        "[SLOT 5] - Ex: Sniper / Utility - Selon la situation"
+      ],
+      "style": "arrow",
+      "textColor": "#ffffff",
+      "iconColor": "#9D4EDD"
+    },
+    {
+      "id": "spacer-fn4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-locker",
+      "type": "heading",
+      "width": "full",
+      "content": "👕 Mon Locker",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#00f5d4"
+    },
+    {
+      "id": "spacer-fn5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-skins",
+      "type": "features",
+      "width": "full",
+      "title": "Mes Skins Preferes",
+      "features": [
+        {
+          "icon": "🦸",
+          "title": "[SKIN MAIN]",
+          "description": "[Pourquoi c'est ton skin prefere, depuis quand tu l'as]"
+        },
+        {
+          "icon": "⭐",
+          "title": "[SKIN RARE]",
+          "description": "[Un skin OG ou rare que tu possedes]"
+        },
+        {
+          "icon": "🎭",
+          "title": "[SKIN FUN]",
+          "description": "[Un skin que tu mets pour rigoler]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#415a77",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fn6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-fn",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1552820728-8b83bb6b2b0a?w=600&h=400&fit=crop", "alt": "Gaming" },
+        { "src": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=600&h=400&fit=crop", "alt": "Controller" },
+        { "src": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&h=400&fit=crop", "alt": "Victory" },
+        { "src": "https://images.unsplash.com/photo-1542751110-97427bbecf20?w=600&h=400&fit=crop", "alt": "Team" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-fn7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-fn",
+      "type": "quote",
+      "width": "full",
+      "content": "[TON MEILLEUR SOUVENIR FORTNITE - Ex: Ma premiere win en solo, j'avais les mains qui tremblaient pendant le 1v1 final !]",
+      "author": "[Ton pseudo]",
+      "style": "filled",
+      "backgroundColor": "#1b263b",
+      "textColor": "#ffffff",
+      "accentColor": "#9D4EDD"
+    },
+    {
+      "id": "spacer-fn8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-fn",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE L'URL PAR UN DE TES CLIPS YOUTUBE OU LAISSE LA VIDEO PAR DEFAUT]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#778da9"
+    },
+    {
+      "id": "spacer-fn9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-fn",
+      "type": "cta",
+      "width": "full",
+      "title": "On squad up ? 🎮",
+      "description": "Add moi sur Epic : [TON PSEUDO EPIC COMPLET] - Je suis dispo [TES HORAIRES - Ex: tous les soirs apres 18h et le weekend]",
+      "buttonText": "Copier mon pseudo",
+      "buttonColor": "#00f5d4",
+      "backgroundColor": "#9D4EDD",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fn10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-fn",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "youtube", "url": "#" },
+        { "platform": "twitter", "url": "#" },
+        { "platform": "tiktok", "url": "#" },
+        { "platform": "instagram", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#9D4EDD"
+    },
+    {
+      "id": "spacer-fn11",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-fn",
+      "type": "footer",
+      "width": "full",
+      "text": "GG WP! Site cree par [TON PRENOM] | [NOMBRE] heures sur Fortnite | Chapter [?] Player",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#0d1b2a",
+      "textColor": "#778da9",
+      "style": "centered"
+    }
+  ]
+}

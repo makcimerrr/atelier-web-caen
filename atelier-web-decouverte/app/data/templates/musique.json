@@ -1,0 +1,300 @@
+{
+  "id": "musique",
+  "name": "Musique & DJ",
+  "description": "Site pour musiciens, DJ et producteurs - Partage ta musique !",
+  "emoji": "🎵",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton nom d'artiste ou de DJ",
+    "Decris ton style musical et tes influences",
+    "Liste ton equipement (platines, controleur, MAO)",
+    "Ajoute tes morceaux ou mixes preferes",
+    "Partage tes reseaux et contacts booking"
+  ],
+  "settings": {
+    "siteName": "DJ Artist",
+    "siteDescription": "Ma musique",
+    "primaryColor": "#FF006E",
+    "backgroundColor": "#0d0d0d",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-music",
+      "type": "header",
+      "width": "full",
+      "title": "🎵 [TON NOM D'ARTISTE]",
+      "subtitle": "DJ & Producer",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Musique", "href": "#music" },
+        { "label": "Setup", "href": "#setup" },
+        { "label": "Booking", "href": "#booking" }
+      ],
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#FF006E",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-music",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON NOM D'ARTISTE]",
+      "subtitle": "[DECRIS-TOI - Ex: DJ House & Tech House base en Normandie, resident au [Nom du club], je mixe depuis 2020 et j'adore faire danser les gens !]",
+      "buttonText": "Ecouter",
+      "buttonColor": "#FF006E",
+      "backgroundImage": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-music1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-music",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Sets joues", "icon": "🎧" },
+        { "value": "[???]", "label": "Tracks produits", "icon": "🎹" },
+        { "value": "[???]", "label": "Followers", "icon": "👥" },
+        { "value": "[???]h", "label": "De mix", "icon": "⏰" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "accentColor": "#FF006E"
+    },
+    {
+      "id": "spacer-music2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-style",
+      "type": "heading",
+      "width": "full",
+      "content": "🎶 Mon Style",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF006E"
+    },
+    {
+      "id": "spacer-music3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-style",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🏠",
+          "title": "[GENRE 1]",
+          "description": "[Ex: House - Groovy et melodique, parfait pour les afters]"
+        },
+        {
+          "icon": "⚡",
+          "title": "[GENRE 2]",
+          "description": "[Ex: Tech House - Plus energique pour les peak times]"
+        },
+        {
+          "icon": "🌙",
+          "title": "[GENRE 3]",
+          "description": "[Ex: Deep House - Pour les ambiances chill]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-music4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-music",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA CITATION OU PHILOSOPHIE - Ex: La musique c'est le langage universel, quand le beat drop tout le monde comprend !]",
+      "author": "[Ton nom d'artiste]",
+      "style": "filled",
+      "backgroundColor": "#FF006E",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-music5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-setup",
+      "type": "heading",
+      "width": "full",
+      "content": "🎛️ Mon Setup",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF006E"
+    },
+    {
+      "id": "spacer-music6",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "gallery-setup",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1571266028243-e4733b0f0bb0?w=600&h=400&fit=crop", "alt": "DJ Setup" },
+        { "src": "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&h=400&fit=crop", "alt": "Concert" },
+        { "src": "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=600&h=400&fit=crop", "alt": "Festival" },
+        { "src": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=600&h=400&fit=crop", "alt": "Crowd" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-music7",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-setup",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[PLATINES/CONTROLEUR] - Ex: Pioneer CDJ-3000 x2 + DJM-900NXS2",
+        "[MAO] - Ex: Ableton Live 11 Suite + Push 2",
+        "[CASQUE] - Ex: Pioneer HDJ-X10",
+        "[ENCEINTES] - Ex: KRK Rokit 8 G4 pour le home studio",
+        "[AUTRE] - Ex: Machines analogiques, synthes..."
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#FF006E"
+    },
+    {
+      "id": "spacer-music8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-music",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video-music",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR UN DE TES SETS OU TRACKS SUR YOUTUBE/SOUNDCLOUD]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-music9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-booking",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?w=800&h=400&fit=crop",
+      "title": "📅 Booking",
+      "description": "[INFOS BOOKING - Ex: Disponible pour soirees privees, clubs, festivals et evenements corporate. Contactez-moi par email ou DM Instagram !]",
+      "buttonText": "Me contacter",
+      "buttonColor": "#FF006E",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-music10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-music",
+      "type": "cta",
+      "width": "full",
+      "title": "Ecoute ma musique ! 🎧",
+      "description": "[LIENS - Ex: SoundCloud: soundcloud.com/tonpseudo | Spotify: open.spotify.com/artist/xxx | Mixcloud: mixcloud.com/tonpseudo]",
+      "buttonText": "SoundCloud",
+      "buttonColor": "#0d0d0d",
+      "backgroundColor": "#FF006E",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-music11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-music",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "youtube", "url": "#" },
+        { "platform": "tiktok", "url": "#" },
+        { "platform": "facebook", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#FF006E"
+    },
+    {
+      "id": "spacer-music12",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-music",
+      "type": "footer",
+      "width": "full",
+      "text": "🎵 Keep the beat alive! [TON NOM D'ARTISTE] | Booking: [ton@email.com] | \"Music is life\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#FF006E",
+      "style": "centered"
+    }
+  ]
+}

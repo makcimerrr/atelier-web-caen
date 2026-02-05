@@ -1,0 +1,339 @@
+{
+  "id": "site-1770298366417-w826xhvei",
+  "studentInfo": {
+    "nom": "Tirard",
+    "prenom": "Jeanne",
+    "email": "tirad.jeanne@laposte.net"
+  },
+  "blocks": [
+    {
+      "id": "header-drone",
+      "type": "header",
+      "width": "full",
+      "title": "🚁 FPV PILOT",
+      "subtitle": "Freestyle & Cinematic",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Accueil",
+          "href": "#"
+        },
+        {
+          "label": "Setup",
+          "href": "#setup"
+        },
+        {
+          "label": "Spots",
+          "href": "#spots"
+        },
+        {
+          "label": "Videos",
+          "href": "#videos"
+        }
+      ],
+      "backgroundColor": "#0a0a0a",
+      "textColor": "#7c3aed",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-drone",
+      "type": "hero",
+      "width": "full",
+      "title": "Jwimm",
+      "subtitle": " Pilote FPV freestyle depuis 2025, fan de gaps et de proximity flying, base en Normandie !",
+      "buttonText": "Voir mes videos",
+      "buttonColor": "#2563eb",
+      "backgroundImage": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0a0a0a",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-drone1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-drone",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "100h",
+          "label": "Heures de vol",
+          "icon": "⏱️"
+        },
+        {
+          "value": "4",
+          "label": "Videos postees",
+          "icon": "🎬"
+        },
+        {
+          "value": "30",
+          "label": "Spots explores",
+          "icon": "📍"
+        },
+        {
+          "value": "70",
+          "label": "Crashes (oups!)",
+          "icon": "💥"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#eff6ff",
+      "textColor": "#7c3aed",
+      "accentColor": "#2563eb"
+    },
+    {
+      "id": "spacer-drone2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-setup",
+      "type": "heading",
+      "width": "full",
+      "content": "🔧 Mon Setup",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-drone3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-setup",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🚁",
+          "title": "PHANTOM",
+          "description": "[Marque, modele, specs - Ex: Custom 5 pouces, Mamba F7, T-Motor F60]"
+        },
+        {
+          "icon": "🥽",
+          "title": "Googles V2",
+          "description": "[Ex: DJI Goggles V2, Fatshark HDO2, Walksnail...]"
+        },
+        {
+          "icon": "🎮",
+          "title": "TX16S",
+          "description": "[Ex: RadioMaster TX16S, TBS Tango 2, DJI RC...]"
+        },
+        {
+          "icon": "📷",
+          "title": "GoPro",
+          "description": "[Ex: GoPro Hero 11, Insta360 GO 3, Naked GoPro...]"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-drone4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-drone",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&h=400&fit=crop",
+          "alt": "Drone en vol"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1508444845599-5c89863b1c44?w=600&h=400&fit=crop",
+          "alt": "Vue aerienne"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=600&h=400&fit=crop",
+          "alt": "Sunset"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+          "alt": "Paysage"
+        }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-drone5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-spots",
+      "type": "heading",
+      "width": "full",
+      "content": "📍 Mes Spots Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-drone6",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-spots",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "Les chemins",
+        "Le skatepark",
+        "[SPOT 3] - Ex: Foret de Cerisy - Belle étoile",
+        "Porte horloge"
+      ],
+      "style": "arrow",
+      "textColor": "#ffffff",
+      "iconColor": "#00D9FF"
+    },
+    {
+      "id": "spacer-drone7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-drone",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video-drone",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR L'URL DE TA MEILLEURE VIDEO FPV SUR YOUTUBE]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-drone8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-drone",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        {
+          "question": "Comment as-tu commence le FPV ?",
+          "answer": "[RACONTE - Ex: J'ai decouvert le FPV sur YouTube et j'ai craque pour un kit debutant...]"
+        },
+        {
+          "question": "Ton conseil pour les debutants ?",
+          "answer": "[CONSEIL - Ex: Commencez par un simulateur comme Liftoff ou Velocidrone, ca sauve des crashes !]"
+        },
+        {
+          "question": "Quel est ton style de vol prefere ?",
+          "answer": "[STYLE - Ex: Freestyle agressif avec beaucoup de flips et de gaps]"
+        }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#0a0a0a",
+      "textColor": "#ffffff",
+      "accentColor": "#00D9FF"
+    },
+    {
+      "id": "spacer-drone9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-drone",
+      "type": "cta",
+      "width": "full",
+      "title": "On vole ensemble ? 🚁",
+      "description": "retrouvez moi chez moi ",
+      "buttonText": "Me contacter",
+      "buttonColor": "#4f46e5",
+      "backgroundColor": "#2563eb",
+      "textColor": "#0a0a0a"
+    },
+    {
+      "id": "spacer-drone10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-drone",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        {
+          "platform": "youtube",
+          "url": "#"
+        },
+        {
+          "platform": "instagram",
+          "url": "#"
+        },
+        {
+          "platform": "tiktok",
+          "url": "#"
+        }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#2563eb"
+    },
+    {
+      "id": "spacer-drone11",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-drone",
+      "type": "footer",
+      "width": "full",
+      "text": "Rejoignez moi à Vassy",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#0a0a0a",
+      "textColor": "#7c3aed",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "FPV Pilot",
+    "siteDescription": "Mon univers drone et FPV",
+    "primaryColor": "#00D9FF",
+    "backgroundColor": "#0a0a0a",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T13:32:46.417Z"
+}

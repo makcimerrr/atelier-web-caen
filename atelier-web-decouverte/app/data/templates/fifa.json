@@ -1,0 +1,256 @@
+{
+  "id": "fifa",
+  "name": "EA FC / FIFA",
+  "description": "Profil de joueur EA FC - Montre ton club Ultimate Team et tes skills !",
+  "emoji": "⚽",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton pseudo EA/PSN/Xbox",
+    "Cree ta composition Ultimate Team",
+    "Indique ton classement Division Rivals",
+    "Change les couleurs avec le vert terrain (#2E8B57)"
+  ],
+  "settings": {
+    "siteName": "EA FC Player",
+    "siteDescription": "Mon profil EA FC / FIFA",
+    "primaryColor": "#2E8B57",
+    "backgroundColor": "#1a1a1a",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-fifa",
+      "type": "header",
+      "width": "full",
+      "title": "EA FC 25",
+      "subtitle": "Ultimate Team",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Profil", "href": "#" },
+        { "label": "Mon XI", "href": "#xi" },
+        { "label": "Stats", "href": "#stats" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#2E8B57",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-fifa",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO EA]",
+      "subtitle": "[DECRIS TON STYLE DE JEU : Possession ? Contre-attaque ? Tiki-taka ? Quel est ton club prefere IRL ?]",
+      "buttonText": "Voir mon equipe",
+      "buttonColor": "#2E8B57",
+      "backgroundImage": "https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-fifa1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-fifa",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[DIV ?]", "label": "Division Rivals", "icon": "🏆" },
+        { "value": "[???]", "label": "Victoires FUT", "icon": "⚽" },
+        { "value": "[???]", "label": "Buts marques", "icon": "🥅" }
+      ],
+      "columns": 3,
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff",
+      "accentColor": "#2E8B57"
+    },
+    {
+      "id": "spacer-fifa2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-xi",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon XI de Reve",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#2E8B57"
+    },
+    {
+      "id": "spacer-fifa3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-formation",
+      "type": "text",
+      "width": "full",
+      "content": "Formation: [TA FORMATION - Ex: 4-3-3, 4-2-3-1, 3-5-2...]",
+      "fontSize": "lg",
+      "fontWeight": "bold",
+      "textAlign": "center",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-attack",
+      "type": "features",
+      "width": "full",
+      "title": "Attaque",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "[ATTAQUANT G]",
+          "description": "[Version de la carte, note]"
+        },
+        {
+          "icon": "👑",
+          "title": "[ATTAQUANT C]",
+          "description": "[Ta star, ton meilleur buteur]"
+        },
+        {
+          "icon": "🔥",
+          "title": "[ATTAQUANT D]",
+          "description": "[Version et note]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa5",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "features-mid",
+      "type": "features",
+      "width": "full",
+      "title": "Milieu",
+      "features": [
+        {
+          "icon": "🎯",
+          "title": "[MILIEU 1]",
+          "description": "[Type: box-to-box, defensif, offensif]"
+        },
+        {
+          "icon": "🧠",
+          "title": "[MILIEU 2]",
+          "description": "[Ton meneur de jeu]"
+        },
+        {
+          "icon": "💪",
+          "title": "[MILIEU 3]",
+          "description": "[Ton CDM]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#3d3d3d",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa6",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "features-def",
+      "type": "features",
+      "width": "full",
+      "title": "Defense & Gardien",
+      "features": [
+        {
+          "icon": "🛡️",
+          "title": "[DEFENSE]",
+          "description": "[Tes 4 defenseurs]"
+        },
+        {
+          "icon": "🧤",
+          "title": "[GARDIEN]",
+          "description": "[Ton GK et sa note]"
+        }
+      ],
+      "columns": 2,
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-fifa",
+      "type": "quote",
+      "width": "full",
+      "content": "[TON MEILLEUR SOUVENIR FUT OU TA TACTIQUE PREFEREE]",
+      "author": "[Ton pseudo]",
+      "style": "bordered",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "accentColor": "#2E8B57"
+    },
+    {
+      "id": "spacer-fifa8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-fifa",
+      "type": "cta",
+      "width": "full",
+      "title": "On fait un match ?",
+      "description": "[TON ID PSN / XBOX / EA - Et tes dispos pour jouer !]",
+      "buttonText": "M'ajouter",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#2E8B57",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-fifa9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-fifa",
+      "type": "footer",
+      "width": "full",
+      "text": "GOOOAAL! Site cree par [TON PRENOM] - Fan de foot depuis toujours",
+      "showSocials": true,
+      "socials": [
+        { "icon": "youtube", "url": "#" },
+        { "icon": "twitter", "url": "#" },
+        { "icon": "tiktok", "url": "#" }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#2E8B57",
+      "style": "centered"
+    }
+  ]
+}

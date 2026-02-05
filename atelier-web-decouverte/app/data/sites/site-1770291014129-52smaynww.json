@@ -1,0 +1,251 @@
+{
+  "id": "site-1770291014129-52smaynww",
+  "studentInfo": {
+    "nom": "Roussel",
+    "prenom": "Mael",
+    "email": "rousselmael78@gmail.com"
+  },
+  "blocks": [
+    {
+      "id": "header-gta",
+      "type": "header",
+      "width": "full",
+      "title": "GTA ONLINE",
+      "subtitle": "Criminal Empire",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Profil",
+          "href": "#"
+        },
+        {
+          "label": "Business",
+          "href": "#business"
+        },
+        {
+          "label": "Garage",
+          "href": "#garage"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#00FF00",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-gta",
+      "type": "hero",
+      "width": "full",
+      "title": "KASA",
+      "subtitle": "habillé tout en blanc ,cagoule avec lunette de skie",
+      "buttonText": "Voir mon empire",
+      "buttonColor": "#00FF00",
+      "backgroundImage": "https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-gta1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-gta",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "271",
+          "label": "Niveau ",
+          "icon": "⭐"
+        },
+        {
+          "value": "35M",
+          "label": "Fortune totale",
+          "icon": "💰"
+        },
+        {
+          "value": "350",
+          "label": "Heures de jeu",
+          "icon": "🎮"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "accentColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-business",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Empire Criminel",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-business",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🏢",
+          "title": "Boites de nuit ",
+          "description": "[Nightclub, Bunker, etc. - Emplacement et revenus]"
+        },
+        {
+          "icon": "🏭",
+          "title": "Usine de meth",
+          "description": "[Ton deuxieme business principal]"
+        },
+        {
+          "icon": "💎",
+          "title": "ARCADE",
+          "description": "[Arcade, Agency, etc.]"
+        },
+        {
+          "icon": "🚁",
+          "title": "Yacht",
+          "description": "[Ta propriete preferee - Yacht, Penthouse, etc.]"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-gta4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-garage",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Garage",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-cars",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "Deluxo",
+        "T20",
+        "Oppressor",
+        "B500",
+        "Labo d'acide"
+      ],
+      "style": "arrow",
+      "textColor": "#ffffff",
+      "iconColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-gta",
+      "type": "quote",
+      "width": "full",
+      "content": "DE très bons moments passés avec mes potes",
+      "author": "Kasa",
+      "style": "bordered",
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#ffffff",
+      "accentColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-gta",
+      "type": "cta",
+      "width": "full",
+      "title": "Rejoins mon crew !",
+      "description": "[NOM DE TON CREW ET COMMENT LE REJOINDRE - Ou juste ton pseudo pour jouer ensemble]",
+      "buttonText": "Rejoindre",
+      "buttonColor": "#0d0d0d",
+      "backgroundColor": "#00FF00",
+      "textColor": "#0d0d0d"
+    },
+    {
+      "id": "spacer-gta8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-gta",
+      "type": "footer",
+      "width": "full",
+      "text": "Wasted! Site cree par [TON PRENOM] - Los Santos depuis [ANNEE]",
+      "showSocials": true,
+      "socials": [
+        {
+          "icon": "youtube",
+          "url": "#"
+        },
+        {
+          "icon": "twitter",
+          "url": "#"
+        },
+        {
+          "icon": "tiktok",
+          "url": "#"
+        }
+      ],
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#00FF00",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "GTA Online",
+    "siteDescription": "Mon profil GTA Online",
+    "primaryColor": "#00FF00",
+    "backgroundColor": "#0d0d0d",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T11:30:14.129Z"
+}

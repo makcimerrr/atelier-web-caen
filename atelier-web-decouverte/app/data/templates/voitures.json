@@ -1,0 +1,319 @@
+{
+  "id": "voitures",
+  "name": "Voitures & Tuning",
+  "description": "Site pour les passionnes d'automobile - Presente ton vehicule et ta passion !",
+  "emoji": "🚗",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton pseudo de passione auto",
+    "Presente ton vehicule ou ton dream car",
+    "Liste les modifications ou specs",
+    "Partage des photos de ta voiture",
+    "Ajoute tes events et rassemblements preferes"
+  ],
+  "settings": {
+    "siteName": "Car Enthusiast",
+    "siteDescription": "Ma passion automobile",
+    "primaryColor": "#DC2626",
+    "backgroundColor": "#0f0f0f",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-car",
+      "type": "header",
+      "width": "full",
+      "title": "🚗 [TON PSEUDO]",
+      "subtitle": "Car Enthusiast",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Mon Auto", "href": "#car" },
+        { "label": "Specs", "href": "#specs" },
+        { "label": "Events", "href": "#events" }
+      ],
+      "backgroundColor": "#0f0f0f",
+      "textColor": "#DC2626",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-car",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS TA PASSION - Ex: Passionne d'automobile depuis toujours, je roule en Golf GTI MK7 full prepa. Fan de JDM et de meetings, je vis pour le son des moteurs !]",
+      "buttonText": "Voir ma caisse",
+      "buttonColor": "#DC2626",
+      "backgroundImage": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0f0f0f",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-car1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-mycar",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&h=400&fit=crop",
+      "title": "[MA VOITURE - Ex: VW Golf GTI MK7 2018]",
+      "description": "[PRESENTE TA CAISSE - Ex: Ma GTI, c'est 3 ans de travail et d'economies. Achetee stock, maintenant elle tape les 300ch grace au stage 2. Elle m'accompagne partout et chaque meeting est une fete !]",
+      "buttonText": "Mon bijou",
+      "buttonColor": "#DC2626",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-car2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-car",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]ch", "label": "Puissance", "icon": "💪" },
+        { "value": "[???]Nm", "label": "Couple", "icon": "🔧" },
+        { "value": "[???]s", "label": "0-100 km/h", "icon": "⏱️" },
+        { "value": "[???]km", "label": "Kilometrage", "icon": "🛣️" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "accentColor": "#DC2626"
+    },
+    {
+      "id": "spacer-car3",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-specs",
+      "type": "heading",
+      "width": "full",
+      "content": "🔧 Modifications & Specs",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#DC2626"
+    },
+    {
+      "id": "spacer-car4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-specs",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[MOTEUR] - Ex: Stage 2 APR, downpipe decata, admission K&N",
+        "[ECHAPPEMENT] - Ex: Ligne complete Milltek, son de ouf",
+        "[SUSPENSION] - Ex: Coilovers KW V3, -35mm",
+        "[JANTES] - Ex: BBS CH-R 19\" en bronze",
+        "[EXTERIEUR] - Ex: Wrap noir mat, vitres teintees, splitter carbone"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#DC2626"
+    },
+    {
+      "id": "spacer-car5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-car",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&h=400&fit=crop", "alt": "Car front" },
+        { "src": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=600&h=400&fit=crop", "alt": "Car side" },
+        { "src": "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=600&h=400&fit=crop", "alt": "Engine" },
+        { "src": "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop", "alt": "Wheels" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-car6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-dreamcars",
+      "type": "heading",
+      "width": "full",
+      "content": "🌟 Mes Dream Cars",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#DC2626"
+    },
+    {
+      "id": "spacer-car7",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-dreamcars",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🥇",
+          "title": "[DREAM CAR 1]",
+          "description": "[Ex: Nissan GTR R34 - La legende JDM ultime, Skyline de mes reves]"
+        },
+        {
+          "icon": "🥈",
+          "title": "[DREAM CAR 2]",
+          "description": "[Ex: Porsche 911 GT3 RS - Le son du flat 6 atmospherique, frissons garantis]"
+        },
+        {
+          "icon": "🥉",
+          "title": "[DREAM CAR 3]",
+          "description": "[Ex: Toyota Supra MK4 - Fast & Furious forever, iconique]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-car8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-car",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA CITATION AUTO - Ex: Une voiture ce n'est pas juste un moyen de transport, c'est une extension de ta personnalite !]",
+      "author": "[Ton pseudo]",
+      "style": "filled",
+      "backgroundColor": "#DC2626",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-car9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-car",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video-car",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR UNE VIDEO DE TA VOITURE OU UN MEETING]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-car10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-car",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Ta premiere voiture ?", "answer": "[REPONDS - Ex: Une Clio 2 1.2L, elle m'a tout appris !]" },
+        { "question": "Ton meeting prefere ?", "answer": "[REPONDS - Ex: Le Wörthersee en Autriche, ambiance de folie]" },
+        { "question": "Prochain projet ?", "answer": "[REPONDS - Ex: Changer le turbo pour un GTX2867R et viser les 400ch !]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#0f0f0f",
+      "textColor": "#ffffff",
+      "accentColor": "#DC2626"
+    },
+    {
+      "id": "spacer-car11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-car",
+      "type": "cta",
+      "width": "full",
+      "title": "On se croise sur la route ? 🚗",
+      "description": "[TES CONTACTS - Ex: Instagram @tonpseudo pour voir mes sorties et mes projets en cours !]",
+      "buttonText": "Follow",
+      "buttonColor": "#0f0f0f",
+      "backgroundColor": "#DC2626",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-car12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-car",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "youtube", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#DC2626"
+    },
+    {
+      "id": "spacer-car13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-car",
+      "type": "footer",
+      "width": "full",
+      "text": "🚗 [TON PSEUDO] | Petrolhead depuis [ANNEE] | \"Built, not bought!\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#0f0f0f",
+      "textColor": "#DC2626",
+      "style": "centered"
+    }
+  ]
+}

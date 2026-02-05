@@ -1,0 +1,299 @@
+{
+  "id": "streaming",
+  "name": "Streaming & YouTube",
+  "description": "Site pour streamers et YouTubers - Presente ta chaine et tes contenus !",
+  "emoji": "🎬",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton pseudo de streamer/YouTuber",
+    "Decris le type de contenu que tu fais",
+    "Ajoute tes stats (abonnes, vues, heures streamees)",
+    "Liste ton equipement (PC, micro, camera)",
+    "Ajoute le lien de ta chaine YouTube ou Twitch"
+  ],
+  "settings": {
+    "siteName": "Streamer",
+    "siteDescription": "Ma chaine de streaming",
+    "primaryColor": "#9146FF",
+    "backgroundColor": "#18181b",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-stream",
+      "type": "header",
+      "width": "full",
+      "title": "🎬 [TON PSEUDO]",
+      "subtitle": "Streamer & Content Creator",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "A propos", "href": "#about" },
+        { "label": "Setup", "href": "#setup" },
+        { "label": "Planning", "href": "#planning" }
+      ],
+      "backgroundColor": "#18181b",
+      "textColor": "#9146FF",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-stream",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS TA CHAINE - Ex: Streamer Twitch et YouTuber gaming, je joue a Valorant, GTA RP et des jeux d'horreur avec ma communaute !]",
+      "buttonText": "S'abonner",
+      "buttonColor": "#9146FF",
+      "backgroundImage": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#18181b",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-stream1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-stream",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Abonnes", "icon": "👥" },
+        { "value": "[???]", "label": "Vues totales", "icon": "👁️" },
+        { "value": "[???]h", "label": "De stream", "icon": "🎥" },
+        { "value": "[???]", "label": "Videos", "icon": "📺" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1f1f23",
+      "textColor": "#ffffff",
+      "accentColor": "#9146FF"
+    },
+    {
+      "id": "spacer-stream2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-about",
+      "type": "heading",
+      "width": "full",
+      "content": "📺 A propos de moi",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#9146FF"
+    },
+    {
+      "id": "spacer-stream3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-about",
+      "type": "text",
+      "width": "full",
+      "content": "[PRESENTE-TOI EN DETAIL - Ex: Salut ! Je suis [Pseudo], j'ai [age] ans et je stream depuis [annee]. J'ai commence par faire des videos Minecraft sur YouTube puis je me suis lance sur Twitch. Ma communaute s'appelle les [Nom], on est une vraie famille ! Je joue principalement a [jeux] mais j'aime aussi les just chatting pour discuter avec vous. Mon objectif c'est d'atteindre [objectif] abonnes et de vivre de ma passion !]",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#a1a1aa"
+    },
+    {
+      "id": "spacer-stream4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "features-content",
+      "type": "features",
+      "width": "full",
+      "title": "Mon contenu",
+      "features": [
+        {
+          "icon": "🎮",
+          "title": "[TYPE 1]",
+          "description": "[Ex: Gaming - Valorant, GTA RP, jeux d'horreur...]"
+        },
+        {
+          "icon": "💬",
+          "title": "[TYPE 2]",
+          "description": "[Ex: Just Chatting - Je discute avec ma communaute]"
+        },
+        {
+          "icon": "🎯",
+          "title": "[TYPE 3]",
+          "description": "[Ex: Challenges - Des defis fous avec mes viewers]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1f1f23",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-stream5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-setup",
+      "type": "heading",
+      "width": "full",
+      "content": "🖥️ Mon Setup",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#9146FF"
+    },
+    {
+      "id": "spacer-stream6",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "gallery-setup",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=600&h=400&fit=crop", "alt": "Setup gaming" },
+        { "src": "https://images.unsplash.com/photo-1593305841991-05c297ba4575?w=600&h=400&fit=crop", "alt": "Peripheriques" },
+        { "src": "https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?w=600&h=400&fit=crop", "alt": "Micro" },
+        { "src": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&h=400&fit=crop", "alt": "RGB" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-stream7",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-setup",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[PC] - Ex: RTX 4070, Ryzen 7 7800X3D, 32GB RAM",
+        "[ECRAN] - Ex: Samsung Odyssey G7 27\" 240Hz",
+        "[MICRO] - Ex: Shure SM7B + GoXLR Mini",
+        "[CAMERA] - Ex: Sony ZV-E10 + Elgato Cam Link",
+        "[PERIPHERIQUES] - Ex: Logitech G Pro X Superlight, SteelSeries Apex Pro"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#9146FF"
+    },
+    {
+      "id": "spacer-stream8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-planning",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&h=400&fit=crop",
+      "title": "📅 Planning des streams",
+      "description": "[TON PLANNING - Ex: Lundi, Mercredi, Vendredi de 20h a 23h | Samedi de 14h a 18h | Dimanche repos !]",
+      "buttonText": "Recevoir les notifs",
+      "buttonColor": "#9146FF",
+      "backgroundColor": "#1f1f23",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-stream9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-stream",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video-stream",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR TA MEILLEURE VIDEO OU TON DERNIER STREAM]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-stream10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-stream",
+      "type": "cta",
+      "width": "full",
+      "title": "Rejoins la communaute ! 🎉",
+      "description": "[LIENS - Ex: Twitch: twitch.tv/tonpseudo | YouTube: youtube.com/@tonpseudo | Discord: discord.gg/tonserveur]",
+      "buttonText": "Follow sur Twitch",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#9146FF",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-stream11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-stream",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "youtube", "url": "#" },
+        { "platform": "twitter", "url": "#" },
+        { "platform": "instagram", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#9146FF"
+    },
+    {
+      "id": "spacer-stream12",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-stream",
+      "type": "footer",
+      "width": "full",
+      "text": "🎬 Made with love by [TON PRENOM] | Streamer depuis [ANNEE] | \"GG dans le chat!\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#18181b",
+      "textColor": "#9146FF",
+      "style": "centered"
+    }
+  ]
+}

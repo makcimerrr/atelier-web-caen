@@ -1,0 +1,129 @@
+{
+  "id": "site-1770287336611-6irrllj3s",
+  "studentInfo": {
+    "nom": "Dubois",
+    "prenom": "Maxime",
+    "email": "maxim3pro@proton.me"
+  },
+  "blocks": [
+    {
+      "id": "block-1770286801967-z0cvu6hy1",
+      "width": "full",
+      "type": "heading",
+      "content": "Zepa",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "block-1770286852275-336t9b5au",
+      "width": "full",
+      "type": "text",
+      "content": "",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "left",
+      "textColor": "#3f3f46"
+    },
+    {
+      "id": "block-1770286906367-d435wx669",
+      "width": "full",
+      "type": "text",
+      "content": "Profité d'une experience or du commun explorer découvré et acheter sur ZEPA le site de seconde main",
+      "fontSize": "base",
+      "fontWeight": "normal",
+      "textAlign": "left",
+      "textColor": "#3f3f46"
+    },
+    {
+      "id": "block-1770287098280-6qxy1dmrq",
+      "width": "full",
+      "type": "spacer",
+      "size": "md"
+    },
+    {
+      "id": "block-1770287031977-dra698tr2",
+      "width": "full",
+      "type": "hero",
+      "title": "Bienvenue chez Zepa la plateforme de seconde main",
+      "subtitle": "Découvrez nos services et laissez-nous vous accompagner dans vos projets.",
+      "buttonText": "En savoir plus",
+      "buttonColor": "#2563eb",
+      "backgroundImage": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=500&fit=crop",
+      "backgroundColor": "#1e293b",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "block-1770286995015-zrsdom7zr",
+      "width": "full",
+      "type": "stats",
+      "stats": [
+        {
+          "value": "100+",
+          "label": "Clients satisfaits",
+          "icon": "😊"
+        },
+        {
+          "value": "50+",
+          "label": "Projets réalisés",
+          "icon": "🚀"
+        },
+        {
+          "value": "5 ans",
+          "label": "D'expérience",
+          "icon": "⭐"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b",
+      "accentColor": "#2563eb"
+    },
+    {
+      "id": "block-1770287005710-np34qrb9m",
+      "width": "full",
+      "type": "testimonial",
+      "quote": "Ce service a transformé notre façon de travailler. Je le recommande vivement !",
+      "author": "Marie Dupont",
+      "role": "Directrice Marketing",
+      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop",
+      "backgroundColor": "#f4f4f5",
+      "textColor": "#18181b",
+      "style": "card"
+    },
+    {
+      "id": "block-1770287013273-xm43dki4o",
+      "width": "auto",
+      "type": "pricing",
+      "title": "Formule Pro",
+      "price": "29€",
+      "period": "/mois",
+      "features": [
+        "Fonctionnalité 1",
+        "Fonctionnalité 2",
+        "Fonctionnalité 3",
+        "Support prioritaire"
+      ],
+      "buttonText": "Choisir",
+      "buttonColor": "#2563eb",
+      "backgroundColor": "#ffffff",
+      "textColor": "#18181b",
+      "highlighted": false
+    }
+  ],
+  "settings": {
+    "siteName": "NovaTech",
+    "siteDescription": "Solutions digitales innovantes",
+    "primaryColor": "#6366f1",
+    "backgroundColor": "#ffffff",
+    "textColor": "#18181b",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-05T10:28:56.611Z"
+}

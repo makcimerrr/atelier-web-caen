@@ -1,0 +1,319 @@
+{
+  "id": "skateboard",
+  "name": "Skateboard & Street",
+  "description": "Site pour les riders - Tricks, spots et sessions !",
+  "emoji": "🛹",
+  "difficulty": "facile",
+  "tasks": [
+    "Ajoute ton pseudo de rider",
+    "Decris ton style et tes tricks preferes",
+    "Liste ton matos (board, trucks, roues)",
+    "Partage tes spots preferes",
+    "Ajoute des videos ou photos de tes sessions"
+  ],
+  "settings": {
+    "siteName": "Skater",
+    "siteDescription": "Ma vie de rider",
+    "primaryColor": "#F59E0B",
+    "backgroundColor": "#1c1917",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-skate",
+      "type": "header",
+      "width": "full",
+      "title": "🛹 [TON PSEUDO]",
+      "subtitle": "Skateboarder",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Accueil", "href": "#" },
+        { "label": "Tricks", "href": "#tricks" },
+        { "label": "Setup", "href": "#setup" },
+        { "label": "Spots", "href": "#spots" }
+      ],
+      "backgroundColor": "#1c1917",
+      "textColor": "#F59E0B",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-skate",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO]",
+      "subtitle": "[DECRIS-TOI - Ex: Rider depuis 5 ans, je skate surtout du street mais j'adore aussi les bowls. Mon objectif : reussir un kickflip propre sur chaque spot de ma ville !]",
+      "buttonText": "Voir mes clips",
+      "buttonColor": "#F59E0B",
+      "backgroundImage": "https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1c1917",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-skate1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-skate",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[???]", "label": "Annees de ride", "icon": "📅" },
+        { "value": "[???]", "label": "Tricks maitrise", "icon": "🎯" },
+        { "value": "[???]", "label": "Boards cassees", "icon": "💔" },
+        { "value": "[???]", "label": "Spots explores", "icon": "📍" }
+      ],
+      "columns": 4,
+      "backgroundColor": "#292524",
+      "textColor": "#ffffff",
+      "accentColor": "#F59E0B"
+    },
+    {
+      "id": "spacer-skate2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-tricks",
+      "type": "heading",
+      "width": "full",
+      "content": "🔥 Mes Tricks",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#F59E0B"
+    },
+    {
+      "id": "spacer-skate3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-tricks",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "✅",
+          "title": "Tricks maitrise",
+          "description": "[Ex: Ollie, Kickflip, Heelflip, Pop Shove-it, 50-50 grind]"
+        },
+        {
+          "icon": "🎯",
+          "title": "En cours d'apprentissage",
+          "description": "[Ex: Tre flip, Hardflip, Crooked grind - j'y suis presque !]"
+        },
+        {
+          "icon": "⭐",
+          "title": "Dream tricks",
+          "description": "[Ex: 360 flip, Impossible, Darkslide - un jour peut-etre !]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#292524",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-skate4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-skate",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        { "src": "https://images.unsplash.com/photo-1564982752979-3f7bc974d29a?w=600&h=400&fit=crop", "alt": "Skate trick" },
+        { "src": "https://images.unsplash.com/photo-1547447134-cd3f5c716030?w=600&h=400&fit=crop", "alt": "Skatepark" },
+        { "src": "https://images.unsplash.com/photo-1520045892732-304bc3ac5d8e?w=600&h=400&fit=crop", "alt": "Street skating" },
+        { "src": "https://images.unsplash.com/photo-1621544402532-78c290378a82?w=600&h=400&fit=crop", "alt": "Bowl" }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-skate5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-setup",
+      "type": "heading",
+      "width": "full",
+      "content": "🛹 Mon Setup",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#F59E0B"
+    },
+    {
+      "id": "spacer-skate6",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-setup",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[DECK] - Ex: Baker 8.25\" - La taille parfaite pour moi",
+        "[TRUCKS] - Ex: Independent Stage 11 - Increvables",
+        "[ROUES] - Ex: Spitfire Formula Four 52mm - Le grip parfait",
+        "[ROULEMENTS] - Ex: Bones Reds - Rapport qualité-prix au top",
+        "[CHAUSSURES] - Ex: Vans Old Skool Pro - Classique indemodable"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#F59E0B"
+    },
+    {
+      "id": "spacer-skate7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-spot",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1579555454160-bdfb4f tried6e6?w=800&h=400&fit=crop",
+      "title": "📍 Mon Spot Prefere",
+      "description": "[DECRIS TON SPOT - Ex: Le skatepark de ma ville, ouvert H24. Il y a un bon ledge, des stairs et un mini bowl. Ambiance toujours cool avec les locals !]",
+      "buttonText": "Y'a du level!",
+      "buttonColor": "#F59E0B",
+      "backgroundColor": "#292524",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-skate8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-skate",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA PHILOSOPHIE DU SKATE - Ex: Le skate c'est pas une question de niveau, c'est une question de kiff. Chaque session est une victoire !]",
+      "author": "[Ton pseudo]",
+      "style": "filled",
+      "backgroundColor": "#F59E0B",
+      "textColor": "#1c1917",
+      "accentColor": "#1c1917"
+    },
+    {
+      "id": "spacer-skate9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "video-skate",
+      "type": "video",
+      "width": "full",
+      "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      "aspectRatio": "16/9",
+      "autoplay": false,
+      "rounded": "xl"
+    },
+    {
+      "id": "text-video-skate",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR UNE DE TES VIDEOS DE SKATE OU UN EDIT QUE TU AIMES]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-skate10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-skate",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Comment tu as commence le skate ?", "answer": "[REPONDS - Ex: Mon cousin m'a prete sa board quand j'avais 12 ans, j'ai passe tout l'ete a apprendre le ollie !]" },
+        { "question": "Ton skateur prefere ?", "answer": "[REPONDS - Ex: Nyjah Huston pour le street, Tony Hawk pour la legende]" },
+        { "question": "Ta pire chute ?", "answer": "[REPONDS - Ex: Un heel gone wrong sur un 5 stair, j'ai boite pendant 2 semaines]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#1c1917",
+      "textColor": "#ffffff",
+      "accentColor": "#F59E0B"
+    },
+    {
+      "id": "spacer-skate11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-skate",
+      "type": "cta",
+      "width": "full",
+      "title": "On ride ensemble ? 🛹",
+      "description": "[TES CONTACTS - Ex: DM moi sur Instagram @tonpseudo pour organiser des sessions !]",
+      "buttonText": "Let's go!",
+      "buttonColor": "#1c1917",
+      "backgroundColor": "#F59E0B",
+      "textColor": "#1c1917"
+    },
+    {
+      "id": "spacer-skate12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-skate",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        { "platform": "instagram", "url": "#" },
+        { "platform": "youtube", "url": "#" },
+        { "platform": "tiktok", "url": "#" }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#F59E0B"
+    },
+    {
+      "id": "spacer-skate13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-skate",
+      "type": "footer",
+      "width": "full",
+      "text": "🛹 [TON PSEUDO] | Skater depuis [ANNEE] | \"Skate and Destroy!\"",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1c1917",
+      "textColor": "#F59E0B",
+      "style": "centered"
+    }
+  ]
+}

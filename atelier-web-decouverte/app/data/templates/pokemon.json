@@ -1,0 +1,232 @@
+{
+  "id": "pokemon",
+  "name": "Pokemon",
+  "description": "Site de dresseur Pokemon - Presente ton equipe et tes aventures !",
+  "emoji": "⚡",
+  "difficulty": "facile",
+  "tasks": [
+    "Choisis ton nom de dresseur",
+    "Cree ton equipe de 6 Pokemon",
+    "Ajoute tes badges ou accomplissements",
+    "Change les couleurs avec du rouge Pokemon (#FF0000) ou jaune Pikachu (#FFCB05)"
+  ],
+  "settings": {
+    "siteName": "Pokemon Trainer",
+    "siteDescription": "Mon aventure Pokemon",
+    "primaryColor": "#FFCB05",
+    "backgroundColor": "#1a1a2e",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-poke",
+      "type": "header",
+      "width": "full",
+      "title": "Pokemon",
+      "subtitle": "Trainer Card",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Profil", "href": "#" },
+        { "label": "Mon Equipe", "href": "#team" },
+        { "label": "Badges", "href": "#badges" },
+        { "label": "Contact", "href": "#contact" }
+      ],
+      "backgroundColor": "#CC0000",
+      "textColor": "#FFCB05",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-poke",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON NOM DE DRESSEUR]",
+      "subtitle": "[DECRIS-TOI : Quel type de dresseur es-tu ? Quel est ton type prefere ? Ton objectif ?]",
+      "buttonText": "Voir mon equipe",
+      "buttonColor": "#FFCB05",
+      "backgroundImage": "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-poke1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-poke",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[?]", "label": "Pokemon captures", "icon": "🔴" },
+        { "value": "[?]", "label": "Badges obtenus", "icon": "🏅" },
+        { "value": "[?]", "label": "Heures de jeu", "icon": "⏰" }
+      ],
+      "columns": 3,
+      "backgroundColor": "#CC0000",
+      "textColor": "#ffffff",
+      "accentColor": "#FFCB05"
+    },
+    {
+      "id": "spacer-poke2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-team",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Equipe de Reve",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FFCB05"
+    },
+    {
+      "id": "spacer-poke3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-team",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "[POKEMON 1]",
+          "description": "[Type, niveau, pourquoi tu l'as choisi]"
+        },
+        {
+          "icon": "🔥",
+          "title": "[POKEMON 2]",
+          "description": "[Sa specialite dans ton equipe]"
+        },
+        {
+          "icon": "💧",
+          "title": "[POKEMON 3]",
+          "description": "[Son role]"
+        },
+        {
+          "icon": "🌿",
+          "title": "[POKEMON 4]",
+          "description": "[Pourquoi il est dans ton equipe]"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#2d2d5a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-poke4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-team2",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🌙",
+          "title": "[POKEMON 5]",
+          "description": "[Type et role]"
+        },
+        {
+          "icon": "⭐",
+          "title": "[POKEMON 6]",
+          "description": "[Ton Pokemon starter ou prefere]"
+        }
+      ],
+      "columns": 2,
+      "backgroundColor": "#2d2d5a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-poke5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-poke",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA CITATION POKEMON PREFEREE - Ex: Je veux etre le meilleur dresseur !]",
+      "author": "[Ton nom de dresseur]",
+      "style": "filled",
+      "backgroundColor": "#CC0000",
+      "textColor": "#ffffff",
+      "accentColor": "#FFCB05"
+    },
+    {
+      "id": "spacer-poke6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-poke",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        { "question": "Quel est ton jeu Pokemon prefere ?", "answer": "[REPONDS ICI - Ex: Pokemon Ecarlate, Pokemon Rouge, etc.]" },
+        { "question": "Quel est ton Pokemon shiny prefere ?", "answer": "[REPONDS ICI - As-tu des shinys ? Lesquels ?]" },
+        { "question": "Joues-tu en competitif ?", "answer": "[REPONDS ICI - Si oui, quel format ? VGC ? Smogon ?]" }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#ffffff",
+      "accentColor": "#FFCB05"
+    },
+    {
+      "id": "spacer-poke7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-poke",
+      "type": "cta",
+      "width": "full",
+      "title": "Echangeons nos Pokemon !",
+      "description": "[AJOUTE TON CODE AMI SWITCH OU TON PSEUDO POKEMON HOME]",
+      "buttonText": "M'ajouter",
+      "buttonColor": "#CC0000",
+      "backgroundColor": "#FFCB05",
+      "textColor": "#1a1a2e"
+    },
+    {
+      "id": "spacer-poke8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-poke",
+      "type": "footer",
+      "width": "full",
+      "text": "Attrapez-les tous! Site cree par [TON PRENOM] - Dresseur depuis [ANNEE]",
+      "showSocials": true,
+      "socials": [
+        { "icon": "youtube", "url": "#" },
+        { "icon": "twitter", "url": "#" }
+      ],
+      "backgroundColor": "#1a1a2e",
+      "textColor": "#FFCB05",
+      "style": "centered"
+    }
+  ]
+}

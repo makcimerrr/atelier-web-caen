@@ -1,0 +1,201 @@
+{
+  "id": "league-of-legends",
+  "name": "League of Legends",
+  "description": "Profil de joueur LoL - Montre ton rank et tes champions !",
+  "emoji": "⚔️",
+  "difficulty": "moyen",
+  "tasks": [
+    "Ajoute ton pseudo et tag Riot",
+    "Indique ton rang actuel et ton pic",
+    "Liste tes 3 champions mains",
+    "Change les couleurs en or/bleu LoL (#C89B3C / #0A1428)"
+  ],
+  "settings": {
+    "siteName": "LoL Profile",
+    "siteDescription": "Mon profil League of Legends",
+    "primaryColor": "#C89B3C",
+    "backgroundColor": "#0A1428",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "blocks": [
+    {
+      "id": "header-lol",
+      "type": "header",
+      "width": "full",
+      "title": "League of Legends",
+      "subtitle": "Summoner Profile",
+      "showNav": true,
+      "navLinks": [
+        { "label": "Profil", "href": "#" },
+        { "label": "Champions", "href": "#champs" },
+        { "label": "Ranked", "href": "#ranked" },
+        { "label": "Clips", "href": "#clips" }
+      ],
+      "backgroundColor": "#0A1428",
+      "textColor": "#C89B3C",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-lol",
+      "type": "hero",
+      "width": "full",
+      "title": "[TON PSEUDO#TAG]",
+      "subtitle": "[TON ROLE PRINCIPAL : Top, Jungle, Mid, ADC ou Support ? Decris ton style !]",
+      "buttonText": "Voir mes stats",
+      "buttonColor": "#C89B3C",
+      "backgroundImage": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0A1428",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-lol1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-lol",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        { "value": "[RANG]", "label": "Rang Solo/Duo", "icon": "🏆" },
+        { "value": "[???]%", "label": "Winrate", "icon": "📈" },
+        { "value": "[???]", "label": "Games jouees", "icon": "🎮" }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1E2328",
+      "textColor": "#ffffff",
+      "accentColor": "#C89B3C"
+    },
+    {
+      "id": "spacer-lol2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-champs",
+      "type": "heading",
+      "width": "full",
+      "content": "Mes Champions Mains",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#C89B3C"
+    },
+    {
+      "id": "spacer-lol3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-champs",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🥇",
+          "title": "[CHAMPION 1]",
+          "description": "[Maitrise niveau ?, winrate, pourquoi tu l'aimes]"
+        },
+        {
+          "icon": "🥈",
+          "title": "[CHAMPION 2]",
+          "description": "[Tes stats avec ce champion]"
+        },
+        {
+          "icon": "🥉",
+          "title": "[CHAMPION 3]",
+          "description": "[Ton pick de secours]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1E2328",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-lol4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-ranked",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&h=400&fit=crop",
+      "title": "Mon Parcours Ranked",
+      "description": "[RACONTE TON CLIMB : ou tu as commence, ton pic, tes galeres, tes moments de fierte !]",
+      "buttonText": "Voir l'historique",
+      "buttonColor": "#C89B3C",
+      "backgroundColor": "#1E2328",
+      "textColor": "#ffffff",
+      "rounded": "lg",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-lol5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-lol",
+      "type": "quote",
+      "width": "full",
+      "content": "[TA REPLIQUE DE CHAMPION PREFEREE OU TON CONSEIL POUR CLIMB]",
+      "author": "[Ton pseudo]",
+      "style": "bordered",
+      "backgroundColor": "#0A1428",
+      "textColor": "#ffffff",
+      "accentColor": "#C89B3C"
+    },
+    {
+      "id": "spacer-lol6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-lol",
+      "type": "cta",
+      "width": "full",
+      "title": "Duo avec moi !",
+      "description": "[AJOUTE TON PSEUDO COMPLET ET TES DISPOS - Ex: Je cherche un support main Lulu/Nami]",
+      "buttonText": "M'ajouter",
+      "buttonColor": "#0A1428",
+      "backgroundColor": "#C89B3C",
+      "textColor": "#0A1428"
+    },
+    {
+      "id": "spacer-lol7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-lol",
+      "type": "footer",
+      "width": "full",
+      "text": "GG EZ! Site cree par [TON PRENOM] - [NOMBRE] heures sur LoL",
+      "showSocials": true,
+      "socials": [
+        { "icon": "youtube", "url": "#" },
+        { "icon": "twitter", "url": "#" },
+        { "icon": "tiktok", "url": "#" }
+      ],
+      "backgroundColor": "#0A1428",
+      "textColor": "#C89B3C",
+      "style": "centered"
+    }
+  ]
+}
