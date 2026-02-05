@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "id": "site-1770280202254-zeck31fsa",
+    "studentInfo": {
+      "nom": "LEBRUN",
+      "prenom": "nolan",
+      "email": "nolanugolebrun@gmail.com"
+    },
+    "createdAt": "2026-02-05T08:30:02.254Z"
+  }
+]
