@@ -11,6 +11,8 @@ import SettingsPanel from "./components/builder/SettingsPanel";
 import CodePopup from "./components/builder/CodePopup";
 import CommentsPanel from "./components/comments/CommentsPanel";
 import SaveModal from "./components/builder/SaveModal";
+import TemplatesModal from "./components/builder/TemplatesModal";
+import MySitesModal from "./components/builder/MySitesModal";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ function Editor() {
   const [showWelcome, setShowWelcome] = useState(true);
   const [showResetModal, setShowResetModal] = useState(false);
   const [showSaveModal, setShowSaveModal] = useState(false);
+  const [showTemplates, setShowTemplates] = useState(false);
+  const [showMySites, setShowMySites] = useState(false);
 
   // Load configuration from localStorage (when coming from admin)
   useEffect(() => {
@@ -40,20 +44,6 @@ function Editor() {
       }
     }
   }, [loadConfiguration]);
-
-  // Load example configuration
-  const loadExample = async () => {
-    try {
-      const res = await fetch("/api/example");
-      if (res.ok) {
-        const data = await res.json();
-        loadConfiguration(data.blocks, data.settings);
-        setShowWelcome(false);
-      }
-    } catch (error) {
-      console.error("Error loading example:", error);
-    }
-  };
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -82,43 +72,74 @@ function Editor() {
       {/* Welcome Modal */}
       {showWelcome && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden animate-bounce-in">
-            <div className="relative h-28 bg-blue-500 flex items-center justify-center">
+          <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden animate-bounce-in">
+            <div className="relative h-32 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
               <div className="absolute inset-0 opacity-20">
                 <div className="absolute inset-0" style={{
                   backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)",
                   backgroundSize: "20px 20px"
                 }} />
               </div>
-              <h1 className="text-3xl font-bold text-white relative">Site Builder</h1>
+              <div className="relative text-center">
+                <h1 className="text-3xl font-bold text-white">Site Builder</h1>
+                <p className="text-white/80 text-sm mt-1">Atelier decouverte web</p>
+              </div>
             </div>
             <div className="p-6">
-              <h2 className="text-xl font-bold text-zinc-800 mb-2">
-                Bienvenue !
+              <h2 className="text-xl font-bold text-zinc-800 mb-2 text-center">
+                Comment veux-tu commencer ?
               </h2>
-              <p className="text-zinc-600 mb-5">
-                Construis ton propre site web en quelques clics. Glisse, dépose, personnalise !
+              <p className="text-zinc-500 text-center mb-6 text-sm">
+                Choisis ton point de depart pour creer ton site web !
               </p>
-              <div className="space-y-2.5 mb-6">
-                <div className="flex items-center gap-3 text-sm text-zinc-600">
-                  <span className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-medium">1</span>
-                  <span>Glisse des éléments sur la page</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-zinc-600">
-                  <span className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-medium">2</span>
-                  <span>Personnalise le contenu et les couleurs</span>
-                </div>
-                <div className="flex items-center gap-3 text-sm text-zinc-600">
-                  <span className="w-7 h-7 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-medium">3</span>
-                  <span>Prévisualise ton site en temps réel</span>
-                </div>
+
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                {/* Option 1: Templates */}
+                <button
+                  onClick={() => {
+                    setShowWelcome(false);
+                    setShowTemplates(true);
+                  }}
+                  className="p-4 rounded-xl border-2 border-purple-200 bg-purple-50 hover:border-purple-400 hover:bg-purple-100 transition-all text-left group"
+                >
+                  <span className="text-3xl mb-2 block">🎮</span>
+                  <h3 className="font-bold text-zinc-800 group-hover:text-purple-600">Templates Jeux</h3>
+                  <p className="text-xs text-zinc-500 mt-1">
+                    Sites a trous sur tes jeux preferes (Fortnite, Minecraft...)
+                  </p>
+                  <span className="inline-block mt-2 text-xs font-medium text-purple-600 bg-purple-100 px-2 py-0.5 rounded-full">
+                    Recommande
+                  </span>
+                </button>
+
+                {/* Option 2: From scratch */}
+                <button
+                  onClick={() => setShowWelcome(false)}
+                  className="p-4 rounded-xl border-2 border-zinc-200 hover:border-blue-400 hover:bg-blue-50 transition-all text-left group"
+                >
+                  <span className="text-3xl mb-2 block">✨</span>
+                  <h3 className="font-bold text-zinc-800 group-hover:text-blue-600">Page vierge</h3>
+                  <p className="text-xs text-zinc-500 mt-1">
+                    Commence de zero et construis tout toi-meme
+                  </p>
+                  <span className="inline-block mt-2 text-xs font-medium text-zinc-500 bg-zinc-100 px-2 py-0.5 rounded-full">
+                    Creatif
+                  </span>
+                </button>
               </div>
-              <button
-                onClick={() => setShowWelcome(false)}
-                className="w-full py-3.5 bg-blue-500 text-white font-bold rounded-xl hover:bg-blue-600 transition-colors"
-              >
-                Commencer
-              </button>
+
+              <div className="border-t border-zinc-200 pt-4">
+                <button
+                  onClick={() => {
+                    setShowWelcome(false);
+                    setShowMySites(true);
+                  }}
+                  className="w-full py-3 text-sm font-medium text-zinc-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all flex items-center justify-center gap-2"
+                >
+                  <span>📚</span>
+                  Reprendre un site existant
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -193,14 +214,20 @@ function Editor() {
           </div>
 
           <button
-            onClick={loadExample}
+            onClick={() => setShowTemplates(true)}
             className="px-3 py-2 text-sm font-medium text-zinc-600 hover:text-purple-500 hover:bg-purple-50 rounded-lg transition-all flex items-center gap-1.5"
-            title="Charger un site exemple"
+            title="Choisir un template"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-            </svg>
-            <span className="hidden sm:inline">Exemple</span>
+            <span>🎮</span>
+            <span className="hidden sm:inline">Templates</span>
+          </button>
+          <button
+            onClick={() => setShowMySites(true)}
+            className="px-3 py-2 text-sm font-medium text-zinc-600 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-all flex items-center gap-1.5"
+            title="Voir les sites enregistres"
+          >
+            <span>📚</span>
+            <span className="hidden sm:inline">Sites</span>
           </button>
           <button
             onClick={() => setShowResetModal(true)}
@@ -382,6 +409,12 @@ function Editor() {
 
       {/* Save Modal */}
       <SaveModal isOpen={showSaveModal} onClose={() => setShowSaveModal(false)} />
+
+      {/* Templates Modal */}
+      <TemplatesModal isOpen={showTemplates} onClose={() => setShowTemplates(false)} />
+
+      {/* My Sites Modal */}
+      <MySitesModal isOpen={showMySites} onClose={() => setShowMySites(false)} />
     </div>
   );
 }
