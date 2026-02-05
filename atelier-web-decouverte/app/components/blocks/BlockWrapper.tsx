@@ -968,21 +968,22 @@ function SocialsBlockComponent({ block }: { block: SocialsBlock }) {
     github: "⌘",
   };
 
+  // Liens désactivés - juste esthétique, pas de navigation
   return (
     <div className="flex gap-3 flex-wrap">
       {block.links.map((link, index) => (
-        <a
+        <span
           key={index}
-          href={link.url}
-          className={`${sizeClasses[block.size]} flex items-center justify-center rounded-full font-bold transition-opacity hover:opacity-80`}
+          className={`${sizeClasses[block.size]} flex items-center justify-center rounded-full font-bold cursor-default select-none`}
           style={{
             backgroundColor: block.style === "filled" ? block.color : "transparent",
             color: block.style === "filled" ? "#fff" : block.color,
             border: block.style === "outline" ? `2px solid ${block.color}` : undefined,
           }}
+          title={`${link.platform} (lien décoratif)`}
         >
           {platformIcons[link.platform]}
-        </a>
+        </span>
       ))}
     </div>
   );

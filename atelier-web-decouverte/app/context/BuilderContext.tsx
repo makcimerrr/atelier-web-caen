@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode, useCallback } from "react";
+import { createContext, useContext, useState, ReactNode, useCallback, useEffect } from "react";
 import {
   EditorState,
   Block,
@@ -13,6 +13,8 @@ import {
   CodeChange,
   DragState,
 } from "../types/builder";
+
+const AUTOSAVE_KEY = "atelier-web-autosave";
 
 const defaultNavLinks: NavLink[] = [
   { id: "nav-1", label: "Accueil", href: "#" },
@@ -98,6 +100,47 @@ const BuilderContext = createContext<BuilderContextType | undefined>(undefined);
 
 export function BuilderProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<EditorState>(initialState);
+  const [hasLoadedFromCache, setHasLoadedFromCache] = useState(false);
+
+  // Charger depuis le cache au démarrage (si disponible)
+  useEffect(() => {
+    if (hasLoadedFromCache) return;
+
+    try {
+      const savedData = localStorage.getItem(AUTOSAVE_KEY);
+      if (savedData) {
+        const { blocks, settings } = JSON.parse(savedData);
+        if (blocks && blocks.length > 0) {
+          setState((prev) => ({
+            ...prev,
+            blocks: blocks,
+            settings: { ...defaultSettings, ...settings },
+            history: [blocks],
+            historyIndex: 0,
+          }));
+        }
+      }
+    } catch (e) {
+      console.warn("Erreur lors du chargement du cache:", e);
+    }
+    setHasLoadedFromCache(true);
+  }, [hasLoadedFromCache]);
+
+  // Sauvegarder automatiquement à chaque changement de blocs ou settings
+  useEffect(() => {
+    if (!hasLoadedFromCache) return;
+
+    try {
+      const dataToSave = {
+        blocks: state.blocks,
+        settings: state.settings,
+        savedAt: new Date().toISOString(),
+      };
+      localStorage.setItem(AUTOSAVE_KEY, JSON.stringify(dataToSave));
+    } catch (e) {
+      console.warn("Erreur lors de la sauvegarde automatique:", e);
+    }
+  }, [state.blocks, state.settings, hasLoadedFromCache]);
 
   // === HISTORY ===
   const saveToHistory = useCallback((blocks: Block[]) => {
@@ -512,6 +555,13 @@ export function BuilderProvider({ children }: { children: ReactNode }) {
 
   // === RESET ===
   const clearCanvas = useCallback(() => {
+    // Effacer le cache de sauvegarde automatique
+    try {
+      localStorage.removeItem(AUTOSAVE_KEY);
+    } catch (e) {
+      console.warn("Erreur lors de la suppression du cache:", e);
+    }
+
     setState((prev) => ({
       ...prev,
       blocks: [],

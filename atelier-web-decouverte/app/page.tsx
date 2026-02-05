@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { BuilderProvider, useBuilder } from "./context/BuilderContext";
 import Canvas from "./components/builder/Canvas";
 import ElementsPanel from "./components/builder/ElementsPanel";
@@ -224,9 +225,18 @@ function Editor() {
           <button
             onClick={() => setShowComments(true)}
             className="px-3 py-2 text-sm font-medium text-zinc-600 hover:text-blue-500 hover:bg-blue-50 rounded-lg transition-all"
+            title="Laisser un commentaire"
           >
             💬
           </button>
+          <Link
+            href="/comments"
+            className="px-3 py-2 text-sm font-medium text-zinc-600 hover:text-purple-500 hover:bg-purple-50 rounded-lg transition-all flex items-center gap-1"
+            title="Voir le mur des messages"
+          >
+            🎨
+            <span className="hidden sm:inline">Mur</span>
+          </Link>
           <button
             onClick={togglePreview}
             className={`px-4 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${

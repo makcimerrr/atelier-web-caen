@@ -373,6 +373,14 @@ export const TEXT_COLORS = [
   { name: "Gris", value: "#71717a" },
   { name: "Gris clair", value: "#a1a1aa" },
   { name: "Blanc", value: "#ffffff" },
+  { name: "Bleu", value: "#2563eb" },
+  { name: "Indigo", value: "#4f46e5" },
+  { name: "Violet", value: "#7c3aed" },
+  { name: "Rose", value: "#ec4899" },
+  { name: "Rouge", value: "#dc2626" },
+  { name: "Orange", value: "#ea580c" },
+  { name: "Vert", value: "#16a34a" },
+  { name: "Cyan", value: "#0891b2" },
 ];
 
 export const DIVIDER_COLORS = [
