@@ -1,0 +1,250 @@
+{
+  "id": "site-1770372087373-w4zdi2nxd",
+  "studentInfo": {
+    "nom": "QUELQUUN",
+    "prenom": "JAHMAE",
+    "email": "jahmaou@gmail.com"
+  },
+  "blocks": [
+    {
+      "id": "header-gta",
+      "type": "header",
+      "width": "full",
+      "title": "GTA ONLINE",
+      "subtitle": "Criminal Empire",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Profil",
+          "href": "#"
+        },
+        {
+          "label": "Business",
+          "href": "#business"
+        },
+        {
+          "label": "Garage",
+          "href": "#garage"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#00FF00",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-gta",
+      "type": "hero",
+      "width": "full",
+      "title": "QUICKDORMOUSE955",
+      "subtitle": "Mon personnage à des lox, il est métisse, il est grand, sappé en noir, jogging, t'shirt, air force montante, casquette normale avec un rolex !",
+      "buttonText": "Voir mon empire",
+      "buttonColor": "#00FF00",
+      "backgroundImage": "https://images.unsplash.com/photo-1493711662062-fa541f7f3d24?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-gta1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-gta",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "320",
+          "label": "Niveau",
+          "icon": "⭐"
+        },
+        {
+          "value": "100M",
+          "label": "Fortune totale",
+          "icon": "💰"
+        },
+        {
+          "value": "200+",
+          "label": "Heures de jeu",
+          "icon": "🎮"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "accentColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-business",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Empire Criminel",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-business",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🏢",
+          "title": "[BUSINESS 1]",
+          "description": "[Nightclub & Salle d'arcade]"
+        },
+        {
+          "icon": "🏭",
+          "title": "[BUSINESS 2]",
+          "description": "[Maker]"
+        },
+        {
+          "icon": "💎",
+          "title": "[BUSINESS 3]",
+          "description": "[Pas besoin en fait, je suis déjà trop riche]"
+        },
+        {
+          "icon": "🚁",
+          "title": "[PROPRIETE]",
+          "description": "[Building privatisé]"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-gta4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-garage",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Garage",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-cars",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[VEHICULE 1 - OPPRESSOR MK2]",
+        "[VEHICULE 2 - LA BATMOBILE]",
+        "[VEHICULE 3 - DELUXO]",
+        "[VEHICULE 4 - SOUS MARIN]"
+      ],
+      "style": "arrow",
+      "textColor": "#ffffff",
+      "iconColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-gta",
+      "type": "quote",
+      "width": "full",
+      "content": "[La rose n'a d'épine que pour celui qui veut la cueillir]",
+      "author": "[JAHAMAE, FELIX, LOUIS & MATHEO]",
+      "style": "bordered",
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#ffffff",
+      "accentColor": "#00FF00"
+    },
+    {
+      "id": "spacer-gta7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-gta",
+      "type": "cta",
+      "width": "full",
+      "title": "Rejoins mon crew !",
+      "description": "[LES MOTORS - Venez dans notre crew, nous sommes clairement les meilleurs !]",
+      "buttonText": "Rejoindre",
+      "buttonColor": "#0d0d0d",
+      "backgroundColor": "#00FF00",
+      "textColor": "#0d0d0d"
+    },
+    {
+      "id": "spacer-gta8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-gta",
+      "type": "footer",
+      "width": "full",
+      "text": "Wasted! Site cree par LES MOTORS - Los Santos depuis 2026",
+      "showSocials": true,
+      "socials": [
+        {
+          "icon": "youtube",
+          "url": "#"
+        },
+        {
+          "icon": "twitter",
+          "url": "#"
+        },
+        {
+          "icon": "tiktok",
+          "url": "#"
+        }
+      ],
+      "backgroundColor": "#0d0d0d",
+      "textColor": "#00FF00",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "GTA Online",
+    "siteDescription": "Mon profil GTA Online",
+    "primaryColor": "#00FF00",
+    "backgroundColor": "#0d0d0d",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-06T10:01:27.373Z"
+}

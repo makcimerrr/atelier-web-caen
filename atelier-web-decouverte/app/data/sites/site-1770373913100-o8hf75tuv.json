@@ -1,0 +1,361 @@
+{
+  "id": "site-1770373913100-o8hf75tuv",
+  "studentInfo": {
+    "nom": "Quelquun",
+    "prenom": "Lucas",
+    "email": "aso.alexis@gmail.com"
+  },
+  "blocks": [
+    {
+      "id": "header-anime",
+      "type": "header",
+      "width": "full",
+      "title": "🎌 [LULU OTAKU]",
+      "subtitle": "Anime & Manga Fan",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Accueil",
+          "href": "#"
+        },
+        {
+          "label": "Mes Animes",
+          "href": "#animes"
+        },
+        {
+          "label": "Top Persos",
+          "href": "#persos"
+        },
+        {
+          "label": "Collection",
+          "href": "#collection"
+        }
+      ],
+      "backgroundColor": "#1a1625",
+      "textColor": "#FF1493",
+      "sticky": true,
+      "style": "centered"
+    },
+    {
+      "id": "hero-anime",
+      "type": "hero",
+      "width": "full",
+      "title": "[LULU OTAKU]",
+      "subtitle": "Actuellement, je suis très fan de mangas, j'adore la lecture, j'aime bien les animes quand même !!",
+      "buttonText": "Voir mes recommandations",
+      "buttonColor": "#FF1493",
+      "backgroundImage": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1625",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-anime1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-anime",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "[10+]",
+          "label": "Animes vus",
+          "icon": "📺"
+        },
+        {
+          "value": "[90+]",
+          "label": "Mangas lus",
+          "icon": "📖"
+        },
+        {
+          "value": "[0]",
+          "label": "Figurines",
+          "icon": "🎎"
+        },
+        {
+          "value": "[0]",
+          "label": "Cosplays",
+          "icon": "🎭"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff",
+      "accentColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-topanime",
+      "type": "heading",
+      "width": "full",
+      "content": "🏆 Mon Top Animes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-topanime",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🥇",
+          "title": "[ANIME 1]",
+          "description": "[Attaque des titans]"
+        },
+        {
+          "icon": "🥈",
+          "title": "[ANIME 2]",
+          "description": "[Demon Slayer]"
+        },
+        {
+          "icon": "🥉",
+          "title": "[ANIME 3]",
+          "description": "[Naruto]"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-manga",
+      "type": "heading",
+      "width": "full",
+      "content": "📚 Mes Mangas Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-manga",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[MANGA 1] - Attaque des titans",
+        "[MANGA 2] - Demon Slayer",
+        "[MANGA 3] - Naruto",
+        "[MANGA 4] - A lire plus tard"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-anime",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=400&fit=crop",
+          "alt": "Anime art"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=600&h=400&fit=crop",
+          "alt": "Manga collection"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=600&h=400&fit=crop",
+          "alt": "Figurines"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1560393464-5c69a73c5770?w=600&h=400&fit=crop",
+          "alt": "Japan"
+        }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-anime7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-persos",
+      "type": "heading",
+      "width": "full",
+      "content": "⭐ Mes Personnages Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime8",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "card-perso1",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=400&fit=crop",
+      "title": "Mon personnage prefere : [LIVAIIII] & [ZENITSU]",
+      "description": "LIVAI est juste trop charismatique et fort & ZENITSU, il est peureux, mais dans il le souhaite ( qu'il dort ), il devient beaucoup trop fort !!",
+      "buttonText": "GOAT",
+      "buttonColor": "#FF1493",
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-anime9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-anime",
+      "type": "quote",
+      "width": "full",
+      "content": "[Aucune idée, je suis à le recherche d'inspiration ...]",
+      "author": "[LUCAS]",
+      "style": "filled",
+      "backgroundColor": "#FF1493",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-anime",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        {
+          "question": "Ton premier anime ?",
+          "answer": "ATTAQUE DES TITANS"
+        },
+        {
+          "question": "Anime actuel que tu suis ?",
+          "answer": "Je lis DEMON SLAYER en ce moment"
+        },
+        {
+          "question": "Tu as ete a Japan Expo ?",
+          "answer": "Non, mais j'aimerais bien !"
+        }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#1a1625",
+      "textColor": "#ffffff",
+      "accentColor": "#FF1493"
+    },
+    {
+      "id": "spacer-anime11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-anime",
+      "type": "cta",
+      "width": "full",
+      "title": "Parlons anime ! 🎌",
+      "description": "[TES CONTACTS - Ex: Retrouve-moi sur MyAnimeList: myanimelist.net/profile/tonpseudo ou Discord pour discuter theories !]",
+      "buttonText": "MyAnimeList",
+      "buttonColor": "#1a1625",
+      "backgroundColor": "#FF1493",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-anime",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        {
+          "platform": "twitter",
+          "url": "#"
+        },
+        {
+          "platform": "instagram",
+          "url": "#"
+        },
+        {
+          "platform": "tiktok",
+          "url": "#"
+        }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#FF1493"
+    },
+    {
+      "id": "spacer-anime13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-anime",
+      "type": "footer",
+      "width": "full",
+      "text": "🎌 [TON PSEUDO] | Otaku depuis [ANNEE] | \"Anime wa jinsei da!\" (L'anime c'est la vie!)",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1a1625",
+      "textColor": "#FF1493",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "Otaku Zone",
+    "siteDescription": "Ma passion anime & manga",
+    "primaryColor": "#FF1493",
+    "backgroundColor": "#1a1625",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-06T10:31:53.101Z"
+}
