@@ -6,7 +6,9 @@
       "prenom": "Jeanne",
       "email": "tirad.jeanne@laposte.net"
     },
-    "createdAt": "2026-02-05T13:32:46.417Z"
+    "createdAt": "2026-02-05T13:32:46.417Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:23.244Z"
   },
   {
     "id": "site-1770297117463-dspekcr4w",
@@ -15,7 +17,9 @@
       "prenom": "nael",
       "email": "naoulragot@gmail.com"
     },
-    "createdAt": "2026-02-05T13:11:57.463Z"
+    "createdAt": "2026-02-05T13:11:57.463Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:22.960Z"
   },
   {
     "id": "site-1770294757913-ljzls4k3b",
@@ -24,7 +28,9 @@
       "prenom": "simon",
       "email": "levillain.simon@laposte.net"
     },
-    "createdAt": "2026-02-05T12:32:37.913Z"
+    "createdAt": "2026-02-05T12:32:37.913Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:38.383Z"
   },
   {
     "id": "site-1770294014169-ni3cjbwb6",
@@ -33,7 +39,9 @@
       "prenom": "lola",
       "email": "lolalepareur199@gmail.com"
     },
-    "createdAt": "2026-02-05T12:20:14.169Z"
+    "createdAt": "2026-02-05T12:20:14.169Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:22.404Z"
   },
   {
     "id": "site-1770291058136-xrga0u7vq",
@@ -42,7 +50,9 @@
       "prenom": "Tymeo",
       "email": "tyondeshayes@gmail.com"
     },
-    "createdAt": "2026-02-05T11:30:58.136Z"
+    "createdAt": "2026-02-05T11:30:58.136Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:22.044Z"
   },
   {
     "id": "site-1770291014129-52smaynww",
@@ -51,7 +61,9 @@
       "prenom": "Mael",
       "email": "rousselmael78@gmail.com"
     },
-    "createdAt": "2026-02-05T11:30:14.129Z"
+    "createdAt": "2026-02-05T11:30:14.129Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:34.167Z"
   },
   {
     "id": "site-1770288988333-7vwf6vr1w",
@@ -60,7 +72,9 @@
       "prenom": "Simon",
       "email": "simonbarbier730@gmail.com"
     },
-    "createdAt": "2026-02-05T10:56:28.333Z"
+    "createdAt": "2026-02-05T10:56:28.333Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:10:21.215Z"
   },
   {
     "id": "site-1770287336611-6irrllj3s",
@@ -69,7 +83,9 @@
       "prenom": "Maxime",
       "email": "maxim3pro@proton.me"
     },
-    "createdAt": "2026-02-05T10:28:56.611Z"
+    "createdAt": "2026-02-05T10:28:56.611Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:08:12.195Z"
   },
   {
     "id": "site-1770285044167-z9hlnodhq",
@@ -114,6 +130,8 @@
       "prenom": "nolan",
       "email": "nolanugolebrun@gmail.com"
     },
-    "createdAt": "2026-02-05T08:30:02.254Z"
+    "createdAt": "2026-02-05T08:30:02.254Z",
+    "emailSent": true,
+    "emailSentAt": "2026-02-06T08:13:32.084Z"
   }
 ]

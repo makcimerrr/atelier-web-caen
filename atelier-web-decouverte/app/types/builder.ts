@@ -334,12 +334,16 @@ export interface SavedSite {
   blocks: Block[];
   settings: SiteSettings;
   createdAt: string;
+  emailSent?: boolean;
+  emailSentAt?: string;
 }
 
 export interface SavedSiteSummary {
   id: string;
   studentInfo: StudentInfo;
   createdAt: string;
+  emailSent?: boolean;
+  emailSentAt?: string;
 }
 
 // === CONSTANTES ===

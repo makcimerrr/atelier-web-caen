@@ -323,5 +323,7 @@
     "showNav": false,
     "showFooter": false
   },
-  "createdAt": "2026-02-05T13:11:57.463Z"
+  "createdAt": "2026-02-05T13:11:57.463Z",
+  "emailSent": true,
+  "emailSentAt": "2026-02-06T08:10:22.960Z"
 }
