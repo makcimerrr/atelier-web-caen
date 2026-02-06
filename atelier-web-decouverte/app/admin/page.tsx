@@ -11,7 +11,7 @@ export default function AdminPage() {
   const [isSending, setIsSending] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const [filterStatus, setFilterStatus] = useState<"all" | "sent" | "pending">("all");
+  const [filterStatus, setFilterStatus] = useState<"all" | "delivered" | "pending" | "bounced">("all");
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
   const [previewSite, setPreviewSite] = useState<SavedSite | null>(null);
   const [isLoadingPreview, setIsLoadingPreview] = useState(false);
@@ -187,14 +187,16 @@ export default function AdminPage() {
 
     const matchesFilter =
       filterStatus === "all" ||
-      (filterStatus === "sent" && site.emailSent) ||
-      (filterStatus === "pending" && !site.emailSent);
+      (filterStatus === "delivered" && site.emailDelivered) ||
+      (filterStatus === "pending" && !site.emailSent) ||
+      (filterStatus === "bounced" && site.emailBounced);
 
     return matchesSearch && matchesFilter;
   });
 
-  const sentCount = sites.filter((s) => s.emailSent).length;
+  const deliveredCount = sites.filter((s) => s.emailDelivered).length;
   const pendingCount = sites.filter((s) => !s.emailSent).length;
+  const bouncedCount = sites.filter((s) => s.emailBounced).length;
 
   return (
     <div className="min-h-screen bg-zinc-100">
@@ -233,18 +235,22 @@ export default function AdminPage() {
 
       <div className="max-w-7xl mx-auto px-4 py-6">
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-4 gap-4 mb-6">
           <div className="bg-white rounded-xl p-4 shadow-sm">
             <div className="text-3xl font-bold text-zinc-800">{sites.length}</div>
             <div className="text-sm text-zinc-500">Sites total</div>
           </div>
           <div className="bg-white rounded-xl p-4 shadow-sm">
-            <div className="text-3xl font-bold text-green-600">{sentCount}</div>
-            <div className="text-sm text-zinc-500">Emails envoyes</div>
+            <div className="text-3xl font-bold text-green-600">{deliveredCount}</div>
+            <div className="text-sm text-zinc-500">Delivres</div>
           </div>
           <div className="bg-white rounded-xl p-4 shadow-sm">
             <div className="text-3xl font-bold text-orange-500">{pendingCount}</div>
             <div className="text-sm text-zinc-500">En attente</div>
+          </div>
+          <div className="bg-white rounded-xl p-4 shadow-sm">
+            <div className="text-3xl font-bold text-red-600">{bouncedCount}</div>
+            <div className="text-sm text-zinc-500">Bounces</div>
           </div>
         </div>
 
@@ -278,14 +284,14 @@ export default function AdminPage() {
                 Tous ({sites.length})
               </button>
               <button
-                onClick={() => setFilterStatus("sent")}
+                onClick={() => setFilterStatus("delivered")}
                 className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
-                  filterStatus === "sent"
+                  filterStatus === "delivered"
                     ? "bg-green-600 text-white"
                     : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
                 }`}
               >
-                Envoyes ({sentCount})
+                Delivres ({deliveredCount})
               </button>
               <button
                 onClick={() => setFilterStatus("pending")}
@@ -296,6 +302,16 @@ export default function AdminPage() {
                 }`}
               >
                 En attente ({pendingCount})
+              </button>
+              <button
+                onClick={() => setFilterStatus("bounced")}
+                className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
+                  filterStatus === "bounced"
+                    ? "bg-red-600 text-white"
+                    : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200"
+                }`}
+              >
+                Bounces ({bouncedCount})
               </button>
             </div>
           </div>
@@ -452,10 +468,27 @@ export default function AdminPage() {
                         <td className="px-4 py-3 text-sm text-zinc-600">{site.studentInfo.email}</td>
                         <td className="px-4 py-3 text-sm text-zinc-500">{formatDate(site.createdAt)}</td>
                         <td className="px-4 py-3 text-center">
-                          {site.emailSent ? (
+                          {site.emailBounced ? (
+                            <span
+                              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-red-100 text-red-700 cursor-help"
+                              title={site.emailBounceReason || "Email non delivre"}
+                            >
+                              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              Bounce
+                            </span>
+                          ) : site.emailDelivered ? (
                             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
                               <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                              </svg>
+                              Delivre
+                            </span>
+                          ) : site.emailSent ? (
+                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">
+                              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                               </svg>
                               Envoye
                             </span>
@@ -543,15 +576,48 @@ export default function AdminPage() {
                     </div>
                   </div>
 
-                  {previewSite.emailSent && previewSite.emailSentAt && (
+                  {previewSite.emailBounced && (
+                    <div className="p-3 bg-red-50 rounded-lg border border-red-100">
+                      <div className="flex items-center gap-2 text-red-700">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span className="text-sm font-medium">Email bounce</span>
+                      </div>
+                      {previewSite.emailBounceReason && (
+                        <div className="text-xs text-red-600 mt-1">{previewSite.emailBounceReason}</div>
+                      )}
+                      {previewSite.emailBouncedAt && (
+                        <div className="text-xs text-red-500 mt-1">{formatDate(previewSite.emailBouncedAt)}</div>
+                      )}
+                    </div>
+                  )}
+
+                  {previewSite.emailDelivered && !previewSite.emailBounced && (
                     <div className="p-3 bg-green-50 rounded-lg border border-green-100">
                       <div className="flex items-center gap-2 text-green-700">
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
+                        <span className="text-sm font-medium">Email delivre</span>
+                      </div>
+                      {previewSite.emailDeliveredAt && (
+                        <div className="text-xs text-green-600 mt-1">{formatDate(previewSite.emailDeliveredAt)}</div>
+                      )}
+                    </div>
+                  )}
+
+                  {previewSite.emailSent && !previewSite.emailDelivered && !previewSite.emailBounced && (
+                    <div className="p-3 bg-blue-50 rounded-lg border border-blue-100">
+                      <div className="flex items-center gap-2 text-blue-700">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                        </svg>
                         <span className="text-sm font-medium">Email envoye</span>
                       </div>
-                      <div className="text-xs text-green-600 mt-1">{formatDate(previewSite.emailSentAt)}</div>
+                      {previewSite.emailSentAt && (
+                        <div className="text-xs text-blue-600 mt-1">{formatDate(previewSite.emailSentAt)}</div>
+                      )}
                     </div>
                   )}
 

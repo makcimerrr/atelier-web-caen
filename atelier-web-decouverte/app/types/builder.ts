@@ -336,6 +336,14 @@ export interface SavedSite {
   createdAt: string;
   emailSent?: boolean;
   emailSentAt?: string;
+  emailDelivered?: boolean;
+  emailDeliveredAt?: string;
+  emailBounced?: boolean;
+  emailBouncedAt?: string;
+  emailBounceReason?: string;
+  emailBounceType?: string;
+  emailComplained?: boolean;
+  emailComplainedAt?: string;
 }
 
 export interface SavedSiteSummary {
@@ -344,6 +352,13 @@ export interface SavedSiteSummary {
   createdAt: string;
   emailSent?: boolean;
   emailSentAt?: string;
+  emailDelivered?: boolean;
+  emailDeliveredAt?: string;
+  emailBounced?: boolean;
+  emailBouncedAt?: string;
+  emailBounceReason?: string;
+  emailComplained?: boolean;
+  emailComplainedAt?: string;
 }
 
 // === CONSTANTES ===

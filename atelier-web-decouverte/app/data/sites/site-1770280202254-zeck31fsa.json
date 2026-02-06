@@ -286,5 +286,9 @@
   },
   "createdAt": "2026-02-05T08:30:02.254Z",
   "emailSent": true,
-  "emailSentAt": "2026-02-06T08:13:32.084Z"
+  "emailSentAt": "2026-02-06T08:19:00.090Z",
+  "emailBounced": true,
+  "emailBouncedAt": "2026-02-06T08:19:01.365Z",
+  "emailBounceReason": "The recipient's email provider sent a bounce message because the message you sent contains content that the provider doesn't allow. You might be able to send a message to the same recipient if you change the content of the message.",
+  "emailBounceType": "Transient"
 }
