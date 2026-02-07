@@ -1,0 +1,365 @@
+{
+  "id": "site-1770369773614-mlmjklzir",
+  "studentInfo": {
+    "nom": "Dubois",
+    "prenom": "Maxime",
+    "email": "maxim3pro@proton.me"
+  },
+  "blocks": [
+    {
+      "id": "header-anime",
+      "type": "header",
+      "width": "full",
+      "title": "🎌 kale",
+      "subtitle": "Anime & Manga Fan",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Accueil",
+          "href": "#"
+        },
+        {
+          "label": "Mes Animes",
+          "href": "#animes"
+        },
+        {
+          "label": "Top Persos",
+          "href": "#persos"
+        },
+        {
+          "label": "Collection",
+          "href": "#collection"
+        }
+      ],
+      "backgroundColor": "#1a1625",
+      "textColor": "#7c3aed",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-anime",
+      "type": "hero",
+      "width": "full",
+      "title": "kalé",
+      "subtitle": "fan d'animé depuis 5 ans, je suiis passionnée par les shonen et les isekai ",
+      "buttonText": "Voir mes recommandations",
+      "buttonColor": "#7c3aed",
+      "backgroundImage": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1625",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-anime1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-anime",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "50+",
+          "label": "Animes vus",
+          "icon": "📺"
+        },
+        {
+          "value": "10+",
+          "label": "Mangas lus",
+          "icon": "📖"
+        },
+        {
+          "value": "5",
+          "label": "Figurines",
+          "icon": "🎎"
+        },
+        {
+          "value": "4",
+          "label": "Posters",
+          "icon": "🎭"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff",
+      "accentColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-topanime",
+      "type": "heading",
+      "width": "full",
+      "content": "🏆 Mon Top Animes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-topanime",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "🥇",
+          "title": "[ANIME 1]",
+          "description": "demon slayer et silent voice "
+        },
+        {
+          "icon": "🥈",
+          "title": "[ANIME 2]",
+          "description": "death note"
+        },
+        {
+          "icon": "🥉",
+          "title": "[ANIME 3]",
+          "description": "spyxfamily"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime4",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-manga",
+      "type": "heading",
+      "width": "full",
+      "content": "📚 Mes Mangas Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-manga",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "spyxfamily",
+        "100 jour avant ta mort ",
+        "teacher in the destruction classroom",
+        "My Hero Academia - Le parfait manga de super-heros"
+      ],
+      "style": "check",
+      "textColor": "#ffffff",
+      "iconColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "gallery-anime",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=600&h=400&fit=crop",
+          "alt": "Anime art"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1613376023733-0a73315d9b06?w=600&h=400&fit=crop",
+          "alt": "Manga collection"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1608889825103-eb5ed706fc64?w=600&h=400&fit=crop",
+          "alt": "Figurines"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1560393464-5c69a73c5770?w=600&h=400&fit=crop",
+          "alt": "Japan"
+        }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "lg"
+    },
+    {
+      "id": "spacer-anime7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-persos",
+      "type": "heading",
+      "width": "full",
+      "content": "⭐ Mes Personnages Preferes",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime8",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "card-perso1",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=800&h=400&fit=crop",
+      "title": "Mes personnages preferes : light yagami & tokito muichiro",
+      "description": "light yagami est manipulateur , toxic , mais il  y a une prrofondeur au personnage qu'on ne voit pas assez , quand a muichiro son ",
+      "buttonText": "MEILLEUR MANIPULATEUR !!!!!",
+      "buttonColor": "#7c3aed",
+      "backgroundColor": "#2d2640",
+      "textColor": "#ffffff",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-anime9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-anime",
+      "type": "quote",
+      "width": "full",
+      "content": "on vit dans un monde pourri et ceux qui pourrissent ce monde merite de mourrir",
+      "author": "light yagami",
+      "style": "filled",
+      "backgroundColor": "#ffffff",
+      "textColor": "#7c3aed",
+      "accentColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-anime",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        {
+          "question": "Ton premier anime ?",
+          "answer": "narruto et delon slayer"
+        },
+        {
+          "question": "Anime actuel que tu suis ?",
+          "answer": "le monde de chihiro"
+        },
+        {
+          "question": "Tu preferes : Sub ou Dub ?",
+          "answer": "[REPONDS - Ex: VOSTFR toujours ! Les voix japonaises sont irreplacables]"
+        },
+        {
+          "question": "Tu as ete a Japan Expo ?",
+          "answer": "non mais j'aimerai y aller un jour"
+        }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#1a1625",
+      "textColor": "#ffffff",
+      "accentColor": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-anime",
+      "type": "cta",
+      "width": "full",
+      "title": "Parlons anime ! 🎌",
+      "description": "anime-samaFAN",
+      "buttonText": "MyAnimeList",
+      "buttonColor": "#1a1625",
+      "backgroundColor": "#7c3aed",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-anime12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-anime",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        {
+          "platform": "twitter",
+          "url": "#"
+        },
+        {
+          "platform": "instagram",
+          "url": "#"
+        },
+        {
+          "platform": "tiktok",
+          "url": "#"
+        }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "spacer-anime13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-anime",
+      "type": "footer",
+      "width": "full",
+      "text": "🎌 kalé | Otaku depuis 2020 | ",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#1a1625",
+      "textColor": "#7c3aed",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "Otaku Zone",
+    "siteDescription": "Ma passion anime & manga",
+    "primaryColor": "#FF1493",
+    "backgroundColor": "#1a1625",
+    "textColor": "#ffffff",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-06T09:22:53.614Z"
+}

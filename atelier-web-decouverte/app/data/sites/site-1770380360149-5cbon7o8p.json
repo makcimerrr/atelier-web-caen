@@ -1,0 +1,285 @@
+{
+  "id": "site-1770380360149-5cbon7o8p",
+  "studentInfo": {
+    "nom": "frogerais",
+    "prenom": "Zoé",
+    "email": "princesa_zoe@icloud.com"
+  },
+  "blocks": [
+    {
+      "id": "header-fifa",
+      "type": "header",
+      "width": "full",
+      "title": "EA FC 25",
+      "subtitle": "Ultimate Team",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Profil",
+          "href": "#"
+        },
+        {
+          "label": "Mon XI",
+          "href": "#xi"
+        },
+        {
+          "label": "Stats",
+          "href": "#stats"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "backgroundColor": "#f4f4f5",
+      "textColor": "#18181b",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-fifa",
+      "type": "hero",
+      "width": "full",
+      "title": "QuietJacket4583 ",
+      "subtitle": "attaquante gauche du PSG, avec un super pied gauche  ",
+      "buttonText": "Voir mon match ",
+      "buttonColor": "#0891b2",
+      "backgroundImage": "https://images.unsplash.com/photo-1557672172-298e090bd0f1?w=800&h=500&fit=crop",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#18181b",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-fifa1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-fifa",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "9 ",
+          "label": "Division Rivals",
+          "icon": "🏆"
+        },
+        {
+          "value": "+123",
+          "label": "Victoires FUT",
+          "icon": "⚽"
+        },
+        {
+          "value": "+20 ",
+          "label": "Buts marques en 1 match",
+          "icon": "🥅"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#f4f4f5",
+      "textColor": "#18181b",
+      "accentColor": "#0891b2"
+    },
+    {
+      "id": "spacer-fifa2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-xi",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon XI de Reve",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#0891b2"
+    },
+    {
+      "id": "spacer-fifa3",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-formation",
+      "type": "text",
+      "width": "full",
+      "content": "Formation: 4-4-2",
+      "fontSize": "lg",
+      "fontWeight": "bold",
+      "textAlign": "center",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-attack",
+      "type": "features",
+      "width": "full",
+      "title": "Attaque",
+      "features": [
+        {
+          "icon": "⚡",
+          "title": "ATTAQUANT G",
+          "description": "MOI"
+        },
+        {
+          "icon": "👑",
+          "title": "ATTAQUANT C",
+          "description": "CR7"
+        },
+        {
+          "icon": "🔥",
+          "title": "ATTAQUANT D",
+          "description": "alexendre bernardo"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa5",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "features-mid",
+      "type": "features",
+      "width": "full",
+      "title": "Milieu",
+      "features": [
+        {
+          "icon": "🎯",
+          "title": "MILIEU 1",
+          "description": "maëly "
+        },
+        {
+          "icon": "🧠",
+          "title": "MILIEU 2",
+          "description": "di maria "
+        },
+        {
+          "icon": "💪",
+          "title": "MILIEU 3",
+          "description": "vithinia"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#3d3d3d",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa6",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "features-def",
+      "type": "features",
+      "width": "full",
+      "title": "Defense & Gardien",
+      "features": [
+        {
+          "icon": "🛡️",
+          "title": "DEFENSE",
+          "description": "hakini"
+        },
+        {
+          "icon": "🧤",
+          "title": "GARDIEN",
+          "description": "hugo loris  "
+        }
+      ],
+      "columns": 2,
+      "backgroundColor": "#2d2d2d",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-fifa7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-fifa",
+      "type": "quote",
+      "width": "full",
+      "content": "TIKI TAKA ",
+      "author": "QuietJacket4583 ",
+      "style": "bordered",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#0891b2",
+      "accentColor": "#0891b2"
+    },
+    {
+      "id": "spacer-fifa8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-fifa",
+      "type": "cta",
+      "width": "full",
+      "title": "On fait un match ?",
+      "description": "Je te bats sur PS4 et SWITCH !!",
+      "buttonText": "Rejoins moi",
+      "buttonColor": "#18181b",
+      "backgroundColor": "#0891b2",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "spacer-fifa9",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "footer-fifa",
+      "type": "footer",
+      "width": "full",
+      "text": "GOOOAAL! Site cree par zoé - Fan de foot depuis toujours",
+      "showSocials": true,
+      "socials": [
+        {
+          "icon": "youtube",
+          "url": "#"
+        },
+        {
+          "icon": "twitter",
+          "url": "#"
+        },
+        {
+          "icon": "tiktok",
+          "url": "#"
+        }
+      ],
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#0891b2",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "EA FC Player",
+    "siteDescription": "Mon profil EA FC / FIFA",
+    "primaryColor": "#2E8B57",
+    "backgroundColor": "#1a1a1a",
+    "textColor": "#ffffff",
+    "fontFamily": "space",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-06T12:19:20.149Z"
+}

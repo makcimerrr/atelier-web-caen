@@ -1,0 +1,368 @@
+{
+  "id": "site-1770381731390-ufp5nf5hx",
+  "studentInfo": {
+    "nom": "Randriamandiny",
+    "prenom": "Elizabeth",
+    "email": "elizabethrandriamandiny@gamil.com"
+  },
+  "blocks": [
+    {
+      "id": "header-photo",
+      "type": "header",
+      "width": "full",
+      "title": "📷 Elizabeth Randriamandiny",
+      "subtitle": "Photographe",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Portfolio",
+          "href": "#"
+        },
+        {
+          "label": "A propos",
+          "href": "#about"
+        },
+        {
+          "label": "Services",
+          "href": "#services"
+        },
+        {
+          "label": "Contact",
+          "href": "#contact"
+        }
+      ],
+      "backgroundColor": "#eff6ff",
+      "textColor": "#1a1a1a",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-photo",
+      "type": "hero",
+      "width": "full",
+      "title": "Elizabeth",
+      "subtitle": "Je me situe en Normandie je prend des paysages naturel et capture les moments précieux",
+      "buttonText": "Voir mon travail",
+      "buttonColor": "#1a1a1a",
+      "backgroundImage": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#1a1a1a",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-photo1",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-portfolio",
+      "type": "heading",
+      "width": "full",
+      "content": "Portfolio",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo2",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "gallery-photo",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop",
+          "alt": "Portrait 1"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop",
+          "alt": "Portrait 2"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&h=500&fit=crop",
+          "alt": "Portrait 3"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=600&fit=crop",
+          "alt": "Portrait 4"
+        }
+      ],
+      "columns": 4,
+      "gap": "sm",
+      "rounded": "none"
+    },
+    {
+      "id": "spacer-photo3",
+      "type": "spacer",
+      "width": "full",
+      "size": "sm"
+    },
+    {
+      "id": "gallery-photo2",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+          "alt": "Paysage 1"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&h=400&fit=crop",
+          "alt": "Paysage 2"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&h=400&fit=crop",
+          "alt": "Paysage 3"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=800&h=500&fit=crop",
+          "alt": "Paysage 4"
+        }
+      ],
+      "columns": 4,
+      "gap": "sm",
+      "rounded": "none"
+    },
+    {
+      "id": "text-gallery",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE CES IMAGES PAR TES PROPRES PHOTOS - Utilise des liens d'images hebergees ou des URLs Unsplash]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#71717a"
+    },
+    {
+      "id": "spacer-photo4",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-about",
+      "type": "heading",
+      "width": "full",
+      "content": "A propos",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo5",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "text-about",
+      "type": "text",
+      "width": "full",
+      "content": "Je suis Elizabeth Randriamandiny, photographe autodidacte depuis 2020. J'ai commence avec un vieux reflex de mon pere et aujourd'hui la photo est devenue ma passion. Je suis specialise dans les paysages naturels et la capture des émotions dans les moments les plus importants . Mon style est naturel, lumineux et authentique. Basé en Normandie, je suis disponible pour des shootings dans toute la region et au-dela !",
+      "fontSize": "lg",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#52525b"
+    },
+    {
+      "id": "spacer-photo6",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-photo",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "200+",
+          "label": "PHOTOS PRISES",
+          "icon": "📸"
+        },
+        {
+          "value": "150+",
+          "label": "Clients satisfaits",
+          "icon": "😊"
+        },
+        {
+          "value": "6 ans",
+          "label": "Annees d'experience",
+          "icon": "📅"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#eff6ff",
+      "textColor": "#1a1a1a",
+      "accentColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo7",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-matos",
+      "type": "heading",
+      "width": "full",
+      "content": "Mon Materiel",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo8",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-matos",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "📷",
+          "title": "[BOITIER]",
+          "description": "Sony A7IV - Mon boitier principal pour les portraits"
+        },
+        {
+          "icon": "🔭",
+          "title": "[OBJECTIF PRINCIPAL]",
+          "description": "Sony 85mm f/1.4 GM - Bokeh de fou pour les portraits"
+        },
+        {
+          "icon": "💡",
+          "title": "[ECLAIRAGE]",
+          "description": " Godox AD200 Pro + softbox - Pour les shootings studio"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#eff6ff",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo9",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "heading-services",
+      "type": "heading",
+      "width": "full",
+      "content": "Services & Tarifs",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo10",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "pricing-photo",
+      "type": "pricing",
+      "width": "auto",
+      "title": "[FORMULE - Ex: Shooting Portrait]",
+      "price": "190€",
+      "period": "",
+      "features": [
+        " 2h de shooting",
+        "15 photos retouchees]",
+        " Galerie privee en ligne]",
+        "Livraison sous 7 jours]"
+      ],
+      "buttonText": "Reserver",
+      "buttonColor": "#1a1a1a",
+      "backgroundColor": "#eff6ff",
+      "textColor": "#1a1a1a",
+      "highlighted": true
+    },
+    {
+      "id": "spacer-photo11",
+      "type": "spacer",
+      "width": "full",
+      "size": "xl"
+    },
+    {
+      "id": "cta-photo",
+      "type": "cta",
+      "width": "full",
+      "title": "Besoin de figer un moment? 📸",
+      "description": "Contacte-moi par email: hello@tonnom.com ou sur Instagram @tonpseudo pour discuter de ton projet !",
+      "buttonText": "Me contacter",
+      "buttonColor": "#18181b",
+      "backgroundColor": "#eff6ff",
+      "textColor": "#18181b"
+    },
+    {
+      "id": "spacer-photo12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-photo",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        {
+          "platform": "instagram",
+          "url": "#"
+        },
+        {
+          "platform": "facebook",
+          "url": "#"
+        },
+        {
+          "platform": "linkedin",
+          "url": "#"
+        }
+      ],
+      "style": "minimal",
+      "size": "lg",
+      "color": "#1a1a1a"
+    },
+    {
+      "id": "spacer-photo13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-photo",
+      "type": "footer",
+      "width": "full",
+      "text": "Elizabeth Randriamandiny Photographie | Elizaphotographe@gmail.com | © 2024",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#eff6ff",
+      "textColor": "#18181b",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "Photographe",
+    "siteDescription": "Mon portfolio photo",
+    "primaryColor": "#1a1a1a",
+    "backgroundColor": "#ffffff",
+    "textColor": "#1a1a1a",
+    "fontFamily": "inter",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-06T12:42:11.390Z"
+}
