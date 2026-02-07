@@ -1,0 +1,372 @@
+{
+  "id": "site-1770462421035-ymw7dl8o4",
+  "studentInfo": {
+    "nom": "mon nom de famille",
+    "prenom": "maxime",
+    "email": "mper96360@gmail.com"
+  },
+  "blocks": [
+    {
+      "id": "header-pet",
+      "type": "header",
+      "width": "full",
+      "title": "Vicky",
+      "subtitle": "Pet Life",
+      "showNav": true,
+      "navLinks": [
+        {
+          "label": "Accueil",
+          "href": "#"
+        },
+        {
+          "label": "Photos",
+          "href": "#photos"
+        },
+        {
+          "label": "A propos",
+          "href": "#about"
+        },
+        {
+          "label": "Fun facts",
+          "href": "#facts"
+        }
+      ],
+      "backgroundColor": "#ffffff",
+      "textColor": "#F97316",
+      "sticky": true,
+      "style": "simple"
+    },
+    {
+      "id": "hero-pet",
+      "type": "hero",
+      "width": "full",
+      "title": "Vicky",
+      "subtitle": "cocker roux et blanc",
+      "buttonText": "Voir ses photos",
+      "buttonColor": "#F97316",
+      "backgroundImage": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=1920&h=1080&fit=crop",
+      "backgroundColor": "#fffbeb",
+      "textColor": "#ffffff",
+      "alignment": "center",
+      "overlay": true
+    },
+    {
+      "id": "spacer-pet1",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "stats-pet",
+      "type": "stats",
+      "width": "full",
+      "stats": [
+        {
+          "value": "1 an",
+          "label": "Age",
+          "icon": "🎂"
+        },
+        {
+          "value": "20kg",
+          "label": "Poids",
+          "icon": "⚖️"
+        },
+        {
+          "value": "dormir",
+          "label": "Jouets",
+          "icon": "🎾"
+        },
+        {
+          "value": "∞",
+          "label": "Calins/jour",
+          "icon": "🤗"
+        }
+      ],
+      "columns": 4,
+      "backgroundColor": "#F97316",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-pet2",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "card-pet",
+      "type": "card",
+      "width": "full",
+      "image": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800&h=400&fit=crop",
+      "title": "🐕 Fiche d'identite",
+      "description": "cocker roux et blanc\nSurnom: N'a pas de surnom\nCourir : Très très vite !!",
+      "buttonText": "Best boy!",
+      "buttonColor": "#F97316",
+      "backgroundColor": "#ffffff",
+      "textColor": "#451a03",
+      "rounded": "xl",
+      "shadow": "lg"
+    },
+    {
+      "id": "spacer-pet3",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-photos",
+      "type": "heading",
+      "width": "full",
+      "content": "📸 Galerie Photos",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#451a03"
+    },
+    {
+      "id": "spacer-pet4",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "gallery-pet",
+      "type": "gallery",
+      "width": "full",
+      "images": [
+        {
+          "src": "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=600&fit=crop",
+          "alt": "Dog 1"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=600&h=600&fit=crop",
+          "alt": "Dog 2"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1561037404-61cd46aa615b?w=600&h=600&fit=crop",
+          "alt": "Dog 3"
+        },
+        {
+          "src": "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=600&h=600&fit=crop",
+          "alt": "Dog 4"
+        }
+      ],
+      "columns": 4,
+      "gap": "md",
+      "rounded": "xl"
+    },
+    {
+      "id": "text-gallery",
+      "type": "text",
+      "width": "full",
+      "content": "[REMPLACE PAR LES PHOTOS DE TON ANIMAL - Chat, chien, hamster, poisson...]",
+      "fontSize": "sm",
+      "fontWeight": "normal",
+      "textAlign": "center",
+      "textColor": "#a1a1aa"
+    },
+    {
+      "id": "spacer-pet5",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-perso",
+      "type": "heading",
+      "width": "full",
+      "content": "💕 Sa Personnalite",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#451a03"
+    },
+    {
+      "id": "spacer-pet6",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "features-perso",
+      "type": "features",
+      "width": "full",
+      "title": "",
+      "features": [
+        {
+          "icon": "😊",
+          "title": "Ses qualites",
+          "description": "Câlin et joueuse"
+        },
+        {
+          "icon": "😈",
+          "title": "Ses betises",
+          "description": "prend les chaussons mange sa propre couverture"
+        },
+        {
+          "icon": "❤️",
+          "title": "Ce qu'elle aime",
+          "description": "les balades les calins les nouvelles balles et manger"
+        }
+      ],
+      "columns": 3,
+      "backgroundColor": "#fef3c7",
+      "textColor": "#451a03"
+    },
+    {
+      "id": "spacer-pet7",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "quote-pet",
+      "type": "quote",
+      "width": "full",
+      "content": "en essayant d'ouvrir un tiroir elle s'est bloquée dedans",
+      "author": "VICKY",
+      "style": "filled",
+      "backgroundColor": "#F97316",
+      "textColor": "#ffffff",
+      "accentColor": "#ffffff"
+    },
+    {
+      "id": "spacer-pet8",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "heading-routine",
+      "type": "heading",
+      "width": "full",
+      "content": "📅 Sa Routine",
+      "level": "h2",
+      "textAlign": "center",
+      "textColor": "#451a03"
+    },
+    {
+      "id": "spacer-pet9",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "list-routine",
+      "type": "list",
+      "width": "full",
+      "items": [
+        "[MATIN] - Ex: 7h - Reveil en sautant sur le lit pour reclamer sa gamelle",
+        "[BALADE] - Ex: 8h et 18h - Grandes balades au parc avec les copains",
+        "[REPAS] - Ex: Croquettes premium matin et soir + friandises pour les tricks",
+        "[SIESTE] - Ex: Apres-midi entiere sur le canape, sa place preferee",
+        "[SOIR] - Ex: Calins devant la tele puis dodo dans son panier (ou le lit)"
+      ],
+      "style": "check",
+      "textColor": "#451a03",
+      "iconColor": "#F97316"
+    },
+    {
+      "id": "spacer-pet10",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "accordion-pet",
+      "type": "accordion",
+      "width": "full",
+      "items": [
+        {
+          "question": "Son jouet prefere ?",
+          "answer": "[REPONDS - Ex: Une vieille balle de tennis toute machee qu'il a depuis chiot, il refuse tout autre jouet]"
+        },
+        {
+          "question": "Sa plus grosse betise ?",
+          "answer": "[REPONDS - Ex: Il a devore un coussin entier un jour ou il est reste seul trop longtemps. Plumes partout !]"
+        },
+        {
+          "question": "Pourquoi tu l'aimes ?",
+          "answer": "[REPONDS - Ex: Il est toujours la pour moi, il sent quand ca va pas et vient faire des calins. C'est le meilleur ami qu'on puisse avoir]"
+        }
+      ],
+      "style": "bordered",
+      "backgroundColor": "#fffbeb",
+      "textColor": "#451a03",
+      "accentColor": "#F97316"
+    },
+    {
+      "id": "spacer-pet11",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "cta-pet",
+      "type": "cta",
+      "width": "full",
+      "title": "Plus de photos sur Insta ! 🐾",
+      "description": "[TON COMPTE - Ex: @cookie_the_golden pour ses aventures quotidiennes et ses betises !]",
+      "buttonText": "Follow",
+      "buttonColor": "#ffffff",
+      "backgroundColor": "#F97316",
+      "textColor": "#ffffff"
+    },
+    {
+      "id": "spacer-pet12",
+      "type": "spacer",
+      "width": "full",
+      "size": "lg"
+    },
+    {
+      "id": "socials-pet",
+      "type": "socials",
+      "width": "auto",
+      "links": [
+        {
+          "platform": "instagram",
+          "url": "#"
+        },
+        {
+          "platform": "tiktok",
+          "url": "#"
+        },
+        {
+          "platform": "youtube",
+          "url": "#"
+        }
+      ],
+      "style": "filled",
+      "size": "lg",
+      "color": "#F97316"
+    },
+    {
+      "id": "spacer-pet13",
+      "type": "spacer",
+      "width": "full",
+      "size": "md"
+    },
+    {
+      "id": "footer-pet",
+      "type": "footer",
+      "width": "full",
+      "text": "🐾 [NOM DE TON ANIMAL] | Best friend since [ANNEE] | Made with 💕 by [TON PRENOM]",
+      "showSocials": false,
+      "socials": [],
+      "backgroundColor": "#451a03",
+      "textColor": "#ffffff",
+      "style": "centered"
+    }
+  ],
+  "settings": {
+    "siteName": "Pet Life",
+    "siteDescription": "La vie de mon animal",
+    "primaryColor": "#F97316",
+    "backgroundColor": "#fffbeb",
+    "textColor": "#451a03",
+    "fontFamily": "poppins",
+    "maxWidth": "xl",
+    "navLinks": [],
+    "showNav": false,
+    "showFooter": false
+  },
+  "createdAt": "2026-02-07T11:07:01.035Z"
+}
