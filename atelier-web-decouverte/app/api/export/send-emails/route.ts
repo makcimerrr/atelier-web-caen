@@ -1,15 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { promises as fs } from "fs";
-import path from "path";
-import { SavedSite, SavedSiteSummary } from "@/app/types/builder";
+import { SavedSite } from "@/app/types/builder";
 import { generateHTML, wrapInDocument } from "@/app/lib/export/html-generator";
 import { generateFullCSS } from "@/app/lib/export/css-generator";
 import { generateJS, generateReadme } from "@/app/lib/export/js-generator";
 import { generateZip, sanitizeFilename } from "@/app/lib/export/zip-generator";
-
-const DATA_DIR = path.join(process.cwd(), "app/data/sites");
-const INDEX_FILE = path.join(DATA_DIR, "index.json");
+import { readIndex, writeIndex, readSite, writeSite } from "@/app/lib/storage";
 
 // Lazy init to avoid build errors when API key is not set
 function getResend() {
@@ -19,24 +15,9 @@ function getResend() {
   return new Resend(process.env.RESEND_API_KEY);
 }
 
-async function readIndex(): Promise<SavedSiteSummary[]> {
-  const data = await fs.readFile(INDEX_FILE, "utf-8");
-  return JSON.parse(data);
-}
-
-async function writeIndex(index: SavedSiteSummary[]): Promise<void> {
-  await fs.writeFile(INDEX_FILE, JSON.stringify(index, null, 2));
-}
-
-async function readSite(id: string): Promise<SavedSite> {
-  const filePath = path.join(DATA_DIR, `${id}.json`);
-  const data = await fs.readFile(filePath, "utf-8");
-  return JSON.parse(data);
-}
-
-async function updateSite(site: SavedSite): Promise<void> {
-  const filePath = path.join(DATA_DIR, `${site.id}.json`);
-  await fs.writeFile(filePath, JSON.stringify(site, null, 2));
+// Delay helper for rate limiting (Resend allows 2 requests/second)
+function delay(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 function generateEmailTemplate(studentName: string, siteName: string): string {
@@ -114,10 +95,21 @@ export async function POST(request: NextRequest) {
     const results: { id: string; success: boolean; error?: string }[] = [];
     const index = await readIndex();
 
-    for (const siteId of siteIds) {
+    for (let i = 0; i < siteIds.length; i++) {
+      const siteId = siteIds[i];
+
+      // Rate limiting: wait 600ms between emails (max ~1.6 requests/second to stay under limit)
+      if (i > 0) {
+        await delay(600);
+      }
+
       try {
         // Load site data
         const site = await readSite(siteId);
+        if (!site) {
+          results.push({ id: siteId, success: false, error: "Site non trouve" });
+          continue;
+        }
         const studentName = `${site.studentInfo.prenom} ${site.studentInfo.nom}`;
 
         // Generate export files
@@ -159,7 +151,7 @@ export async function POST(request: NextRequest) {
           // Update site with email sent status
           site.emailSent = true;
           site.emailSentAt = new Date().toISOString();
-          await updateSite(site);
+          await writeSite(site);
 
           // Update index
           const indexEntry = index.find((s) => s.id === siteId);
