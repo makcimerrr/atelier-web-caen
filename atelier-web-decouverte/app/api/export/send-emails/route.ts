@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { put } from "@vercel/blob";
 import { SavedSite } from "@/app/types/builder";
 import { generateHTML, wrapInDocument } from "@/app/lib/export/html-generator";
 import { generateFullCSS } from "@/app/lib/export/css-generator";
@@ -20,7 +21,7 @@ function delay(ms: number): Promise<void> {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function generateEmailTemplate(studentName: string, siteName: string): string {
+function generateEmailTemplate(studentName: string, siteName: string, downloadUrl: string): string {
   return `
 <!DOCTYPE html>
 <html>
@@ -29,12 +30,18 @@ function generateEmailTemplate(studentName: string, siteName: string): string {
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8fafc;">
   <div style="background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); border-radius: 16px; padding: 32px; text-align: center; margin-bottom: 24px;">
-    <h1 style="color: white; margin: 0 0 8px 0; font-size: 28px;">Bravo ${studentName} ! 🎉</h1>
+    <h1 style="color: white; margin: 0 0 8px 0; font-size: 28px;">Bravo ${studentName} !</h1>
     <p style="color: rgba(255,255,255,0.9); margin: 0; font-size: 16px;">Ton site "${siteName}" est pret !</p>
   </div>
 
+  <div style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center;">
+    <h2 style="margin: 0 0 16px 0; font-size: 18px; color: #1e293b;">Telecharge ton site</h2>
+    <a href="${downloadUrl}" style="display: inline-block; background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-weight: 600; font-size: 16px;">Telecharger le ZIP</a>
+    <p style="margin: 16px 0 0 0; font-size: 12px; color: #94a3b8;">Ce lien reste disponible pendant 30 jours</p>
+  </div>
+
   <div style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-    <h2 style="margin: 0 0 16px 0; font-size: 18px; color: #1e293b;">📦 Contenu de ton ZIP</h2>
+    <h2 style="margin: 0 0 16px 0; font-size: 18px; color: #1e293b;">Contenu du ZIP</h2>
     <ul style="margin: 0; padding: 0; list-style: none;">
       <li style="padding: 8px 0; border-bottom: 1px solid #e2e8f0; display: flex; align-items: center;">
         <span style="background: #dbeafe; color: #1d4ed8; padding: 4px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; margin-right: 12px;">HTML</span>
@@ -56,9 +63,9 @@ function generateEmailTemplate(studentName: string, siteName: string): string {
   </div>
 
   <div style="background: white; border-radius: 12px; padding: 24px; margin-bottom: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
-    <h2 style="margin: 0 0 16px 0; font-size: 18px; color: #1e293b;">🚀 Comment voir ton site ?</h2>
+    <h2 style="margin: 0 0 16px 0; font-size: 18px; color: #1e293b;">Comment voir ton site ?</h2>
     <ol style="margin: 0; padding-left: 20px; color: #475569;">
-      <li style="margin-bottom: 8px;">Decompresse le fichier ZIP joint</li>
+      <li style="margin-bottom: 8px;">Telecharge et decompresse le fichier ZIP</li>
       <li style="margin-bottom: 8px;">Ouvre le dossier extrait</li>
       <li style="margin-bottom: 8px;">Double-clique sur <strong>index.html</strong></li>
       <li>Ton site s'ouvre dans ton navigateur !</li>
@@ -66,7 +73,7 @@ function generateEmailTemplate(studentName: string, siteName: string): string {
   </div>
 
   <div style="text-align: center; color: #64748b; font-size: 14px;">
-    <p style="margin: 0 0 8px 0;">Felicitations pour ton travail lors de cet atelier ! 🌟</p>
+    <p style="margin: 0 0 8px 0;">Felicitations pour ton travail lors de cet atelier !</p>
     <p style="margin: 0;">A bientot,<br><strong>L'equipe Atelier Web</strong></p>
   </div>
 </body>
@@ -130,18 +137,21 @@ export async function POST(request: NextRequest) {
 
         const filename = `${sanitizeFilename(site.settings.siteName)}.zip`;
 
-        // Send email
+        // Upload ZIP to Vercel Blob
+        const blob = await put(`exports/${siteId}/${filename}`, zipBuffer, {
+          access: "public",
+          addRandomSuffix: false,
+          allowOverwrite: true,
+        });
+
+        const downloadUrl = blob.url;
+
+        // Send email with download link (no attachment)
         const { error } = await getResend().emails.send({
           from: process.env.RESEND_FROM_EMAIL || "Atelier Web <onboarding@resend.dev>",
           to: site.studentInfo.email,
-          subject: `🎉 Ton site "${site.settings.siteName}" est pret !`,
-          html: generateEmailTemplate(studentName, site.settings.siteName),
-          attachments: [
-            {
-              filename,
-              content: zipBuffer,
-            },
-          ],
+          subject: `Ton site "${site.settings.siteName}" est pret !`,
+          html: generateEmailTemplate(studentName, site.settings.siteName, downloadUrl),
         });
 
         if (error) {
