@@ -1,10 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-import { SavedSiteSummary } from "@/app/types/builder";
-
-const DATA_DIR = path.join(process.cwd(), "app/data/sites");
-const INDEX_FILE = path.join(DATA_DIR, "index.json");
+import { readIndex, writeIndex, readSite, deleteSite } from "@/app/lib/storage";
 
 // GET - Retrieve a specific site by ID
 export async function GET(
@@ -13,9 +8,13 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
-    const filePath = path.join(DATA_DIR, `${id}.json`);
-    const data = await fs.readFile(filePath, "utf-8");
-    return NextResponse.json(JSON.parse(data));
+    const site = await readSite(id);
+
+    if (!site) {
+      return NextResponse.json({ error: "Site not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(site);
   } catch (error) {
     return NextResponse.json({ error: "Site not found" }, { status: 404 });
   }
@@ -28,16 +27,14 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
-    const filePath = path.join(DATA_DIR, `${id}.json`);
 
-    // Delete the site file
-    await fs.unlink(filePath);
+    // Delete the site
+    await deleteSite(id);
 
     // Update the index
-    const indexData = await fs.readFile(INDEX_FILE, "utf-8");
-    const index: SavedSiteSummary[] = JSON.parse(indexData);
+    const index = await readIndex();
     const updatedIndex = index.filter((site) => site.id !== id);
-    await fs.writeFile(INDEX_FILE, JSON.stringify(updatedIndex, null, 2));
+    await writeIndex(updatedIndex);
 
     return NextResponse.json({ success: true, message: "Site supprime" });
   } catch (error) {

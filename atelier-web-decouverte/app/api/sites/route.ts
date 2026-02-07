@@ -1,33 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
-import { SavedSite, SavedSiteSummary, StudentInfo } from "@/app/types/builder";
-
-const DATA_DIR = path.join(process.cwd(), "app/data/sites");
-const INDEX_FILE = path.join(DATA_DIR, "index.json");
-
-async function ensureDataDir() {
-  try {
-    await fs.access(DATA_DIR);
-  } catch {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-  }
-  try {
-    await fs.access(INDEX_FILE);
-  } catch {
-    await fs.writeFile(INDEX_FILE, JSON.stringify([], null, 2));
-  }
-}
-
-async function readIndex(): Promise<SavedSiteSummary[]> {
-  await ensureDataDir();
-  const data = await fs.readFile(INDEX_FILE, "utf-8");
-  return JSON.parse(data);
-}
-
-async function writeIndex(index: SavedSiteSummary[]): Promise<void> {
-  await fs.writeFile(INDEX_FILE, JSON.stringify(index, null, 2));
-}
+import { SavedSite } from "@/app/types/builder";
+import { readIndex, writeIndex, writeSite } from "@/app/lib/storage";
 
 // GET - List all saved sites (summary only)
 export async function GET() {
@@ -62,8 +35,6 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    await ensureDataDir();
-
     const newSite: SavedSite = {
       id: `site-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
       studentInfo: {
@@ -76,11 +47,8 @@ export async function POST(request: NextRequest) {
       createdAt: new Date().toISOString(),
     };
 
-    // Save full site data to individual file
-    await fs.writeFile(
-      path.join(DATA_DIR, `${newSite.id}.json`),
-      JSON.stringify(newSite, null, 2)
-    );
+    // Save full site data
+    await writeSite(newSite);
 
     // Update index
     const index = await readIndex();
